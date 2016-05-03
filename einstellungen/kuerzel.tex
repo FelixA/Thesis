@@ -1,0 +1,44 @@
+% Hier sind Makros definiert, die die Eingabe erleichtern sollen. Für korrekte Abstände zwischen
+% "z.B." sorgt also ein "z.\,B." (LaTeX-Befehl für kleineren Abstand)
+% Schneller schreibt sich das durch das Makro "\zB":
+
+% \newcommand{\zB}{z.\,B.\ }
+
+% Hier ist der Rest aber mit dem Paket xspace verwirklicht. Damit kann
+% man bei Bedarf den Abstand mit "\hspace" exakt eingeben. Dann zeigt
+% LaTeX keine Toleranz bei den Abkürzungen und macht eben exakt das
+% untenstehende. 
+
+%\renewcommand{\entryname}{K\"urzel}
+%\renewcommand{\descriptionname}{Beschreibung}
+
+\newcommand{\eu}{\@\xspace\officialeuro\hspace{0.125em}\@\xspace}
+\newcommand{\vgl}{vgl.\@\xspace} 
+\newcommand{\abb}{Abb.\@\xspace} 
+\newcommand{\tab}{Tab.\@\xspace} 
+\newcommand{\zb}{z.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]B.\@\xspace}
+\newcommand{\bzw}{bzw.\@\xspace}
+\newcommand{\dahe}{d.\nolinebreak[4]\hspace{0.125em}h.\nolinebreak[4]\@\xspace}
+\newcommand{\etc}{etc.\@\xspace}
+\newcommand{\s}{S.\@\xspace}
+\newcommand{\bzgl}{bzgl.\@\xspace}
+\newcommand{\so}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]o.\@\xspace}
+\newcommand{\ia}{i.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]A.\@\xspace}
+\newcommand{\sa}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]a.\@\xspace}
+\newcommand{\su}{s.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]u.\@\xspace}
+\newcommand{\ua}{u.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]a.\@\xspace}
+\newcommand{\og}{o.\nolinebreak[4]\hspace{0.125em}\nolinebreak[4]g.\@\xspace}
+
+\newcommand{\prof}{Prof.\@\xspace}
+\newcommand{\dr}{Dr.\@\xspace}
+
+\newcommand{\HSKA}{\myHochschulename \xspace}
+\newcommand{\GNU}{GNU\xspace}
+\newcommand{\GPL}{\GNU Public License\xspace}
+
+\newcommand{\hpops}{HP Operations Orchestration}
+
+\newcommand{\ACM}{ACM\xspace}
+\newcommand{\PDA}{PDA\xspace}
+
+\newcommand{\myLatex}{{\rmfamily\LaTeX\xspace}}		% LaTeX in eigenem Font

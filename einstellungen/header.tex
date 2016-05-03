@@ -1,0 +1,65 @@
+%+++Kopf- und Fusszeilen++++++++++++++++++++++++++++++++++++++++++++++
+\usepackage{scrpage2}
+
+% \pagestyle{scrheadings} = show header and footer
+\pagestyle{scrheadings}
+						
+\newcommand{\footerdatestyle}{\today}
+
+\ihead{Ingo Foth \\ Matrikelnummer: 20007 }
+\chead{}
+\ohead{
+% oben rechts HP Logo
+%\begin{figure}[!h]
+%		% bounding box examples
+%		% [bb=0 0 100 100]
+		\includegraphics[width=2cm]{bilder/hplogo.jpg}
+%	\label{fig:hplogo}
+%\end{figure}
+}
+
+% dem zu grossen Bild etwas mehr Platz einraeumen
+% der Header wird dadurch etwas groesser, 
+% text im Dokument wird automatisch etwas nach unten gerueckt 
+\setlength{\headheight}{3.1\baselineskip}%{55pt}
+
+\ifoot{\small Ingo Foth}%%
+\cfoot{Seite \thepage}
+\ofoot{\small \today}
+% nützlich: \pagemark = Seitenzahl
+
+% \setheadwidth [Verschiebung]{Breite}
+% \setheadwidth [0pt]{page}
+\setheadsepline{1pt}						%Dicke der Trennlinie Kopfzeile - Text
+% \setfootwidth [Verschiebung]{Breite}
+% \setfootwidth [0pt]{page}
+\setfootsepline{0.5pt}					%Dicke der Trennlinie Fusszeile - Text					
+%+++Ende Kopf- und Fusszeile +++++++++++++++++++++++++++++++++++++++++
+
+
+% einige Parameter
+%\setheadtopline{}     % modifiziert die Parameter fuer die Linie ueber dem Seitenkopf
+   %\setheadsepline{.4pt}[\color{black}]
+                         % modifiziert die Parameter fuer die Linie zwischen Kopf
+                         % und Textkörper
+   %\setfootsepline{}    % modifiziert die Parameter fuer die Linie zwischen Text
+                         % und Fuß
+   %\setfootbotline{}    % modifiziert die Parameter fuer die Linie unter dem Seitenfuss
+%}
+ 
+% Groeße des Headers
+%\setlength{\headheight}{1.1\baselineskip}
+% -> eingestellt über Option 'headlines'.
+ 
+% Breite von Kopf und Fusszeile einstellen
+% \setheadwidth[Verschiebung]{Breite}
+% \setfootwidth[Verschiebung]{Breite}
+% mögliche Werte
+% paper - die Breite des Papiers
+% page - die Breite der Seite
+% text - die Breite des Textbereichs
+% textwithmarginpar - die Breite des Textbereichs inklusive dem Seitenrand
+% head - die aktuelle Breite des Seitenkopfes
+% foot - die aktuelle Breite des Seitenfusses
+%\setheadwidth[0pt]{text}
+%\setfootwidth[0pt]{text}

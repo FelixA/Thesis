@@ -1,0 +1,42 @@
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 2pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null
+    \vskip 5\p@
+    \hskip 55
+    \hbox{\mbox{%
+        \hspace{4pt}%
+        \fbox{\includegraphics[width=40pt]{bilder/hplogo.jpg}}%
+        \hspace{4pt}
+        }%
+      \vrule width 3 depth 0.90\textheight
+      \mbox{\hspace{2pt}}
+      \vtop{% %%%%%%%%%%%%%%%%%%
+        \vskip 80\p@
+        \begin{flushleft}
+          \Large \sffamily \@author \par
+          \Large \sffamily Matrikelnummer: 20007 \par
+        \end{flushleft}
+        \vskip 60\p@
+        \begin{flushleft}
+          \huge \sffamily \@title \par
+        \end{flushleft}
+        \vskip 1\p@
+        \begin{flushleft}
+          \huge \sffamily <FIRMENNAME-HIER> \par
+        \end{flushleft}
+        \vfil
+        }}
+    \null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+
+\makeatother
+\author{Vorname Nachname}
+\title{Arbeitstitel}
+\date{1.1.2000}

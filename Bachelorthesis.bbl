@@ -1,0 +1,104 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Angelo}{2014{\em a}}{Angelo.2014}
+Angelo, J.~D.  \harvardyearleft 2014{\em a}\harvardyearright , `Bitcoin 101 -
+  the nightmare of a 51{\%} attack - part 1 - calculating the costs'.
+\newline\url{https://www.youtube.com/watch?v=bi2thGzzNSs}
+
+\harvarditem{Angelo}{2014{\em b}}{Angelo.2014b}
+Angelo, J.~D.  \harvardyearleft 2014{\em b}\harvardyearright , `Bitcoin 101 -
+  the nightmare of a 51{\%} attack - part 2 - how to destroy bitcoin'.
+\newline\url{https://www.youtube.com/watch?v=Kjtgp5h-jEY}
+
+\harvarditem{Antonopoulos}{2015}{Antonopoulos.2015}
+Antonopoulos, A.~M.  \harvardyearleft 2015\harvardyearright , {\em Mastering
+  bitcoin: Unlocking digital cryptocurrencies}, first edition edn, O'Reilly,
+  Sebastopol, CA.
+
+\harvarditem[Back et~al.]{Back, Corallo, Dashjr, Friedenbach, Maxwell, Miller,
+  Poelstra, Tim{\'o}n \harvardand\ Wuille}{2014}{Back.2014}
+Back, A., Corallo, M., Dashjr, L., Friedenbach, M., Maxwell, G., Miller, A.,
+  Poelstra, A., Tim{\'o}n, J. \harvardand\ Wuille, P.  \harvardyearleft
+  2014\harvardyearright , `Enabling blockchain innovations with pegged
+  sidechains'.
+\newline\url{http://www.blockstream.com/sidechains.pdf}
+
+\harvarditem{Buterin}{2014{\em a}}{Buterin.2014}
+Buterin, V.  \harvardyearleft 2014{\em a}\harvardyearright , `Daos, dacs, das
+  and more: An incomplete terminology guide'.
+\newline\url{https://blog.ethereum.org/2014/05/06/daos-dacs-das-and-more-an-incomplete-terminology-guide/}
+
+\harvarditem{Buterin}{2014{\em b}}{Buterin.2014c}
+Buterin, V.  \harvardyearleft 2014{\em b}\harvardyearright , `What is a merkle
+  tree'.
+\newline\url{https://www.weusecoins.com/what-is-a-merkle-tree/}
+
+\harvarditem{Buterin}{2016}{Buterin.2016}
+Buterin, V.  \harvardyearleft 2016\harvardyearright , `A next-generation smart
+  contract and decentralized application platform'.
+\newline\url{https://github.com/ethereum/wiki/wiki/White-Paper}
+
+\harvarditem{Geiling}{2016}{Geiling.2016}
+Geiling, L.  \harvardyearleft 2016\harvardyearright , `Distributed ledger: Die
+  technologie hinter den virtuellen w{\"a}hrungen am beispiel der blockchain',
+  {\em BaFin Journal} (2/2016),~28--32.
+\newline\url{http://www.bafin.de/SharedDocs/Downloads/DE/BaFinJournal/2016/bj_1602.pdf?__blob=publicationFile&v=3}
+
+\harvarditem{Glatz}{2014}{Glatz.2014}
+Glatz, F.  \harvardyearleft 2014\harvardyearright , `What are smart contracts?
+  in search of a consensus.'.
+\newline\url{https://medium.com/@heckerhut/whats-a-smart-contract-in-search-of-a-consensus-c268c830a8ad#.n75czj8ro}
+
+\harvarditem{Hearn}{2016}{Hearn.2016}
+Hearn, M.  \harvardyearleft 2016\harvardyearright , `The resolution of the
+  bitcoin experiment'.
+\newline\url{https://medium.com/@octskyward/the-resolution-of-the-bitcoin-experiment-dabb30201f7#.owgtvb9ry}
+
+\harvarditem{Nakamoto}{2008}{Nakamoto.2008}
+Nakamoto, S.  \harvardyearleft 2008\harvardyearright , `Bitcoin: A peer-to-peer
+  electronic cash system'.
+\newline\url{https://bitcoin.org/bitcoin.pdf}
+
+\harvarditem{Pfn{\"u}r}{2014}{Pfnur.2014}
+Pfn{\"u}r, C.  \harvardyearleft 2014\harvardyearright , Vergleich dezentraler
+  elektronischer W{\"a}hrungen, PhD thesis, {Hochschule f{\"u}r Technik und
+  Wirtschaft Dresden}, Dresden.
+\newline\url{http://www2.htw-dresden.de/~jvogt/abschlussarbeiten/Pfn%C3%BCr.pdf}
+
+\harvarditem{Rootstock}{2016}{Rootstock.2016}
+Rootstock  \harvardyearleft 2016\harvardyearright , `Following the yellow brick
+  road'.
+\newline\url{http://www.rootstock.io/blog/following-the-yellow-brick-road}
+
+\harvarditem{Szabo}{1996}{Szabo.1996}
+Szabo, N.  \harvardyearleft 1996\harvardyearright , `Smart contracts: Building
+  blocks for digital markets'.
+\newline\url{http://szabo.best.vwh.net/smart_contracts_2.html}
+
+\harvarditem{Szabo}{1997}{Szabo.1997}
+Szabo, N.  \harvardyearleft 1997\harvardyearright , `Formalizing and securing
+  relationships on public networks', {\em First Monday} {\bf 2}(9).
+
+\harvarditem{TierNolan}{2013}{TierNolan.2013}
+TierNolan  \harvardyearleft 2013\harvardyearright , `Re: Alt chains and atomic
+  transfers'.
+\newline\url{https://bitcointalk.org/index.php?topic=193281.msg2224949#msg2224949}
+
+\harvarditem{{Universit{\"a}t Frankfurt}}{2016}{UniversitatFrankfurt.2016}
+{Universit{\"a}t Frankfurt}  \harvardyearleft 2016\harvardyearright , `Anzahl
+  der atome'.
+\newline\url{https://elearning.physik.uni-frankfurt.de/data/FB13-PhysikOnline/lm_data/lm_282/auto/kap09/cd236b.htm}
+
+\harvarditem[van Valkenburgh et~al.]{van Valkenburgh, Dietz, de~Filippie,
+  Shadab, Xethalis \harvardand\ Bollier}{2015}{Valkenburgh.2015}
+van Valkenburgh, P., Dietz, J., de~Filippie, P., Shadab, H., Xethalis, G.
+  \harvardand\ Bollier, D.  \harvardyearleft 2015\harvardyearright ,
+  `Distributed collaborative organisations: Distributed networks {\&}
+  regulatory frameworks'.
+\newline\url{http://bollier.org/sites/default/files/misc-file-upload/files/DistributedNetworksandtheLaw%20report%2C%20Swarm-Coin%20Center-Berkman.pdf}
+
+\harvarditem{Webbtc}{2015}{Webbtc.2015}
+Webbtc  \harvardyearleft 2015\harvardyearright , `Beispielhafter block'.
+\newline\url{https://webbtc.com/block/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.json}
+
+\end{thebibliography}

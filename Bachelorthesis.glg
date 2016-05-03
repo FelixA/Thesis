@@ -1,0 +1,23 @@
+;; This logfile was generated automatically by `xindy'
+;; at 29.03.2016  11:58:47
+;; Indexstyle: "d50f9doWc7", Rawindex: "2v3gBY6K4o", Output: "Bachelorthesis.gls"
+
+
+Building indexentry-tree:
+Hierdepth of index is :TREE
+
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+
+Forming letter-groups:
+Letter-group: "„´Ã†®†¤€¨¼" -> "B"
+Letter-group: "„¨Ú†Ã¨¼" -> "B"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "„¨Ú†Ã¨¼" -> "B"
+
+makeglossaries messages:
+
+Cannot locate xindy module for language ngerman in codepage utf8.
+Retrying using default codepage.
+Cannot locate xindy module for language ngerman.
+Retrying with -L general

@@ -1,0 +1,303 @@
+
+%---------------------------------------------------------------------------------------------------
+\section{Evaluationskategorien}
+\label{kategorienGesamt}
+Nach Schmelzer und Sesselmann ist die wichtigste Anforderung an ein \ac{BPMS} die Abdeckung des gesamten \ac{BPM} Lifecycles. \cite[S.468]{Schmelzer.2013} Über dies hinaus treffen die Anforderungen, welche allgemein an Software gestellt werden, auch auf ein \ac{BPMS} zu. 
+
+\medskip\noindent Daher werden im Folgenden die Anforderungen an ein \ac{BPMS} anhand des in Kapitel \ref{Lifecycle} beschriebenen \ac{BPM} Lifecycles abgeleitet. Der Unterpunkt \ref{SoftwareAnforderugen} ergänzt diese um allgemeine Software Anforderungen. In \ref{herleitungKategorien} werden aus den zuvor beschriebenen Anforderungen Kategorien abgeleitet, deren einzelne Kriterien in \ref{definitionKriterien} aufgeführt werden.
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Anforderungen aus dem BPM Lifecycle}
+\label{AnforderungenPhasen}
+Bezogen auf den in Kapitel \ref{Lifecycle} beschriebenen \ac{BPM} Lifecycle werden im Folgenden die Anforderungen anhand dessen Phasen heraus gearbeitet. Die Hauptaufgabe eines \ac{BPMS}s ist die möglichst effiziente Unterstützung der Benutzer bei der Durchführung ihrer Aufgaben und Tätigkeiten. Daher werden die Anforderungen aus den Tätigkeiten der Benutzer abgeleitet.
+
+\newpage
+\paragraph*{Process Identification:}
+In der Identifikationsphase wird ein Prozess zuerst stark vereinfacht dargestellt. Dabei werden notwendige Details in textueller Form mitgeführt bzw. an den Prozess annotiert. Da ein Prozess selten nur eine Organisationseinheit betrifft, wird das zugehörige Prozessmodell von mehreren Personen bearbeitet. Berücksichtigung finden sollten auch etwaige Beziehungen zu anderen Prozessen bzw. mögliche Beeinflussungen derer.
+
+\medskip\textit{\textbf{Tätigkeiten:}}
+\begin{compactitem}{}
+\item[] Prozess modellieren
+\item[] Abhängigkeiten darstellen
+\end{compactitem}
+
+
+
+%In der Identifikationsphase geht es vor allem darum, Prozesse zu erkennen und diese in Beziehung zu anderen Prozessen zu bringen. Dabei sollte ein \ac{BPMS} den Benutzer vor allem bei der Strukturierung der Prozesse in eine Prozessarchitektur unterstützen. Ferner ist es von Vorteil, Prozesse nicht mit allen Details zu modellieren, sondern zuerst nur eine grobe Einordnung dessen zu finden.
+%
+%Prozess einordnen, in Beziehung bringen, Ideen sammeln mithilfe von Annotationen, Kooperation verschiedener Benutzer
+%Beziehungen verschiedener Prozesse darstellen -> BPMN Diagrammarten
+%Grob-granulare (high-level) Darstellung von Prozessen
+%Startparameter und Ergebnisse definieren
+%
+%Prozesse modellieren -> abstrakt, nicht fein granular
+%Modelle annotieren -> textuelle Beschreibung
+%Abhängigkeiten darstellen -> Prozessarchitektur
+
+
+\paragraph*{Process Discovery:}
+Nachdem die Notwendigkeit eines Prozesses in der Process Identification Phase festgestellt wurde, wird dieser in der Process Discovery Phase mit allen notwendigen Tätigkeiten modelliert. Dabei werden auch alle beteiligten Systeme und Organisationsrollen identifiziert und in das Prozessmodell mit aufgenommen. Es sollten dabei durchaus verschiedene Varianten des selben Prozesses berücksichtigt werden.
+
+\medskip\textit{\textbf{Tätigkeiten:}}
+\begin{compactitem}{}
+\item[] Prozess modellieren
+\item[] Abhängigkeiten darstellen
+\end{compactitem}
+
+%Verschiedene Sichten desselben Prozesses -> verschiedene Beteiligte, verschiedene Granularitäten
+%Annotationen an Prozesse, mehrere Nutzer können einen Prozess bearbeiten
+%Prozesse modellieren
+%Benutzerverwaltung
+%Geschäftsregeln
+%Fach / Branchespezifische Prozesse
+%
+%Prozesse modellieren
+%Modelle annotieren
+%Verschiedene Varianten darstellen
+%Prozessbeteiligte identifizieren
+%Gemeinsame Modellierung
+
+\paragraph*{Process Analysis:}
+Die in der vorhergehenden Phase modellierten Prozesse werden im Anschluss auf ihre Performance und Compliance hin geprüft. Dabei werden verschiedene Varianten eines Prozesses miteinander verglichen. 
+
+\medskip\textit{\textbf{Tätigkeiten:}}
+\begin{compactitem}{}
+\item[] Prozess modellieren
+\item[] Abhängigkeiten darstellen
+\item[] Prozess simulieren/testen
+\end{compactitem}
+
+%Um die Schwachstellen eines Prozesses zu identifizieren werden die zur Laufzeit gesammelten Daten bzw. die aus einer Simulation gewonnenen Daten analysiert. Dabei sollte der Nutzer vom \ac{BPMS} dahin gehend unterstützt werden, dass die Zahlen aufbereitet Dargestellt werden, oder im Idealfall in konfigurierbaren   
+%
+%Um die Effizienz von Prozessen messen zu können, sollten zur Laufzeit sowohl technische Daten der Process Execution Engine als auch frei definierbare \ac{KPI}s gespeichert werden. Zur Veranschaulichung sollten diese grafisch ausgewertet werden können. 
+%
+%Analysieren
+%Modelle annotieren
+%Prozesse modellieren
+%Prozesse einsehen
+%Modelle vergleichen
+%Prozesse simulieren
+%Gemeinsame Modellierung
+%
+%Prozesssimulation -> 
+%Messung Kennzahlen wie Durchlaufzeit -> Festlegung Messparameter
+%Fehlerbehandlung
+%Fachliche Prozessmodellierung -> Semantische + Syntaktische Korrektheit
+
+\newpage
+\paragraph*{Process Redesign:}
+In der Redesign-Phase liegt der Fokus auf der Beseitigung der in der Analyse aufgedeckten Schwachstellen. Dazu wird das Prozessmodell entsprechend angepasst und dokumentiert. 
+
+\medskip\textit{\textbf{Tätigkeiten:}}
+\begin{compactitem}{}
+\item[] Prozess modellieren
+\item[] Abhängigkeiten darstellen
+\end{compactitem}
+
+% vorhandener Prozesse. Diese müssen den Ergebnissen der Analyse entsprechend angepasst. Dazu ist es Notwendigkeit, das Prozessmodell sowie die zugehörige Prozessdokumentation zu überarbeiten. 
+%
+%Vergleich verschiedener Prozessvarianten
+%Beziehungen zu anderen Prozessen
+%Wiederverwendungen von bestehenden Teilprozessen / Infrastruktur
+%Fachliche Modellierung
+%
+%Modelle gemeinsam bearbeiten
+%Prozesse modellieren
+%Prozessvarianten einfügen
+%Zuständigkeiten und Verantwortlichkeiten festlegen
+
+
+
+\paragraph*{Process Implementation:}
+Nachdem das Prozessmodell in der finalen Form (im Sinne des aktuellen Lifecycles) vorliegt, wird es um technischen Details zu Automatisierung ergänzt. Dabei werden Schnittstellen zu anderen Systemen definiert, Benutzeroberflächen eingebunden und die Benutzerverwaltung integriert. Hierzu gehört auch die Einteilung des Prozesses in wiederverwendbare Komponenten.
+%Zur Wiederverwendung vorhandener Funktionalitäten sollten Templates und Unterprozesse eingesetzt werden.
+
+\medskip\textit{\textbf{Tätigkeiten:}}
+\begin{compactitem}{}
+\item[] Prozess modellieren
+\item[] Technische Implementierung einfügen
+\item[] Templates und Teilprozesse zur Wiederverwendung
+\item[] Prozessimplementierung aktualisieren
+\end{compactitem}
+
+%Für die Implementierung eines Prozesses mithilfe eines \ac{BPMS}s gilt es zuerst, ein fachliches Prozessmodell um die technischen Details wie Serviceaufrufe zu erweitern. Dabei sollte die Entwicklungsumgebung für das technische Prozessmodell den Entwickler möglichst intuitiv unterstützen. Mit heutigem Stand der Technik sollte ein \ac{BPMS} einen WYDIWYE (What You Draw is What You Execute) Editor für BPMN 2.0 Modelle bieten.
+%
+%Trennung fachliches Prozessmodell von Technischem, 
+%Technisches Prozessmodell
+%Schnittstellen -> schnelle Implementierung -> Flexibilität -> vordefinierte Komponenten
+%Benutzerinteraktion -> Generierung/Erstellung von Benutzeroberflächen
+%Einbindung manuelle Schritte
+%Dauer der Umsetzung
+%Benutzerverwaltung
+%Skalierung -> 
+%
+%Technischen Prozess modellieren
+%Prozessmodell testen
+%Prozessmodell deployen
+%Oberflächen erstellen/generieren
+%Rechtemanagement einbinden
+%Templates nutzen
+
+
+\paragraph*{Process Monitoring and Controlling:}
+%passive Überwachung, aktive Steuerung
+Zur Laufzeit gilt es, stets den Status eines Prozesses und seiner Instanzen eingesehen zu können. Unter dem Status wird dabei der aktuelle Fortschritt einer Instanz, aufgetretene Fehler, aktueller Wert der Prozessvariablen und zuständigem Bearbeiter verstanden. Um flexibel auf Änderungen reagieren zu können, ist es notwendig verschiedene Versionen desselben Prozesses berücksichtigen zu können. Die Prozesskennzahlen, die zur Laufzeit gesammelt werden, sollten für den Benutzer aufbereitet dargestellt werden.
+\newline In Ergänzung zur passiven Überwachung gilt es zur effektiven Steuerung von Prozessen, einen entsprechend privilegierter Benutzer in die Lage zu versetzen, all die zuvor genannten Eigenschaften zur Laufzeit aktiv zu ändern. Ferner sollte die Möglichkeit bestehen, fehlerbehaftete Prozessinstanzen zu Beenden.
+
+\medskip\textit{\textbf{Tätigkeiten:}}
+\begin{compactitem}
+\item[] Status für System, Prozess und Instanzen einsehen
+\item[] Kennzahlen einsehen
+\item[] Prozessvariablen zur Laufzeit editieren
+\item[] Prozessinstanzen beenden
+\item[] Zuständigkeit von Aufgaben ändern
+\end{compactitem}
+
+%Prozesse einsehen -> Status, Prozessvariablen, zuständiger Nutzer
+%Prozessinstanzen einsehen
+%Fehlermeldungen einsehen
+%Zuständigkeit ändern
+%Instanz beenden
+%Prozessvariablen zur Laufzeit ändern
+%Prozesskennzahlen einsehen
+%Geschäftsregeln ändern
+%Aufgaben bearbeiten
+%
+%
+%Alles findet zur Laufzeit statt
+%Fortschrittseinsicht, Messung/Erfassung und Aufbereitung von Kennzahlen, Compliance, 
+%Anpassung an Prozessen
+%Aufbereitung Kennzahlen
+%Fehlermonitoring / Behandlung
+%Eskalation
+%Adminfunktionen -> Prozesse stoppen
+%Benutzerverwaltung -> Verantwortlichen ändern (Urlaub, Krankheit etc.)
+%
+%Da die Prozesse eines Unternehmens immer konträr zur Aufbauorganisation ablaufen, benötigt ein \ac{BPMS} eine Benutzerverwaltung
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Anforderungen an Software im Allgemeinen}
+\label{SoftwareAnforderugen}
+Neben den \ac{BPM} spezifischen Anforderungen treffen auf ein \ac{BPMS} auch allgemeine Softwareanforderungen zu. Diese betreffen  betriebswirtschaftliche Gesichtspunkte, IT-strategische Aspekte sowie die grundlegende Benutzbarkeit.
+
+\textbf{Betriebswirtschaftlich} gesehen stehen die direkten und indirekten Kosten im Fokus. Dazu zählen die Anschaffungs- bzw. Lizenzkosten und die Kosten für Wartung und Support. 
+Aus Sicht der \textbf{IT- Strategie} werden die Kompatibilität mit anderen Systemen, spezieller die Schnittstellen zu Standardsoftware, allgemeiner die zugrunde liegende Technologie betrachtet. Ferner spielen hierbei die Plattform- und Herstellerabhängigkeit eine große Rolle. Um verschiedene Auslastungsszenarien entsprechen zu können, bedarf es einer Möglichkeit der Skalierung. Weiter wird die \textbf{Benutzbarkeit} für Anwender sowie Entwickler betrachtet. Wichtigster Punkt hierbei ist die verfügbare Dokumentation sowohl für technische Aspekte wie auch der für die Anwendung. Ebenso betrachtet werden die Administrations- und Konfigurationsmöglichkeiten.
+\newline
+%komplexe Software, Administrationsmöglichkeiten, Datenbank + Servereinstellungen, Rechteverwaltung System, 
+
+
+
+%Mehrwert von BPMS vor allem Flexibilität und Funktionsübergreifung
+%
+%Schnittstellen
+%Anbieter / Hersteller -> 
+%Ergonomie -> Look \& Feel, Konfigurierbarkeit, Fehlerverhalten
+%Plattformabhängigkeit
+%Anpassbarkeit
+%
+%Allgemeingültige Software Anforderungen aus der Literatur
+%Technische Anforderungen aus Referenzarchitektur
+%---------------------------------------------------------------------------------------------------
+\subsection{Kategorisierung der Anforderungen}
+\label{herleitungKategorien}
+Da die in den einzelnen Phasen des \ac{BPM} Lifecycles durchgeführten Tätigkeiten mehrfach vorkommen, werden die Anforderungen nach Tätigkeiten kategorisiert.
+
+Grundsätzlich können die Tätigkeiten in Laufzeitgebundene und Laufzeitunabhängige eingeteilt werden. Erstere sind vor allem in der Process Monitoring and Controlling Phase zu finden und umfassen Schwerpunktmäßig das Einsehen des Status sowie das aktive Eingreifen bzw. Ändern von Laufzeitvariablen. Letztgenannte sind vor allem für die Ausführung vorbereitende bzw. nachbereitende Tätigkeiten. Dazu zählen in erster Linie die Modellierung und Implementierung sowie die Darstellung von Abhängigkeiten. Ferner umfasst die Process Analysis Phase die Tätigkeiten der Simulation bzw. dem Testen, welche zwar laufzeitungebunden sind, jedoch stark von den zur Laufzeit gesammelten Daten profitieren.
+
+\newpage
+\noindent Diese Unterscheidung wird bei der folgenden Einteilung Tätigkeiten in Kategorien berücksichtigt. Die Kategorisierung dient Einordnung der Evaluationskriterien und ganz allgemein einer besseren Übersicht.
+
+\begin{enumerate}[label=\bfseries\arabic*]
+%Überleitung Modellierung
+\item Eine der Kerntätigkeiten innerhalb des \ac{BPM} Lifecycles ist das Modellieren von Prozessen. Von ersten Ideen für neue Prozesse oder Prozessverbesserungen, über fachliche Prozessmodelle bis hin zum fertigen technischen Prozessmodell zur Automatisierung wird stets mit \ac{BPMN} Prozessmodellen gearbeitet. Dabei spielt auch der Austausch von Prozessmodellen zwischen verschiedenen Modellierungswerkzeugen eine große Rolle. Häufig kommen in großen Unternehmen mehrere \ac{BPMN} fähige Modellierungswerkzeuge zum Einsatz. Da der \textbf{Modellierung} von Prozessmodellen in nahezu allen Phasen des \ac{BPM} Lifecycles eine wesentliche  Bedeutung zukommt, wird dies die erste Evaluationskategorie.
+
+%Überleitung Implementierung
+\item Zentrale Aufgabe eines \ac{BPMS} ist die Automatisierung von Geschäftsprozessen. Um die dabei inbegriffenen Systeme zu integrieren, müssen zahlreiche Schnittstellen zu diesen genutzt werden. Automatisierte Prozessmodelle bedürfen daher einer detaillierten technischen Implementierung. Die \textbf{Implementierung} von automatisierten Prozessmodellen spielt nur in der Process Implementation Phase eine zentrale Rolle, ist jedoch eine der Kernaufgaben eines \ac{BPMS}, um Geschäftsprozesse zu automatisieren. Um von einem \ac{BPMN} Prozessmodell zu einem Ausführbaren zu gelangen, sollte ein \ac{BPMS} den Entwickler dabei unterstützen, die technische Implementierung um Schnittstellen zu anderen Systemen und Benutzeroberflächen zu ergänzen. Daher wird als zweite Evaluationskategorie die Implementierung verwendet.
+
+%Überleitung Ausführung
+\item Nicht direkt in den Phasen des \ac{BPM} Lifecycles sichtbar, dennoch von zentraler Bedeutung ist die Einbindung und \textbf{Information des Benutzers} zur Laufzeit. Um dies in der Evaluation berücksichtigen zu können, wird die Kategorie Prozessausführung aufgenommen. Dabei liegt der Fokus klar auf Anwenderebene bzw. den direkt prozessbeteiligten Personen.
+
+\newpage
+%Überleitung Steuerung und Überwachung
+\item Um die mit Schwerpunkt auf der Process Monitoring and Controlling Phase auftretenden Tätigkeiten in die Evaluation einbeziehen zu können, wird die Kategorie \textbf{Steuerung und Überwachung} eingeführt. In Abgrenzung zur Kategorie Prozessausführung liegt hier der Fokus auf dem Gesamtüberblick von Prozessen und System. Ferner gehören dazu auch Möglichkeiten zum Eingriff in die Laufzeitumgebung.
+
+%Überleitung Analyse
+\item Direkt aus der Process Analysis Phase übernommen wird die Evaluationskategorie \textbf{Analyse}. Für die Analyse eines Prozesses sollten die während der Ausführung gesammelten Daten zur Verfügung stehen. Zur besseren Übersicht sollten diese Daten individuell grafisch aufbereitet werden können. Ferner sollte eine Möglichkeit bestehen, verschiedene Prozessvarianten hinsichtlich ihrer Performance miteinander vergleichen zu können. 
+
+%Überleitung Allgemeine 
+\item Als zusätzliche Kategorie werden die unter Punkt \ref{SoftwareAnforderugen} beschriebenen Merkmale in \textbf{Allgemeine Software Anforderungen} zusammen gefasst. Diese spiegelt die zu Beginn des Kapitels genannten, an jede Unternehmenssoftware gestellten Anforderungen, wieder.
+
+\end{enumerate}
+
+
+%Tätigkeiten aus Prozesssicht -> Strukturierung
+
+%Bogen schlagen => Anforderungen -> Lifecycle -> Phasen -> Tätigkeiten -> Stärken/Schwächen in Phasen -> Tauglichkeit BPM
+
+%---------------------------------------------------------------------------------------------------
+\newpage
+\paragraph*{Zusammenfassung der Evaluatioskategorien:}
+\label{AnforderungenKategorien}
+Die Tabelle \ref{Hauptkategorien} bietet nochmals eine Übersicht über alle sechs oben aufgeführten Kategorien mit einer kurzen Zusammenfassung.
+
+
+%\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+%\setlength\LTleft{0pt}            % default: \parindent
+%\setlength\LTright{0pt}           % default: \fill
+%\label{kriterienModellierung}
+%\begin{longtabu}{@{\extracolsep{\fill}}|p{5mm} p{40mm}|X|}
+%\caption{ Evaluationskriterien Modellierung } \\ \hline
+%\rowcolor{black!10} 
+% & \normalsize\textbf{Kategorie} & \normalsize\textbf{Beschreibung} \\
+%\endfirsthead
+%\caption*{Evaluationskriterien Modellierung -- Fortsetzung} \\ \hline
+%\rowcolor{black!10} 
+% & \normalsize\textbf{Kategorie} & \normalsize\textbf{Beschreibung} \\
+%\endhead
+%\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+%nächsten Seite}} \\ \hline
+%\endfoot
+%\endlastfoot
+%\hline
+%1 & \raggedright\textit{Modellierung} & Unter dem Aspekt Modellierung werden alle Funktionalitäten zusammen gefasst, die den Benutzer dabei unterstützen, Prozessmodelle zu erstellen und zu beschreiben.\smallskip \tabularnewline
+%\hline
+%2 & \raggedright\textit{Implementierung} & Umfasst alle Funktionalitäten, welche den Nutzer bei der Umsetzung der Automatisierung eines Prozesses unterstützen.\smallskip  \tabularnewline
+%\hline
+%3 & \raggedright\textit{Prozessausführung} & Beinhaltet alle den Nutzer während der Ausführung eines Prozesses direkt unterstützenden Funktionalitäten.\smallskip \tabularnewline
+%\hline
+%4 & \raggedright\textit{Steuerung und Überwachung} & Fasst alle Funktionalitäten zusammen, welche dem Benutzer eine Übersicht und Steuerungsmöglichkeiten über Prozesse und System zur Laufzeit ermöglichen.\smallskip \tabularnewline
+%\hline
+%5 & \raggedright\textit{Analyse} & Bündelt die Funktionalitäten, die den Benutzer bei der Analyse von Prozessen und deren Performance unterstützen.\smallskip \tabularnewline
+%\hline
+%6 & \raggedright\textit{Allgemeine Software Anforderungen} & Umfasst die Kriterien, welche für komplexe Unternehmenssoftware im Allgemeinen gültig sind.\smallskip \tabularnewline
+%\hline
+%\end{longtabu}
+%\normalsize
+
+\small
+\begin{table}[!ht]
+\caption{Hauptkategorien der Evaluationskriterien}
+\label{Hauptkategorien1}
+\begin{tabularx}{\textwidth}[b]{|p{5mm} p{40mm}|X|}
+\hline
+\rowcolor{black!10} \multicolumn{2}{|l|}{\normalsize\textbf{Kategorie}}  & \normalsize\textbf{Beschreibung}  \tabularnewline
+\hline
+1 & \raggedright\textit{Modellierung} & Unter dem Aspekt Modellierung werden alle Funktionalitäten zusammen gefasst, die den Benutzer dabei unterstützen, Prozessmodelle zu erstellen und zu beschreiben. \tabularnewline
+\hline
+2 & \raggedright\textit{Implementierung} & Umfasst alle Funktionalitäten, welche den Nutzer bei der Umsetzung der Automatisierung eines Prozesses unterstützen.  \tabularnewline
+\hline
+3 & \raggedright\textit{Prozessausführung} & Beinhaltet alle den Nutzer während der Ausführung eines Prozesses direkt unterstützenden Funktionalitäten. \tabularnewline
+\hline
+4 & \raggedright\textit{Steuerung und Überwachung} & Fasst alle Funktionalitäten zusammen, welche dem Benutzer eine Übersicht und Steuerungsmöglichkeiten über Prozesse und System zur Laufzeit ermöglichen. \tabularnewline
+\hline
+5 & \raggedright\textit{Analyse} & Bündelt die Funktionalitäten, die den Benutzer bei der Analyse von Prozessen und deren Performance unterstützen. \tabularnewline
+\hline
+6 & \raggedright\textit{Allgemeine Software Anforderungen} & Umfasst die Kriterien, welche für komplexe Unternehmenssoftware im Allgemeinen gültig sind. \tabularnewline
+\hline
+\end{tabularx}
+\end{table}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+%\subsection{Kategorisierte Anforderungsliste}
+\input{kapitel/hauptteil/vergleichtheorie/anforderungen/kriterien.tex}			

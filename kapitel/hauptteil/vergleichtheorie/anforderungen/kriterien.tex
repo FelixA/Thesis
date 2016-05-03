@@ -1,0 +1,270 @@
+\subsection{Evaluationskriterien}
+\label{definitionKriterien}
+
+Die in Punkt \ref{AnforderungenPhasen} genannten Anforderungen werden im Folgenden den in Punkt \ref{AnforderungenKategorien} aufgeführten Kategorien zugeordnet. Dazu wird für jede Kategorie eine kurze Zusammenfassung der Schwerpunkte gegeben. In der zugehörigen Tabelle werden die einzelnen Kriterien mit Beschreibung aufgeführt.
+
+
+
+\subsubsection*{Modellierung}
+%------Beschreibung für Tabelle
+Bei den Kriterien für die Kategorie Modellierung wird der Fokus auf die Umsetzung des \ac{BPMN} Standards, die Benutzbarkeit sowie die Austauschmöglichkeiten zwischen verschiedenen Prozessmodellierungswerkzeugen gelegt. 
+%------------------------------
+\newpage
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{kriterienModellierung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm} m{0.5cm}|X|}
+\caption{ Evaluationskriterien Modellierung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \multicolumn{2}{l|}{\normalsize\textbf{Modellierug}} \\
+\endfirsthead
+\caption*{Evaluationskriterien Modellierung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \multicolumn{2}{l|}{\normalsize\textbf{Modellierug}} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 
+ & a 
+ & \textit{\textbf{Unterstützung des \ac{BPMN} 2.0 Standards}} \newline Ein \ac{BPMS}, welches als \ac{BPMN}-fähig bezeichnet wird, sollte den gesamten Standard mit allen Elementen abdecken. Dazu zählen Aufgaben, Ereignisse, Sequenz- und Nachrichtenflüsse sowie Pools und Lanes.
+%  Unterstützung nativer BPMN Modelle zur Ausführung. 
+\smallskip \tabularnewline
+\cline{2-3}
+ 
+ & b 
+ & \textit{\textbf{Benutzbarkeit des Modellierungswerkzeugs}} \newline Das Modellierungswerkzeug sollte dem Benutzer nur legale Verknüpfungen ermöglichen und ihn auf etwaige Fehler hinweisen, um die Standardkonformität eines Prozessmodells zu gewähren. Generell sollte es intuitiv Bedienbar sein. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & c 
+ & \textit{\textbf{Unterstützung von Unterprozessen und Prozessaufrufen}} \newline  Zur besseren Strukturierung und der Wiederverwendung von (Teil-)Prozessen sollten die im \ac{BPMN} 2.0 Standard definierten Möglichkeiten von Unterprozessen sowie Ereignissunterprozessen unterstützt werden. Um eigenständige Prozesse aus einem anderen heraus aufrufen können, sollte ein Implementierung der Aufrufaktivität vorhanden sein. \smallskip \tabularnewline
+\cline{2-3}
+  
+ & d 
+ & \textit{\textbf{Unterstützung des Imports und Exports von \ac{BPMN} Prozessmodellen}} \newline  Um einen Austausch zwischen verschiedenen Modellierungswerkzeugen zu ermöglichen, sollten Prozessmodelle in \ac{BPMN} 2.0 konformen \ac{XML} sowohl importiert wie auch exportiert werden können. Da der Standard Erweiterungen explizit vorsieht, sollten nicht standardkonforme Elemente als solche behandelt werden. \smallskip \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+
+%-------------------------------------------------------------------------------------------------------------------------
+%------Beschreibung für Tabelle
+\subsubsection*{Implementierung}
+Der Fokus der Kategorie Implementierung liegt auf der Unterstützung des Entwicklers bei der Automatisierung eines Prozessmodells. Dazu gehören unter Anderem vordefinierte Komponenten, die Unterstützung zur Erstellung von Benutzeroberflächen sowie die Möglichkeit zur Implementierung von Business Rules.
+%------------------------------
+\newpage
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{kriterienImplementierung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm} m{0.5cm}|X|}
+\caption{ Evaluationskriterien Implementierung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{2} & \multicolumn{2}{l|}{\normalsize\textbf{Implementierung}} \\
+\endfirsthead
+\caption*{Evaluationskriterien Implementierung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{2} & \multicolumn{2}{l|}{\normalsize\textbf{Implementierung}} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 
+ & a 
+ & \textit{\textbf{Möglichkeiten der Wiederverwendung von Funktionalitäten und Teilprozessen}} \newline Um nicht nur ganze Teilprozesse, sondern die dahinter liegende Funktionalität wiederverwenden zu können, sollten dafür Templating Möglichkeiten vorhanden sein. Die Templates sollten dabei zentral verfügbar sein, um in anderen Prozessen eingesetzt werden zu können. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & b 
+ & \textit{\textbf{Unterstützung zur Erstellung von Benutzeroberflächen}} \newline Um dem Benutzer für Benutzeraktivitäten die Interaktion zu ermöglichen, sollte ein \ac{BPMS} die Erstellung von Benutzeroberflächen aktiv unterstützen. Dabei sollte es Funktionalität zur einfachen Einbindung von Prozessvariablen bieten. Im Idealfall bietet es die Möglichkeit zur Generierung von Benutzeroberflächen anhand der zugrunde liegenden Prozessvariablen/Daten. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & c 
+ & \textit{\textbf{Unterstützung zur Erstellung von Serviceaktivitäten}} \newline Um ein schnelles und einfaches Einbinden von weit verbreiteten Schnittstellentypen zu ermöglichen, sollten dafür vordefinierte Komponenten bereit stehen. Dazu können u.a. Webservices, Datenbankanbindungen, Komponenten zum Lesen und Schreiben von Dateien, und Unternehmenssoftware wie \ac{CMS} oder \ac{ERP} Systemen gehören. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & d 
+ & \textit{\textbf{Unterstützung von Business Rules}} \newline Zur weiteren Flexibilisierung von Geschäftsprozessen können mithilfe von Business Rules deren Ablauf und Verhalten getrennt werden. vgl.\cite{Scheer.Februar2005}
+ Die zur Implementierung von Business Rules notwendige Rules Engine sollte daher bei einem modernen \ac{BPMS} als Bestandteil gesehen werden können. Mindestens jedoch sollte die Möglichkeit zur Implementierung einfacher Wenn-Dann-Regeln vorhanden sein. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & e 
+ & \textit{\textbf{Unterstützung eines Rechtemanagements}} \newline Zur Einhaltung der betrieblichen Compliance sollte ein \ac{BPMS} eine vollständige Benutzerverwaltung bieten. Diese sollte Benutzer, Gruppen und deren Rechte umfassen. Für einen unternehmensweiten Einsatz sollte zudem eine \ac{LDAP}-Schnittstelle bereit stehen. \smallskip \tabularnewline
+\cline{2-3}
+  
+ & f 
+ & \textit{\textbf{Möglichkeit zur Definition von Kennzahlen}} \newline Zur benutzerspezifischen Messbarkeit von Prozessen sollte ein \ac{BPMS} die Möglichkeit zur Implementierung von individuellen Kennzahlen bieten. Dazu gehören quantitative Parameter sowie die Erfassung von speziellen Ereignissen. \smallskip \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%------------------------------------------------------------------------------------------------------------------------- 
+%------Beschreibung für Tabelle
+\subsubsection*{Prozessausführung}
+Die Kategorie Prozessausführung behandelt die zur Laufzeit notwendige Unterstützung des Benutzers mit Informationen. Zusätzlich beinhaltet sie die Fehlerbehandlung und die Versionsverwaltung für Prozesse.
+%------------------------------
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{kriterienAusführung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm} m{0.5cm}|X|}
+\caption{ Evaluationskriterien Prozessausführung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{3} & \multicolumn{2}{l|}{\normalsize\textbf{Prozessausführung}} \\
+\endfirsthead
+\caption*{Evaluationskriterien Prozessausführung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{3} & \multicolumn{2}{l|}{\normalsize\textbf{Prozessausführung}} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 
+ & a 
+ & \textit{\textbf{Information des Anwenders}} \newline Da ein Prozess sich selbst dadurch definiert, dass das Richtige zur richtigen Zeit getan wird, sollte es eine essentielle Fähigkeit eines \ac{BPMS} sein, den Benutzer über anstehende Aufgaben zu informieren. Zu jeder Aufgabe sollte für eine bessere Gesamtübersicht der jeweilige Prozess mit aktuellem Stand eingesehen werden können. Ferner sollte die entsprechende Oberfläche um individuelle Inhalte erweitert werden können. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & b 
+ & \textit{\textbf{Unterstützung verschiedener Prozessversionen}} \newline  Eines der grundlegenden Merkmale des \ac{BPM} ist die Flexibilität, auf veränderte Rahmenbedingungen reagieren zu können. Dadurch kann es, insbesondere bei langlaufenden Prozessen, dazu kommen, dass mehrere Versionen desselben Prozesses ausgeführt werden. Daher sollte ein \ac{BPMS} diverse Versionen eines Prozesses darstellen und ausführen können. Im Optimalfall bietet es Funktionalitäten, um einen Prozess auf eine neuere Version zu migrieren. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & c 
+ & \textit{\textbf{Fehlerbehandlung}} \newline  Ein \ac{BPMS} sollte eine Fehlerbehandlung sowohl für vorhersehbare wie unvorhergesehene Fehler bieten. Vorhersehbar sind dabei Fehler, die bereits im Prozessmodell berücksichtigt wurden, und für welche es eine geplante Fehler- bzw. Eskalationsbehandlung gibt. Unvorhergesehene Fehler hingegen finden sich nicht direkt im Prozessmodell. Dies ist dem Umstand geschuldet, dass es sich um gravierende Fehler wie einen Systemausfall handelt. \smallskip \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+%------------------------------------------------------------------------------------------------------------------------- 
+%------Beschreibung für Tabelle
+\subsubsection*{Steuerung und Überwachung}
+Der Fokus der Kriterien in der Kategorie Steuerung und Überwachung liegt primär auf einer Übersicht des Status auf verschiedenen Ebenen sowie dem etwaigen Eingriff in den Ablauf. 
+%------------------------------
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{kriterienÜberwachung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm} m{0.5cm}|X|}
+\caption{ Evaluationskriterien Steuerung und Überwachung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{4} & \multicolumn{2}{l|}{\normalsize\textbf{Steuerung und Überwachung}} \\
+\endfirsthead
+\caption*{Evaluationskriterien Steuerung und Überwachung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{4} & \multicolumn{2}{l|}{\normalsize\textbf{Steuerung und Überwachung}} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 
+ & a
+ & \textit{\textbf{Übersicht über alle laufenden Prozessinstanzen}} \newline Ein \ac{BPMS} sollte stets einen Überblick über alle deployten Prozesse, deren Instanzen und wiederum deren Status bieten. Zu einer Instanz sollten jederzeit der aktuelle Fortschritt, der zuständige Bearbeiter der aktuellen Aufgabe, evtl. aufgetretene Fehler sowie die Werte aller Prozessvariablen einsehbar sein. Zum manuellen Eingriff in den Ablauf eines Prozesses sollten die Prozessvariablen zur Laufzeit editierbar sein. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & b \label{kennzahlenÜberwachung} 
+ & \textit{\textbf{Unterstützung für Kennzahlenerfassung}} \newline Zur Laufzeit sollte die Process Engine Zugriff auf benötigte Metadaten gewähren. Zum einen auf die der Instanz und ihrer Aktivitäten, zum anderen aber auch auf die Benutzerverwaltung. Änderungen wie z.B. die Änderung des zuständigen Bearbeiters sollten dabei geloggt werden. \smallskip \tabularnewline
+\cline{2-3}
+  
+ & c 
+ & \textit{\textbf{Aufbereitung von Kennzahlen in verschiedenen Detaillierungsgraden}} \newline  Zur besseren Übersicht sollten Prozesskennzahlen für den Nutzer grafisch aufbereitet werden können. Dabei können Tabellen und Diagramme aller Art zum Einsatz kommen. Im Optimalfall hat der Anwender die Möglichkeit, individuelle Dashboards anzulegen. \smallskip \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+
+%------------------------------------------------------------------------------------------------------------------------- 
+%------Beschreibung für Tabelle
+\subsubsection*{Analyse}
+
+Die Kategorie Analyse fasst die Kriterien zusammen, die den Benutzer bei der Ermittlung der Prozessperformance unterstützen. Dabei werden die Datengrundlage, eine grafische Auswertung und Möglichkeiten zur Simulation berücksichtigt.
+
+%------------------------------
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{kriterienAnalyse}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm} m{0.5cm}|X|}
+\caption{ Evaluationskriterien Analyse } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{5} & \multicolumn{2}{l|}{\normalsize\textbf{Analyse}} \\
+\endfirsthead
+\caption*{Evaluationskriterien Analyse -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{5} & \multicolumn{2}{l|}{\normalsize\textbf{Analyse}} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 
+ & a 
+ & \textit{\textbf{Unterstützung zur Erfassung historisierter Messdaten}} \newline Die zur Laufzeit gesammelten Daten sollten persistent gespeichert werden und auch nach Abschluss einer Instanz zur Auswertung erhalten bleiben. Dabei sollten auch (Fehler-)Ereignisse und Benutzeraktionen aufgezeichnet werden. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & b 
+ & \textit{\textbf{Unterstützung zur visuellen Aufbereitung historischer Messdaten}} \newline Parallel zur Aufbereitung laufzeitorientierter Kennzahlen in Punkt \ref{kennzahlenÜberwachung} sollte eine Möglichkeit zur Visualisierung der Historie vorhanden sein. Dabei ist insbesondere eine statistische Auswertung verschiedener Instanzen im Vergleich von Bedeutung. \smallskip \tabularnewline
+\cline{2-3}
+  
+ & c 
+ & \textit{\textbf{Möglichkeiten zur Prozesssimulation}} \newline Um die Performance eines Prozesses quantifizierbar zu machen, sollte ein \ac{BPMS} Funktionalitäten zur Prozesssimulation bzw. zum Testen von Prozessen anbieten. Dabei liegt vor allem der Vergleich verschiedener Varianten/Instanzen/Versionen desselben Prozesses im Vordergrund. Das Ziel ist das Erkennen von Engpässen und/oder Problemfeldern. \smallskip \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+%------------------------------------------------------------------------------------------------------------------------- 
+%------Beschreibung für Tabelle
+\subsubsection*{Allgemeine Software Anforderungen}
+
+Die allgemeinen Software Anforderungen umfassen technische Kriterien wie Technologie und Skalierung, sowie Nicht-technische wie Herstellerabhängigkeit und Kosten.
+
+%------------------------------
+\newpage
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{kriterienSoftware}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm} m{0.5cm}|X|}
+\caption{ Evaluationskriterien Allgemeine Software Anforderungen } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{6} & \multicolumn{2}{l|}{\normalsize\textbf{Allgemeine Software Anforderungen}} \\
+\endfirsthead
+\caption*{Evaluationskriterien Allgemeine Software Anforderungen -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{6} & \multicolumn{2}{l|}{\normalsize\textbf{Allgemeine Software Anforderungen}} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 
+ & a 
+ & \textit{\textbf{Technologie}} \newline Die technologische Basis spielt insbesondere bei der Erweiterbarkeit eines \ac{BPMS} eine große Rolle. Dazu gehört deren Verbreitung, die einen Rückschluss auf qualifizierte Entwickler zulässt. Nicht ganz unwichtig ist zudem der Punkt der Zukunftssicherheit. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & b 
+ & \textit{\textbf{Dokumentation}} \newline  Aktualität und Vollständigkeit sind hierbei die wichtigsten Punkte. Sowohl die Interaktion der Anwender, der Administratoren als auch der Entwickler mit dem System sollte dabei berücksichtigt werden. Hierzu zählen Installations-, Konfigurations-, Entwicklungs- und Anwenderdokumentation. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & c 
+ & \textit{\textbf{Kosten}} \newline  Hierbei werden die einmaligen Anschaffungskosten sowie evtl. während der Nutzung anfallende Lizenzkosten berücksichtigt. Aufgrund der bei großer Unternehmenssoftware üblichen komplexen Preisgestaltung, wird hierbei die Differenz zum marktüblichen Preisniveau als Maßstab heran gezogen. Ebenfalls betrachtet werden die Kosten für Wartung \& Support. Dabei gilt gleich den Lizenzkosten der übliche Marktpreis als Referenz. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & d 
+ & \textit{\textbf{Herstellerabhängigkeit}} \newline Bei der Herstellerabhängigkeit werden zwei Punkte berücksichtigt. Zum Ersten die Bindung an die Produktpalette des Herstellers. Der zweite Punkt behandelt die Insolvenzgefahr des Herstellers. Da damit die Gefahr einhergeht, dass das betreffende Produkt eingestellt wird, sollte dies nicht vernachlässigt werden. Dabei können die Referenzkunden sowie die Etablierung am Markt als Maßstab genommen werden. \smallskip \tabularnewline
+\cline{2-3}
+ 
+ & e 
+ & \textit{\textbf{Administrationsmöglichkeiten}} \newline Wie bei Unternehmenssoftware üblich, sollte auch ein \ac{BPMS} über umfangreiche Administrations- und Konfigurationseinstellungen verfügen. Wichtigster Punkt hierbei ist die Gesamtsystemüberwachung. Weiter sollten die Punkte der Systembenutzerverwaltung sowie einer Server- und Datenbankverwaltung Berücksichtigung finden. \smallskip \tabularnewline
+\cline{2-3}
+  
+ & f 
+ & \textit{\textbf{Skalierung}} \newline Um bei wenigen wie auch einer großen Zahl parallel laufender Prozessinstanzen die selbe Funktionalität und Benutzererfahrung bieten zu können, sollte ein \ac{BPMS} über Möglichkeiten zur Skalierung bieten. Da ein umfangreicher Test aufgrund der dazu notwendigen Lizenzen und Hardware im Rahmen dieser Arbeit nicht realistisch durchführbar  ist, wird dafür auf die Angaben des jeweiligen Herstellers zurück gegriffen. \smallskip \tabularnewline
+\hline
+\end{longtabu}
+\normalsize

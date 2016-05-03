@@ -1,0 +1,129 @@
+%---------------------------------------------------------------------------------------------------
+% Voreinstellungen (Layout, neue Befehle, etc.)
+%---------------------------------------------------------------------------------------------------
+
+\input{einstellungen/grundeinstellungen}											% Die stilistischen Parameter
+
+%--------------------------------------------------------------------------------------------------- 
+% Anfang des Schriftstücks
+%---------------------------------------------------------------------------------------------------	
+
+
+\begin{document}
+\begin{titlepage}
+%\includepdf{pdf/deckblatt}		
+\end{titlepage}							% deckblatt.pdf von der Hochschule einbinden
+\mbox{} \thispagestyle{empty} \newpage
+																						% der Selbstständigkeit nicht von hinten durch die 
+																						%	Titelseite durchschimmert			
+		
+
+\pagenumbering{Roman}
+\pagestyle{empty}
+%--------------------------------------------------------------------------------------------------- 
+% Danksagung  
+%---------------------------------------------------------------------------------------------------	
+																						
+
+%--------------------------------------------------------------------------------------------------- 
+% Zusammenfassung}
+%---------------------------------------------------------------------------------------------------			
+%	\input{standard/abstrakt}									  													
+
+%--------------------------------------------------------------------------------------------------- 
+% Verzeichnisse
+%---------------------------------------------------------------------------------------------------	
+
+ % \cleardoubleemptypage
+
+	 	% römische Nummerierung 
+
+%	 \input{einstellungen/asurency}	
+	 
+%	 \input{standard/danke}
+	\input{standard/abstract}
+
+
+  	\tableofcontents                              							% Inhaltsverzeichnis
+%	\listoffigures                                							% Abbildungsverzeichnis  
+%	\listoftables                                 							% Tabellenverzeichnis
+	\input{standard/abkuerzung} 										% Abkürzungsverzeichnis
+	\input{standard/glossar} 											%Glossar
+	\printglossary
+\cleardoublepage
+% arabische Nummerierung
+	
+
+
+%--------------------------------------------------------------------------------------------------- 
+% Der erste Teil der Arbeit:
+%---------------------------------------------------------------------------------------------------
+
+	%\input{kapitel/einleitung/todos.tex}
+%	\pagenumbering{arabic}
+\mainmatter
+\pagestyle{scrheadings}
+	\input{kapitel/einleitung/einleitung.tex}
+	\input{kapitel/hauptteil/Aufbau_Architektur.tex}
+	\input{kapitel/hauptteil/Anwendungsmöglichkeiten.tex}
+	\input{kapitel/hauptteil/Überprüfung_Anwendungsmöglichkeiten.tex}
+	\input{kapitel/hauptteil/Technische_Herausforderungen.tex}
+	\input{kapitel/hauptteil/Fachliche_Herausforderungen.tex}
+	\input{kapitel/hauptteil/Lösungsansätze.tex}
+	\input{kapitel/schluss/Abschliessende_Betrachtung.tex}	
+%---------------------------------------------------------------------------------------------------	
+% Der zweite Teil der Arbeit:
+%---------------------------------------------------------------------------------------------------
+%	\input{kapitel/hauptteil/Einfuehrung_ACM.tex}
+
+	
+
+%---------------------------------------------------------------------------------------------------
+% Der dritte Teil der Arbeit
+%---------------------------------------------------------------------------------------------------
+%	\input{kapitel/schluss/schluss.tex}
+
+%---------------------------------------------------------------------------------------------------	
+% Literaturverzeichnis
+%---------------------------------------------------------------------------------------------------		
+  \hyphenpenalty=10000										% Silbentrennung für das Literaturverzeichnis ausschalten
+  
+
+  %
+\bibliographystyle{agsm}
+%  \bibliographystyle{alpha}
+  
+%	\bibliographystyle{alphadin}
+  % 
+
+\bibliography{literatur/literatur}      														% Literaturverzeichnis
+  
+%---------------------------------------------------------------------------------------------------	
+% Anhänge
+%---------------------------------------------------------------------------------------------------	
+\appendix
+\begin{appendix}	
+
+\newpage
+\chapter{Anhang}
+%\input{kapitel/anhang/bdsg.tex}
+												% Anhang: Quellcode
+
+%  \input{anhang/hilfsmittel/hilfsmittel}															% Anhang: Hilfsmittel zur Erstellung
+																																			% 					dieser Arbeit
+%---------------------------------------------------------------------------------------------------	
+% Glossar
+%---------------------------------------------------------------------------------------------------	
+%	\printnomenclature
+
+%---------------------------------------------------------------------------------------------------	
+% Stichwortverzeichnis
+%---------------------------------------------------------------------------------------------------	
+%	\printindex
+
+\end{appendix}	
+
+%--------------------------------------------------------------------------------------------------- 
+% Ende des Schriftstücks
+%--------------------------------------------------------------------------------------------------- 
+\end{document}

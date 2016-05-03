@@ -1,0 +1,56 @@
+\section{Die Rolle der Business Process Model and Notation}
+
+Die  \ac{BPMN} ist eine grafische Notation zur Modellierung von Geschäftsprozessdiagrammen. Sie wurde in ihrer ersten Version 2004 von der \ac{BPMI} veröffentlicht. Seit 2005 wird die Weiterentwicklung durch die \ac{OMG} voran getrieben. Die \ac{BPMN} wurde von Anfang an mit dem Ziel entwickelt, eine standardisierte, graphische Prozessnotation bereitzustellen, welche auch der Prozessautomatisierung dienen kann. vgl.\cite[S. 8+9]{Freund.2010}
+
+Die \ac{BPMN} 2.0 Spezifikation ist mit 538 Seiten sehr umfangreich und definiert alle Symbole, deren  Bedeutung und die Regeln, nach denen sie kombiniert werden dürfen. \cite{ObjectManagementGroup.2011}
+Die \ac{BPMN} soll vor allem eine Notation bereitstellen, die der Kommunikation von Prozessinformationen dient, die sowohl von nicht-technischen Fachanwendern wie auch technischen Entwicklern verstanden wird. Sie bietet dafür die Notation und Semantik für Kollaborationsdiagramme, Prozessdiagramme und Choreographie-Diagramme(siehe \ref{diagrammarten}). vgl.\cite[S.1]{ObjectManagementGroup.2011}
+Das Aussehen der Formen ist daher weitgehend vorgegeben, um die Wiedererkennbarkeit und das Verstehen für alle mit den Prozessmodellen in Kontakt kommenden Personen zu erleichtern. Um trotzdem den verschiedensten individuellen Ansprüchen genügen zu können, ist der Standard Erweiterungen gegenüber offen, solange diese nicht im Widerspruch zu den Standard Formen stehen. vgl.\cite[S.8]{ObjectManagementGroup.2011}
+
+\subsection{Abgrenzung des Anwendungsbereich}
+Die \ac{BPMN} ist dahingehend beschränkt, dass sie nur die Konzepte der Geschäftsprozessmodellierung unterstützt. Damit sind unter anderem Organisationsmodelle, funktionelle Aufgliederungen, Daten- und Informationsmodelle, Strategiemodelle und Geschäftsregelmodelle außerhalb des Anwendungsbereichs der \ac{BPMN}. vgl.\cite[S.22]{ObjectManagementGroup.2011}
+Datenflüsse und die Assoziationen zu Datenartefakten werden zwar von der \ac{BPMN} dargestellt, es handelt sich dabei jedoch nicht um eine Flusssprache. Auch die Betriebssimulation, Überwachung und das Bereitstellen von Geschäftsprozessen sind nicht Bestandteil der Spezifikation. vgl.\cite[S.22]{ObjectManagementGroup.2011} 
+
+
+
+\subsection{Der BPMN 2.0 XML Standard}
+Einer der großen Vorteile des \ac{BPMN} 2.0 Standards ist das zugehörige XML Schema. Dieses ermöglicht den Austausch von Prozessmodellen zwischen verschiedenen Modellierungswerkzeugen. Insbesondere auf den Transfer von nicht vollständigen Prozessmodellen wurde dabei Wert gelegt. vgl.\cite[S.475]{ObjectManagementGroup.2011}
+Dass dies auch in der Praxis funktioniert, konnte jüngst auf dem \ac{OMG} Technical Meeting in Berlin im August 2013 gezeigt werden. Dabei wurde ein Prozessmodell über acht verschiedene \ac{BPMN} Modellierungswerkzeuge hinweg entwickelt und ausgeführt. vgl.\cite{FalkoMenge.2013}
+
+\subsection{Diagrammarten}
+\label{diagrammarten}
+Die \ac{BPMN} bietet prinzipiell vier verschiedene Diagrammarten, wobei davon eine nur von einer anderen erweitert wird. Gemeinsam ermöglichen diese es, einen Prozess aus unterschiedlichen Sichtweisen zu betrachten und den Fokus auf Sequenzfluss, Nachrichtenfluss, oder die Kollaboration der Prozessbeteiligten zu legen. Das Zusammenspiel der verschiedenen Diagrammarten kann anhand des in den Abbildungen \ref{fig:sequenzdiagramm} bis \ref{fig:konversationsdiagramm} dargestellten Prozesses nachvollzogen werden.
+
+\medskip\noindent Ein \textbf{Sequenzdiagramm} (siehe Abb. \ref{fig:sequenzdiagramm}) stellt den Ablauf von Aktivitäten innerhalb einer Organisation dar. Es bildet den Sequenzfluss mit seinen Aktivitäten, Ereignissen und Gateways ab. vgl.\cite[S.107]{ObjectManagementGroup.2011} Das bedeutet, dass keine verschiedenen Prozessteilnehmer berücksichtigt werden, sondern nur welche Tätigkeiten in welcher Reihenfolge ausgeführt werden.
+\begin{figure}[!h]
+	\caption{bpmn - Sequenzdiagramm}
+	\centering
+		\includegraphics[height=2.5cm]{grafiken/Sequenzdiagramm.png}	
+	\label{fig:sequenzdiagramm}
+\end{figure}
+
+\medskip\noindent Das \textbf{Kollaborationsdiagramm} (siehe Abb. \ref{fig:kollaborationsdiagramm}) erweitert das Prozessdiagramm um die Unterteilung der Prozessbeteiligten in Pools bzw. Lanes und die Darstellung des Nachrichtenflusses. vgl.\cite[S.107]{ObjectManagementGroup.2011} Lanes dienen dabei der Darstellung von Zuständigkeiten. vgl.\cite[S.44+45]{Freund.2010} Ein Pool enthält ein Sequenzdiagramm oder kann als „black box“ dargestellt werden, wodurch nur der Nachrichtenfluss sichtbar ist. vgl.\cite[S.112]{ObjectManagementGroup.2011}
+\begin{figure}[!h]
+	\caption{bpmn - Kollaborationsdiagramm}
+	\centering
+		\includegraphics[height=6cm]{grafiken/Kollaborationsdiagramm.png}	
+	\label{fig:kollaborationsdiagramm}
+\end{figure}
+
+\newpage
+\medskip\noindent Der Fokus des \textbf{Choreographiediagramms} (siehe Abb. \ref{fig:choreographiediagramm}) liegt auf der Darstellung des Nachrichtenflusses zwischen den Prozessbeteiligten. Es bringt den Nachrichtenaustausch und dessen logische Beziehung als Konversation zum Vorschein. Damit können Konflikte im Zusammenwirken der Prozessbeteiligten in einem Geschäftsprozess sichtbar gemacht werden. vgl.\cite[S.315]{ObjectManagementGroup.2011}
+
+\begin{figure}[!h]
+	\caption{bpmn - Choreographiediagramms}
+	\centering
+		\includegraphics[height=3cm]{grafiken/Choreographiediagramm.png}	
+	\label{fig:choreographiediagramm}
+\end{figure}
+
+\medskip\noindent Das \textbf{Konversationsdiagramm} (siehe Abb. \ref{fig:konversationsdiagramm}) stellt eine Vereinfachung der Kollaboration dar, indem nur die logische Beziehung des Nachrichtenaustauschs dargestellt wird. Dies mag bei einfachen, bilateralen Szenarien wenig Nutzen stiften. Bei Geschäftsprozessen hingegen kann die Beziehung der Prozessbeteiligten oft in komplexen, langlaufenden und mit gegenseitigem Nachrichtenaustausch behafteten Kollaborationen enden. Hierfür bietet die Konversation eine abstrakte Sicht auf den Nachrichtenaustausch im Rahmen der modellierten Domäne. vgl.\cite[S.124-126]{ObjectManagementGroup.2011}
+\begin{figure}[!h]
+	\caption{bpmn - Konversationsdiagramm}
+	\centering
+		\includegraphics[height=2.5cm]{grafiken/Konversationsdiagramm.png}	
+	\label{fig:konversationsdiagramm}
+\end{figure}
+%---------------------------------------------------------------------------------------------------

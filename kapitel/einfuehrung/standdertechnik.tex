@@ -1,0 +1,109 @@
+\chapter{Stand der Technik}
+%------------------------------------------------------------------------------------------
+\section{Bsp für Zitate, Referenzierungen auf Abschnitte, Abbildungen \& Tabellen}
+% Hier darf nichts stehen
+%------------------------------------------------------------------------------------------
+\subsection{Verweis auf eine Grafik innerhalb des Textes}
+Expertensysteme werden dem Bereich "`künstliche Intelligenz"' zugeordnet und bilden neben den klassischen Aufgabenstellungen der künstlichen Intelligenz eine eigene Disziplin, wie in der Abbildung \ref{fig:dummy} dargestellt. 
+
+\begin{figure}[!h]
+	\centering
+		\includegraphics[width=0.7\textwidth]{grafiken/dummy.jpg}
+	\caption{Dummygrafik}
+	\label{fig:dummy}
+\end{figure}
+
+%------------------------------------------------------------------------------------------
+\subsection{Verweis auf Literatur}
+Das f steht für Seite folgend. \\
+Das ff steht für Seiten folgend. \\
+
+%------------------------------------------------------------------------------------------
+\subsubsection{Mit f - Seite 2 und 3}
+In der Literatur werden die Begriffe wissensbasierte Systeme oder auch wissensbasierte Expertensysteme synonym für Expertensysteme verwendet, auch wenn die Wissensbasis nicht immer den Ansprüchen eines Experten genügt \cite[\vgl][S. 2 f]{GiarratanoRiley:1989}. 
+
+%------------------------------------------------------------------------------------------
+\subsubsection{Mit ff - folgend weitere 2 Seiten, also Seite 2 - 4}
+In der Literatur werden die Begriffe wissensbasierte Systeme oder auch wissensbasierte Expertensysteme synonym für Expertensysteme verwendet, auch wenn die Wissensbasis nicht immer den Ansprüchen eines Experten genügt \cite[\vgl][S. 2 ff]{GiarratanoRiley:1989}. 
+
+%------------------------------------------------------------------------------------------
+\subsubsection{Mit ff, 6 - folgend weitere 2 Seiten, also Seite 2 - 4, und die Seite 6}
+In der Literatur werden die Begriffe wissensbasierte Systeme oder auch wissensbasierte Expertensysteme synonym für Expertensysteme verwendet, auch wenn die Wissensbasis nicht immer den Ansprüchen eines Experten genügt \cite[\vgl][S. 2 ff, 6]{GiarratanoRiley:1989}. 
+
+
+%------------------------------------------------------------------------------------------
+\subsection{Bsp Zitierungen}
+
+%------------------------------------------------------------------------------------------
+\subsubsection{Vom Text hervorgehobenes wörtliches Zitat}
+\myCitation{"`An expert system is a computer program that represents and reasons with knowledge of some specialist subject with a view of solving problems or giving advice."'}{\citep{Jackson:1990}}
+
+%------------------------------------------------------------------------------------------
+\subsubsection{Zitierung mit allgemeiner Referenz auf ein Werk}
+Nach Giarratano und Riley ist der Fachmann ein Experte, der in der Lage ist, Probleme zu lösen, die ein abgegrenztes Wissensgebiet betreffen und worüber andere Personen nur ein geringes bis kein Wissen haben \citep[\vgl][]{GiarratanoRiley:1989}. \\
+
+%------------------------------------------------------------------------------------------
+\subsubsection{Kapitel in seiner Arbeit referenzieren}
+\label{sec:referenzabschnitt}
+Mit label kann man referenzierbare Punkte setzen. Mit ref kann man sie ansprechen. label kann für jedes Element definiert werden. Auch Abschnitte wie dieser.\\
+
+Bsp:\\
+Auf die Referenzierbarkeit von Abschnitten wird ausführlicher in Kapitel \ref{sec:referenzabschnitt} eingegangen. 
+
+%------------------------------------------------------------------------------------------
+\subsubsection{Anhang in seiner Arbeit referenzieren}
+Man kann aus dem Fließtext heraus auch auf einen Anhang referenzieren und beispielsweise auf einen Quellcode verweisen (\vgl Anhang \ref{sec:quellcode}). 
+
+
+%------------------------------------------------------------------------------------------
+\section{Listings}
+
+%------------------------------------------------------------------------------------------
+\subsection{Listing von gesamter Quelldatei innerhalb von Fließtext}
+Hier ein Beispiellistung innerhalb eines Fließtextes (zentriert und 0.8 der Textbreite).
+
+\begin{center}
+
+	\vspace{5mm}
+	
+		\begin{minipage}{.8\textwidth}		
+			
+			% listing
+			\input{einstellungen/listingjavasection}
+			\lstinputlisting{source/test.java}
+			
+		\end{minipage}
+
+	\vspace{5mm}
+
+\end{center}
+
+%------------------------------------------------------------------------------------------
+\subsection{Listing einiger bestimmter Zeilen innerhalb von Fließtext}
+Hier kann man die verschiedenen Parameter der Umgebung "`lstinputlisting"' in Aktion sehen (\vgl Listing \ref{testlabel}).
+
+\input{einstellungen/listingjavasection}
+\lstinputlisting[firstline=36,lastline=42,name=testname,label=testlabel,caption=Zeile 35 bis 42 der Klasse test.java]{source/test.java}
+
+
+
+%------------------------------------------------------------------------------------------
+\section{Die Umgebung "`verb"' zum Markieren von Klassen- und Methodennamen}
+Man kann die Nennung von Methoden- und Klassennamen mit der Umgebung verb verdeutlichen. Es wird automatisch eine courierähnliche Schrift benutzt. Ein Bespiel kann man hier sehen. \\
+
+Bsp.:\\
+Das Aufrufen der Schnittstelle erfolgt über die \verb|xyzName|-Methode der Klasse \verb|Test|. Mit der Regelbasis wird anschließend ein neue Instanz der Klasse \verb|WorkingMemory| initialisiert. Die Instanz der Klasse \verb|Node| wird dem \verb|WorkingMemory| über die \verb|insert|-Methode als Fakt hinzugefügt. Danach wird die Verarbeitung der Regeln mit der Methode \verb|fireAllRules| gestartet. In der Rule-Engine werden die Regeln auf Fakten angewendet und zutreffende Regeln werden ausgeführt. 
+
+%------------------------------------------------------------------------------------------
+\section{Literaturverzeichnis}
+Dieser Abschnitt ist nur dazu da, ein Literaturverzeichnis zu generieren und die verscheidenen Einträge zu demonstrieren (\vgl Literaturverzeichnis im Anhang).
+\begin{itemize}
+	\item \cite[\vgl][]{workflowcoalation:2008}
+	\item \cite[\vgl][]{omg:2008}
+	\item \cite[\vgl][]{drools:2007}
+	\item \cite[\vgl][]{Itil:2008}
+	\item \cite[\vgl][]{Doorenbos:1994}
+	\item \cite[\vgl][]{beck:2005}
+	\item \cite[\vgl][]{vanBerg:2006}
+	\item \cite[\vgl][]{WrightMarshall:2000}
+\end{itemize}

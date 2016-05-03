@@ -1,0 +1,346 @@
+\newpage
+\section{Evaluation IBM Business Process Managers}
+\label{evaluationIBM}
+Evaluiert wird der IBM Business Process Manager Standard in der Version 8.5. Zur Insallation wird der Windows 32-Bit Installer verwendet. Es werden keine zusätzlichen Komponeten oder Patches nachinstalliert.
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Modellierung}
+
+Der IBM Business Process Designer bietet mit seinem designzentrischen Ansatz eine sehr gute Benutzbarkeit bei gleichzeitig ausreichend technischer Tiefe und setzt die wichtigsten Elemente des \ac{BPMN} 2.0 Standards um. Dazu gehören alle Varianten von Unterprozessen bzw. Prozessaufrufen. Schwächen hingegen zeigt er bei der Exportfunktionalität. Deshalb und aufgrund der nicht vollständigen Umsetzung des \ac{BPMN} 2.0 Standards wird in Bewertung ein Punkt abgezogen.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{ibmModellierung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ IBM Modellierung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Modellierung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Unterstützung des BPMN 2.0 Standards}} \newline Der Business Process Designer als Modellierungswerkzeug des IBM Business Process Managers arbeitet auf der Basis von \ac{BPMN} 2.0 XML Dateien, unterstützt allerdings nicht den gesamten \ac{BPMN} 2.0 Standard. Es fehlen die Ereignisse für Eskalation, Kompensation, Signal, Link und Abbruch. Manuelle Aufgaben müssen über eine Benutzeraufgabe implementiert werden. Damit kann nur eine durchschnittliche Bewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Benutzbarkeit des Modellierungswerkzeugs}} \newline Insgesamt ist der Process Designer (siehe Abb. \ref{fig:ibm_modeler}) sehr Benutzerfreundlich und stellt für alle wichtigen Funktionalitäten eine Oberfläche bereit. Es lassen sich nur Sequenz- bzw. Nachrichtenflüsse als Verbindung zwischen Elementen anlegen, wenn dies im \ac{BPMN} Standard so vorgesehen ist. Da auch trotz des designzentrischen Ansatzes für Entwickler eine ausreichende Tiefe bei der technischen Implementierung gegeben ist, wird hier die Höchstbewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Unterstützung von Unterprozessen und Prozessaufrufen}} \newline Mit Unterprozessen, Ereignissunterprozessen sowie der Call-Aktivität zum Aufruf weitere Prozesse sind alle im \ac{BPMN} 2.0 Standard vorgesehenen Möglichkeiten abgedeckt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ d 
+ & \textit{\textbf{Unterstützung des Imports und Exports von \ac{BPMN} Prozessmodellen}} \newline  Die Möglichkeit zum Import von \ac{BPMN} Prozessmodellen ist vorhanden und weißt den Nutzer bei Nicht-Vorhandensein der entsprechenden \ac{BPMN} Elemente darauf hin, dass diese durch Standardelemente ersetzt werden (z.B. Eskalationsendereignis ersetzt durch Standardendereignis). Dazu muss die \ac{BPMN}-Datei allerdings in ein Zip-Archiv gepackt werden. Der Export von \ac{BPMN}-Modellen ist prinzipiell möglich, jedoch verweigern sowohl der Camunda BPMN Modeler wie auch die Cloud-Lösung von Signavio einen Import aufgrund fehlender Platzierungsinformationen der Elemente. Damit wird die Exportfunktionalität als nicht vorhanden gesehen, was zu einer nur durchschnittlichen Bewertung führt. \smallskip
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Implementierung}
+
+Der IBM Business Process Manager leistet sich in der Kategorie Implementierung keinerlei größere Schwächen. Durch die große Anzahl vordefinierter Schnittstellentypen, einer integrierten Testumgebung, der sehr guten Templating-Möglichkeit mittels Toolkits und der automatischen Generierung von Benutzeroberflächen lassen sich neue Prozesse verhältnismäßig schnell und standardisiert implementieren. Einzig die nur teilweise Implementierung von Business Rules fällt hier als negativ auf. Trotzdem kann aufgrund der zuvor genannten Merkmale die Höchstbewertung vergeben werden. 
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\newpage
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{ibmImplementierung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ IBM Implementierung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{2} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Implementierung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{2} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a \label{ibmToolkit}
+ & \textit{\textbf{Möglichkeiten der Wiederverwendung von Funktionalitäten und Teilprozessen}} \newline  IBM nutzt sogenannte Toolkits zur Wiederverwendung von Funktionalitäten und (Teil-)Prozessen. Diese können zentral im Process Center angelegt werden und als Abhängigkeit für Prozesse definiert werden. Die Toolkits werden automatisch mittels Snapshots versioniert und können sämtliche Elemente eines regulären Projektes enthalten. Somit können nahezu beliebige (Teil)-Prozesse, technische Implementierungen, Oberflächen, Datentypen, Regeln und Konfigurationen als Template wiederverwendet werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung zur Erstellung von Benutzeroberflächen}} \newline  IBM nutzt sogenannte Coaches zur Oberflächengenerierung. Mittels vorgefertigter Komponenten lassen sich damit sehr einfach Prozessvariablen via Drag\&Drop auf die Oberfläche binden. Für grundlegende Aufgaben wie Akzeptieren/Ablehnen oder die Durchführung einer Tätigkeit bestätigen gibt es komplette Coach-Vorlagen. Insgesamt bietet IBM nahezu 70 vordefinierte Datentypen, für welche es vorgefertigte Oberflächen-Komponenten gibt. Dazu gibt es verschiedene Layoutelemente und Bedienelemente wie Kalender, Listen und Tabellen. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Unterstützung zur Erstellung von Serviceaktivitäten}} \newline  Für Serviceaktivitäten existiert eine Vielzahl von vorgefertigten Integrationsserviceelementen. Darunter sind Komponenten für SOAP und HTTP Aufrufe, zum E-Mails senden und empfangen, SQL Ausführen, Dateien zu schreiben und zu lesen sowie weitere. Mithilfe von JavaScript können diese bis zu einem gewissen Grad individualisiert werden. Werden komplett individuelle Integrationsaktivitäten benötigt, können diese aus einer Reihe von technischen Elementen wie Webservice-Aufrufen, JavaScript und Java Integration, zusammengebaut werden. Diese werden als Prozess modelliert, verwenden jedoch kein reines \ac{BPMN} mehr (siehe Abb. \ref{fig:ibm_tech_impl}). Damit sind alle Anforderungen erfüllt, es kann die Maximalbewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ d 
+ & \textit{\textbf{Unterstützung von Business Rules}} \newline  Einfache Wenn-Dann-Beziehungen und Entscheidungstabellen lassen sich direkt an Business Rule Aufgaben anhängen. Für komplexere Business Rules wird eine Verbindung zu einer externen Business Rules Engine benötigt. IBM bietet dafür das ILOG \ac{BRMS} an, welches sich über eine vordefinierte Schnittstelle anbinden lässt. Dieses ist jedoch nicht Bestandteil der Standard Version und somit auch Keines der Evaluationsumgebung. Damit wird in der Bewertung aufgrund der Einschränkungen ein Punkt abgezogen. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ e 
+ & \textit{\textbf{Unterstützung eines Rechtemanagements}} \newline  Das Rechtemanagement basiert auf Benutzern und Gruppen, welchen wiederum Benutzerattribute zugewiesen werden. Dabei lassen sich die Rechte für Prozessstart, Verfügbarkeit der Geschäfts- sowie Leistungsmessdaten separat vergeben. Die Benutzerverwaltung wird vom zugrunde liegenden WebSphere-Server verwendet und kann somit mit einem externen \ac{LDAP}-Server synchronisiert werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ f \label{ibmKennzahlen}
+ & \textit{\textbf{Möglichkeit zur Definition von Kennzahlen}} \newline  Es können individuelle Kennzahlen auf Prozess- und Aufgabenebene hinzugefügt werden.  Diese lassen sich auf der Basis von booleschen Werten, Anzahl, Währung und Zeit implementieren. Dazu werden explizite Kennzahlen-Objekte angelegt, um eine Wiederverwendbarkeit bieten zu können. Damit ist eine Maximalbewertung gerechtfertigt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Prozessausführung}
+
+Die Tasklist in Form des Process Portals bietet alle notwendigen Funktionalitäten, die ein Anwender zur Bearbeitung seiner Aufgaben benötigt. Auch die technische Unterstützung für verschiedene Prozessversionen erfüllt alle Anforderungen. Ebenso bietet die Fehlerbehandlung alle notwendigen Möglichkeiten, sowohl für unvorhergesehene als auch in der Implementierung bereits berücksichtigte Fehlermöglichkeiten. Daher wird auch in dieser Kategorie die maximal mögliche Bewertung vergeben.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{ibmAusführung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ IBM Prozessausführung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{3} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Prozessausführung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{3} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Information des Anwenders}} \newline  Der Benutzer kann über das Process Portal seine Aufgaben, deren Fälligkeit, die Performance seines Teams sowie die Performance der Prozesse, deren Eigner er ist, einsehen und neue Prozessinstanzen starten. Zudem kann zu einer Aufgabe der aktuelle Zustand der Prozessinstanz via eines \ac{BPMN} Prozessmodells mit zusätzlichem Gantt-Diagramm der bisher erledigten Aktivitäten eingesehen werden. Entsprechende Benutzerrechte vorausgesetzt, kann auch die Fälligkeit einer Aufgabe bearbeitet werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung verschiedener Prozessversionen}} \newline  Um einen Prozess deployen zu können, muss im Process Center ein Snapshot davon erstellt werden. Diese Snapshots sind versioniert und parallel lauffähig. Gestartet werden kann jedoch immer nur die aktuellste Version. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Fehlerbehandlung}} \newline  Treten unvorhergesehene Fehler auf, können diese über die Process Admin Console eingesehen werden. Dabei kann die Instanz eskaliert oder beendet werden. Weitere Möglichkeiten sind die Wiederholung der Aufgabe oder das Ändern von Prozessvariablen. Vorhersehbare Fehler, die bereits im Prozessmodell mittels Fehlerereignis berücksichtigt wurden, können an einen Exception Handler weiter gereicht werden oder an den Benutzer mit einer aufbereiteten Fehlermeldung geleitet werden. Der Stacktrace kann den Details der Fehlermeldung entnommen werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Steuerung und Überwachung}
+
+IBM bietet mit Process Admin-Console, Business Performance Admin Console, Process Center Console und Process Portal sehr umfangreiche Möglichkeiten der Überwachung von Prozessen und deren Instanzen. Als Grundlage dienen die durch das System bereit gestellten umfassenden Laufzeit- und Metadaten. Zur grafischen Darstellung dieser steht eine große Bibliothek verschiedenster Komponenten zur Verfügung. Damit wird allen Anforderungen entsprochen und somit kann die Höchstbewertung vergeben werden.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{ibmÜberwachung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ IBM Steuerung und Überwachung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{4} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Steuerung und Überwachung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{4} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Übersicht über alle laufenden Prozessinstanzen}} \newline  Über die Process Admin Console können alle aktuellen und beendeten Instanzen (inkl. Filtermöglichkeit) sowie deren Status eingesehen werden. Dabei kann eine Instanz unterbrochen/angehalten werden, beendet werden oder ihre Variablen können bearbeitet werden. Damit kann die Maximalbewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung für Kennzahlenerfassung}} \newline Zur Laufzeit kann auf die Metadaten der eigenen Prozessinstanz, deren Aktivitäten sowie der Prozessumgebung zugriffen werden. Diese können in der Prozessgestaltung direkt über automatisch geführte Variablen abgerufen werden. Damit sind alle Anforderungen für die Höchstbewertung erfüllt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c \label{ibmAufbereitung}
+ & \textit{\textbf{Aufbereitung von Kennzahlen in verschiedenen Detaillierungsgraden}} \newline Kennzahlen können in Tabellen und Diagrammen verschiedener Form dargestellt werden. Dazu werden die zugrunde liegenden Daten, die grafische Aufbereitungsform und die Skalierung gewählt, um anschließend in einem Coach-Element in die Oberfläche eingebunden zu werden. Keine der Anforderungen bleibt unerfüllt, damit wird die Maximalbewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Analyse}
+
+Die Analysefunktionalitäten genügen allen gestellten Anforderungen. Es können sowohl Simulationsdaten als auch historisierte Daten abgeschlossener Prozessinstanzen zur Analyse des Prozessverhaltens und der Prozessperformance verwendet werden. Die Integration in den Process Designer erlaubt eine einheitliche und intuitive Bedienung der Simulationsumgebung, von IBM als Optimizer bezeichnet. Die Ergebnisse der Simulation werden in Tabellen, Diagramme, Heatmap und Pfadvisualisierung aufbereitet. Damit wird in der Kategorie Analyse die Höchstbewertung erreicht.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{ibmAnalyse}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ IBM Analyse } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{5} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Analyse -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{5} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a
+ & \textit{\textbf{Unterstützung zur Erfassung historisierter Messdaten}} \newline Alle zur Laufzeit gesammelten Kennzahlen werden mit Zeitstempel für eine Auswertung vorgehalten. Dazu gehören standardmäßig auf Aufgabenebene bereits Ausführungs-, Warte- und Gesamtzeit sowie, wenn die notwendigen Werte hinterlegt sind, die Kosten. Auf Prozessebene wird die Gesamtzeit erfasst. Zusätzlich werden Daten wie aktuell zuständiger Bearbeiter und Fälligkeit gespeichert. Sie können als Grundlage für Auswertungen, Analysen, Berichte und innerhalb von Prozessen verwendet werden. Damit wird die Maximalbewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung zur visuellen Aufbereitung historischer Messdaten}} \newline  Kennzahlen können, wie unter Punkt \ref{ibmAufbereitung} aufgeführt, in verschiedenen Formen grafisch aufbereitet werden. Da die Daten in einem Implementierungsprozess ausgelesen werden, können auch kumulierte Werte über Instanzen und Prozesse hinweg verwendet werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Möglichkeiten zur Prozesssimulation}} \newline  IBM bietet direkt innerhalb der Process Designers umfangreiche Möglichkeiten zur Prozesssimulation (siehe Abb. \ref{fig:ibm_simulation}). Dazu können sowohl fiktive Simulationsdaten als auch die Daten bereits ausgeführter Prozessinstanzen heran gezogen werden. Die Simulationsergebnisse zeigen die verbrachte Zeit je Aktivität, die Gesamtzeit sowie die gewählten Prozesspfade. Dabei werden Teamgrößen, Arbeitszeit, Arbeitseffizient und Kosten mittels justierbarer Parameter berücksichtigt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Allgemeine Software Anforderungen}
+
+IBM bietet mit den vielen vordefinierten Komponenten, der Möglichkeit zur direkten Einbindung von Java sowie dem Einsatz von Javascript für die Individualisierung der vorgefertigten Komponenten eine starke technologische Basis. Die zugehörige Dokumentation von IBM selbst ist zu grob bzw. zu unübersichtlich gehalten. Durch den Verweis auf Neil Kolban's Buch schafft es IBM hier jedoch trotzdem, eine fundierte Dokumentation bereit zu stellen. 
+Die Konfiguration ist, soweit es für eine Unternehmenssoftware dieser Größe möglich ist, als komfortabel zu bezeichnen.
+Negativ hingegen fallen die überdurchschnittlichen Kosten auf. Im Gesamten kann dennoch eine gute Bewertung vergeben werden.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{ibmSoftware}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ IBM Software Anforderungen } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{6} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Software Anforderungen -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{6} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Technologie}} \newline  Der IBM Business Process Manager basiert auf Java. Java Services können direkt über einen speziellen Aktivitätentyp eingebunden werden. Der Großteil der  individuellen Implementierungen innerhalb des Process Designers, die direkt an Aktivitäten angehängt sind, werden mit Javascript Code umgesetzt. Damit setzt IBM auf weit verbreitete und ausgereifte Technologien, die auch dank einem großen Interesse der Open Source Gemeinschaft als sehr zukunftssicher gesehen werden. Deshalb, und aufgrund der Möglichkeit, Java Code direkt einzubinden, wird die Maximalbewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Dokumentation}} \newline  Die Dokumentation von IBM selbst ist eher unübersichtlich und lässt viele Detailfragen offen. IBM verweist jedoch auf seiner Homepage direkt auf das Buch Kolban's Book on IBM Business Process Management. Dieses ist mit Stand Dezember 2013 1540 Seiten umfassend und enthält zahlreiche Best Practices mit Schritt-für-Schritt Anleitungen, die nahezu sämtliche Funktionalitäten im Detail abdecken. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ c \label{ibmKosten}
+ & \textit{\textbf{Kosten}} \newline  Nach Forrester liegen alleine die durchschnittlichen Lizenzkosten für die Anschaffung eines proprietären \ac{BPMS} für zwischen 250.000\$ und 300.000\$. Zusätzlich fallen Kosten für Schulungen und die notwendige Infrastruktur an. vgl.\cite[4]{Forresterresearchinc.2013} Hinzu kommt, dass die Wartungs- und Supportkosten von IBM 25\% über dem Marktdurchschnitt liegen. \cite[11]{Gartner.2012} Daher fällt die Bewertung für die Kosten sehr schlecht aus. \smallskip
+ & \centering\arraybackslash \textcircled{-} \textcircled{-} \tabularnewline
+\hline 
+ d 
+ & \textit{\textbf{Herstellerabhängigkeit}} \newline Mit der Installationsroutine werden standardmäßig eine DB2 Datenbank und ein WebSphere Applikationsserver von IBM installiert. Die Datenbank kann nach der Installation in der Konfiguration gegen eine andere ausgetauscht werden.
+ IBM kann zahlreiche Referenzkunden anführen, wozu auch viele international bekannte Konzerne gehören. Auch die Aufnahme in die Forrester bzw. Gartner Berichte zeugt von der Etablierung IBMs am Markt.\cite{Gartner.2012}\cite{Forresterresearchinc.2013} \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ e 
+ & \textit{\textbf{Administrationsmöglichkeiten}} \newline  Für die Gesamtsystemsicht steht die WebSphere Application Server-Administrationskonsole mit umfangreichen Konfigurationsmöglichkeiten zur Verfügung. Die Konfiguration erfolgt komplett über die Weboberfläche. Für \ac{BPMS}-typische Konfigurationen dienen Process Admin-Console, Business Performance Admin Console sowie die Process Center Console. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ f 
+ & \textit{\textbf{Skalierung}} \newline Eine Skalierung wird über das Clustering des WebSphere Applikationsservers und dessen Datenquellen ermöglicht. Dabei ist jedoch zu berücksichtigen, dass eine Skalierung unterhalb der Standardinstallation nicht vorgesehen ist, was die Zielkundengruppe auf mittlere und große Unternehmen einschränkt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+
+%---------------------------------------------------------------------------------------------------
+\newpage
+\subsection{Zusammenfassung der IBM Evaluationsergebnisse}
+
+Der IBM Business Process Manager kann in allen Kategorien überzeugen. Dank der umfangreichen Komponentenbibliothek und der Möglichkeiten zur Wiederverwendung mittels Toolkits lassen sich neue Prozesse verhältnismäßig schnell implementieren. Eine weitere Stärke ist die sehr gute Integration der Test- und Simulationsumgebung mit Auswertung direkt in den Process Designer.
+Auch in den Bereichen Steuerung und Überwachung sowie Analyse bietet IBM sehr gute umgesetzte Funktionalitäten.
+
+In der Modellierungskategorie unter Punkt \ref{ibmModellierung} hingegen fallen der nicht komplett umgesetzte \ac{BPMN} Standard und die unzureichende Export Funktionalität auf. Ebenso fallen die hohen Kosten für Wartung \& Support (siehe \ref{ibmKosten}) negativ auf. 
+
+\smallskip\noindent Trotz der Schwächen kann für das hervorragenden Gesamtpaket eine sehr gute Bewertung vergeben werden.
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{ibmZusammenfassung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ IBM Zusammenfassung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{Nr} & \normalsize\textbf{Kategorie} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Zusammenfassung -- Fortsetzung} \\ \hline
+\rowcolor{black!10}
+\textbf{Nr} & \textbf{Kategorie} & \textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 1 
+ & Modellierung
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ 2 
+ & Implementierung
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 3 
+ & Prozessausführung
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 4 
+ & Steuerung und Überwachung
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 5 
+ & Analyse
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 6 
+ & Allgemeine Software Anforderungen
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hhline{===}
+\multicolumn{2}{|r|}{\textbf{Gesamtbewertung:}} & \centering\arraybackslash \textbf{\textcircled{+} \textcircled{+}} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize

@@ -1,0 +1,53 @@
+%---------------------------------------------------------------------------------------------------
+\section{Auswahl der Evaluationskandidaten}
+In \ref{marktübersicht} werden die aktuell am Markt verfügbaren \ac{BPMS} aufgeführt. Mit den in \ref{auswahlKriterien} definierten Mindestanforderungen werden die zur Evaluation heran gezogenen Systeme ausgewählt. Das Ergebnis wird in \ref{ergebnisAuswahl} dargestellt.
+
+
+\subsection{Marktübersicht}
+\label{marktübersicht}
+Zur besseren Übersicht werden die am Markt verfügbaren \ac{BPMS} nach Proprietären und Quelloffenen unterschieden. Dabei werden jeweils spezielle Kriterien definiert, welche von einem potentiellen Kandidaten für die Auswahl zur Evaluation erfüllt werden müssen (siehe \ref{auswahlKriterien}). Im Folgenden werden die zur Auswahl stehenden \ac{BPMS} inkl. Herstellerangabe aufgeführt.
+
+
+\subsubsection*{Proprietäre \ac{BPMS}:}
+Bei den proprietären Systemen werden nur solche berücksichtigt, die sowohl im Forrester Wave Report BPMS Q1 2013 \cite{Forresterresearchinc.2013} als auch dem Gartner Magic Quadrant iBPMS 2012 \cite{Gartner.2012} aufgeführt werden.
+
+\begin{compactitem}
+	\item Appian BPMS
+	\item IBM Business Process Manager
+	\item OpenText MBPM mit OpenText Stack
+	\item Oracle Business Process Management Stack
+	\item Pegasystems Pega
+	\item Software AG webMethods
+	\item Tibco Software ActiveMatrix BPM mit Tibco Stack
+\end{compactitem}
+
+%\paragraph*{Open Source \ac{BPMS}:}
+\subsubsection*{Open Source \ac{BPMS}:}
+Da die quelloffenen \ac{BPM} Lösungen fast durchweg sehr jung sind, werden sie bis auf Bonitasoft nicht von Forrester und Gartner berücksichtigt. Daher werden hier auch weitere Lösungen für die Marktübersicht beachtet.
+
+\begin{compactitem}
+	\item Camunda BPM platform
+	\item Bonitasoft BPM
+	\item Eclipse Stardust BPM
+	\item Activiti
+	\item JBoss jBPM 6
+\end{compactitem}
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Auswahlkriterien}
+\label{auswahlKriterien}
+Um die in der Einleitung genannten Rahmenbedingungen zu erfüllen, werden für die Evaluation ein Open Source System und zwei kommerzielle Systeme heran gezogen. Für die Relevanz des Vergleichs werden nur Systeme berücksichtigt, bei welchen der letzte Major Release höchstens ein Jahr zurück liegt. Ferner ist eines der beiden kommerziellen Systeme nach Gartner und Forrester als Marktführer eingestuft, das Andere befindet sich danach im Mittelfeld. Grundvoraussetzung  für die Berücksichtigung der Kandidaten ist, dass sie durchgehend auf den Einsatz von \ac{BPMN} ausgerichtet sind. Zusätzlich wird vorausgesetzt, dass der Anbieter des Systems auch selbst Wartung und Support dafür anbietet.
+Ein Ausschlusskriterium ist der Zugang zu Testlizenzen. Sollte für einen potentiellen Kandidaten keine kostenfreie Lizenz für den Zeitraum des Vergleichs zur Verfügung stehen, so wird dieser automatisch ausgeschlossen. Grundbedingung ist, dass die Lizenz eine Eigeninstallation erlaubt, wodurch Cloudlösungen außerhalb dieser Auswahl liegen.
+
+\subsection{Ergebnis der Auswahl}
+\label{ergebnisAuswahl}
+Im Folgenden wird eine Auswahl der drei \ac{BPMS}, welche zur Evaluation heran gezogen werden, getroffen. Dabei wird eine Einteilung in Marktführer, Mittelfeld und Open Source getroffen. 
+
+\medskip\noindent Nach dem Forrester Wave Report BPMS Q1 2013 und dem Gartner Magic Quadrant iBPMS 2012 sind die Marktführer für BPMS Pegasystems Pega, IBMs Business Process Manager und Appians BPMS. Da Pega keine Test-Lizenz zur Verfügung stellt, wird ihr Produkt für diese Evaluation nicht weiter berücksichtigt. Appian bietet nur innerhalb ihrer Cloud-Lösung eine Testlizenz, womit auch deren Produkt ausscheidet. Damit bleibt die Lösung von \textbf{IBM}, welche alle Anforderungen erfüllt. Es nutzt \ac{BPMN} zur Modellierung und Ausführung, eine Testlizenz steht zur Verfügung, der letzte Major Release ist verfügbar seit dem 14.06.2013. \cite{IBMCorporation.2013}
+
+\medskip\noindent Im Mittelfeld von Forrester Wave Report BPMS Q1 2013 und Gartner Magic Quadrant iBPMS 2012 sind die \ac{BPMS} der Hersteller OpenText, Oracle, Software AG sowie Tibco zu finden. Für die Produkte von OpenText, der Software AG und Tibco ist keine Testlizenz erhältlich, was zum Ausscheiden dieser führt. Somit bleibt Oracle als Evaluationskandidat. Eine Testlizenz steht zur Verfügung und der letzte Major Release stammt vom 03.04.2013. \cite{OracleRelease.2013}
+
+\medskip\noindent Bei den Open Source Systemen wird nur von Camunda, Bonitasoft und Red Hat (JBoss jBPM 6) Wartung \& Support direkt vom Hersteller angeboten. Da von jBPM 6 mit Datum 15.10.2013 nur eine CR2 Version verfügbar ist, scheidet dieses als potentieller Evaluationskandidat aus. 
+
+
+\medskip\noindent Von den Open Source Systemen wird die \textbf{Camunda} BPM Platform zur Evaluation heran gezogen. Der Grund dafür ist, dass der letzte Release vom 31.08.2013 \cite{camundaRelease.2013} zeitgleich auch der erste final-Release von Camunda ist.

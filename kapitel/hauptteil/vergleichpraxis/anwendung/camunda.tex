@@ -1,0 +1,347 @@
+\section{Evaluation Camunda BPM Platform}
+\label{evaluationCamunda}
+Zur Evaluation wird die Version 7.0.0-Final der Camunda BPM Platform heran gezogen. Dabei wird auf ein von Camunda bereits gestelltes Paket mit dem Applikationsserver JBoss AS 7 zurück gegriffen. Als Entwicklungsumgebung und Modellierungswerkzeug kommt der Camunda BPMN 2.0 Modeler zum Einsatz. 
+Zur Entwicklung werden die Apache Maven-Abhängigkeiten für camunda-engine und camunda-engine-cdi genutzt.
+Von Drittanbietern stammen die Apache Commons IO in Version 2.4, Apache HttpClient in Version 4.3.1 sowie PrimeFaces in Version 4.0.
+\newline Als Rules Engine kommt JBoss Drools in Version 6.0.0.Final zum Einsatz.
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Modellierung}
+
+Die Camunda BPM Platform bietet für die Prozessmodellierung den als Eclipse Erweiterung implementierten \ac{BPMN} 2.0 Modeler. Er unterstützt alle drei Diagrammarten der \ac{BPMN}. Insgesamt überzeugen die Modellierungsmöglichkeiten der Camunda BPM Platform mit nahezu vollständiger \ac{BPMN} 2.0 Standardabdeckung, einem gut benutzbarem Modellierungswerkzeug sowie dem Einsatz nativer \ac{BPMN} Dateien. Einziger Kritikpunkt ist die feste Integration des Modelers in eine Entwicklungsumgebung. Dies könnte auf nicht-Softwareentwickler abschreckend wirken. 
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{camundaModellierung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Camunda Modellierung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Modellierung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Unterstützung des BPMN 2.0 Standards}} \newline  Der Camunda \ac{BPMN} 2.0 Modeler bietet alle Elemente des \ac{BPMN} 2.0 Standards zur Modellierung an. Ebenso werden alle Diagrammarten unterstützt. Die Process Engine hingegen unterstützt nicht alle Elemente. Es fehlen die Ereigniselemente für Eskalation und Bedingung. Aufgrund der Darstellungsmöglichkeiten für alle Diagrammarten sowie der nahezu vollständigen Unterstützung \ac{BPMN} 2.0 Standards durch die Process Engine wird die maximale Bewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Benutzbarkeit des Modellierungswerkzeugs}} \newline Die Implementierung des Camunda \ac{BPMN} 2.0 Modelers als Plugin (siehe Abb. \ref{fig:camunda_modeler}) für die Entwicklungsumgebung Eclipse sorgt für einen starken entwicklerzentrischen Ansatz. Dieser einseitige Ansatz kann zu Akzeptanzproblemen bei Business Analysten bzw. den Mitarbeitern der Fachabteilungen sorgen. Generell werden bei der Modellierung nur \ac{BPMN}-konforme Verbindungen zugelassen. Auch alleinstehende Elemente werden zuverlässig erkannt. Insgesamt ist die Bedienung aller notwendigen Funktionen gut, nur die einseitige Auslegung führt zu einem Punkt Abzug in der Bewertung. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Unterstützung von Unterprozessen und Prozessaufrufen}} \newline  Die Camunda Process Engine unterstützt alle im \ac{BPMN} 2.0 Standard vorgesehenen Arten von Unterprozessen. Ebenso ist die Call-Aktivität zum Aufruf anderer Prozesse implementiert. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ d 
+ & \textit{\textbf{Unterstützung des Imports und Exports von \ac{BPMN} Prozessmodellen}} \newline  Der Camunda \ac{BPMN} 2.0 Modeler arbeitet auf der Basis nativer  \ac{BPMN}-Dateien. Damit ist eine explizite Export-Funktion nicht nötig, die Datei kann direkt von ihrem Pfad kopiert werden. Sie lässt sich sowohl in die Cloud-Lösung von Signavio als auch in den IBM Business Process Designer problemlos importieren. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Implementierung}
+
+Die Camunda BPM Platform bietet selbst keine vordefinierten Schnittstellen zur Integration von Drittsystemen. Jedoch können aufgrund des nativen Java Einsatzes alle aus der Java Welt bekannten Frameworks verwendet werden. Dadurch ergibt sich eine enorme Vielfalt an potentiellen Kombinationen bzw. Möglichkeiten zur Implementierung von individuellen Funktionalitäten. Insgesamt wird deutlich, dass die Camunda BPM Platform als Baukasten verstanden werden muss. Bestes Beispiel dafür sind die \ac{BR}s. Es wird keine vorgefertigte Lösung mitgeliefert, jedoch wird anhand von Beispielen gezeigt, wie sich ein Open Source \ac{BRMS} eines Drittanbieters einbinden lässt. Trotz der fehlenden Komponenten für Schnittstellen wäre eine gute Bewertung dieser Kategorie gerechtfertigt, da durch den Einsatz von nativem Java das Erweiterungsspektrum sehr groß ist. Dem steht allerdings die fehlende Möglichkeit zur Implementierung von Kennzahlen in vordefinierter Weise im Weg.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{camundaImplementierung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Camunda Implementierung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{2} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Implementierung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{2} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Möglichkeiten der Wiederverwendung von Funktionalitäten und Teilprozessen}} \newline Aufgrund der nativen Java Implementierung lassen sich Funktionalitäten kapseln und wiederverwenden. Dabei können alle Möglichkeiten, die Java bietet, zum Einsatz kommen. Eine vordefinierte Möglichkeit für (Teil-)Prozesstemplates existiert nicht. Da keine Implementierung zum zentralen Austausch derer mitgeliefert wird, wird in der Bewertung ein Punkt abgezogen. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung zur Erstellung von Benutzeroberflächen}} \newline  Die Camunda BPM Platform bietet standardmäßig nur eine sehr eingeschränkte Unterstützung zur Oberflächenerzeugung. Es können entweder mithilfe einer minimalistischen \ac{DSL} in die Camunda Tasklist eingebettet Oberflächen erstellt werden oder mittels \ac{JSF} eigenständige Implementierungen eingesetzt werden. Bei beiden Varianten kann direkt auf Prozessvariablen zugegriffen werden. Aufgrund der fehlenden Möglichkeit zur Generierung von Oberflächen wird in der Bewertung ein Punkt abgezogen. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Unterstützung zur Erstellung von Serviceaktivitäten}} \newline  Service-Aktivitäten werden mittels Java Delegaten implementiert. Die BPM Platform gewährt mittels \ac{CDI} Zugriff auf die Services der Process Engine. Für alle weiteren Implementierungen stehen sämtliche Möglichkeiten der Java Entwicklung offen. Bei Bedarf unterstützt die BPM Plattform auch den Java EE Kontext. Da jedoch vordefinierte Schnittstellenkomponenten fehlen, was mindestens den erstmaligen Implementierungsaufwand deutlich erhöht, kann nur eine durchschnittliche Bewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+ d 
+ & \textit{\textbf{Unterstützung von Business Rules}} \newline Die Camunda BPM Platform bietet selbst keine Implementierung für \ac{BR}s. Es werden jedoch mehrere Beispiel-Projekte angeboten, welche das Open Source \ac{BRMS} JBoss Drools integrieren, um \ac{BR}s verwenden zu können. Da hierzu keine weitere Dokumentation seitens Camunda  zur Verfügung gestellt wird, muss die entsprechende Implementierung anhand der Beispiele nachvollzogen werden. Dies führt zu einer durchschnittliche Bewertung. \smallskip
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+ e 
+ & \textit{\textbf{Unterstützung eines Rechtemanagements}} \newline  Die Benutzerverwaltung bietet die Einteilung von Nutzern in Gruppen und Rollen. Die Benutzerdaten können über eine Schnittstelle mit einem \ac{LDAP} Server synchronisiert werden. Die Rechte für den Administrationsbereich, das Cockpit und die Tasklist können separat vergeben werden. Allerdings muss ein Punkt bei der Bewertung abgezogen werden, da bei der Zuweisung der Zuständigkeit für eine Aufgabe keine Form der Autovervollfständigung bzw. Auswahl aus allen Möglichen Benutzern oder Gruppen vorhanden ist. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ f \label{camundaDefKPI}
+ & \textit{\textbf{Möglichkeit zur Definition von Kennzahlen}} \newline  Die Dokumentation enthält mit Stand 21.12.2013 keinerlei Hinweise zur Implementierung individueller Kennzahlen. Damit bleibt nur der Umweg diese über Prozessvariablen mitzuführen und den Audit-Level entsprechend hoch einzustellen. Da dies prinzipiell möglich ist, jedoch keine besonders elegante Lösung darstellt, wird von der schlechtesten Bewertung abgesehen. \smallskip
+ & \centering\arraybackslash \textcircled{-} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Prozessausführung}
+
+Die Anwenderunterstützung zur Laufzeit ist angemessen. Es werden alle notwendigen Informationen angezeigt, eine Erweiterung der zugehörigen Oberfläche jedoch verhältnismäßig aufwendig. Die Prozessversionierung ist sehr gut gelöst und erfüllt alle Anforderungen, weshalb die Gesamtbewertung der Kategorie noch entsprechend gut ausfällt.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+}
+\leftskip=0cm
+
+\newpage
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{camundaAusführung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Camunda Prozessausführung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{3} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Prozessausführung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{3} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Information des Anwenders}} \newline  Der Benutzer kann über die Tasklist einsehen, welche Aufgaben ihm zugeteilt sind. Diese kann er zur Bearbeitung starten, an jemanden Anderen delegieren oder ablehnen. Mittels eines \ac{BPMN} Prozessmodells lässt sich die aktuelle Aufgabe im Kontext des gesamten Prozesses einblenden. Neue Prozessinstanzen lassen sich über die selbe Oberfläche starten. Zur Erweiterung dieser ist jedoch ein verhältnismäßig hoher Implementierungsaufwand notwendig. Daher wird in der Bewertung ein Punkt abgezogen. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung verschiedener Prozessversionen}} \newline  Jedes Deployment eines Prozesses, das Änderungen zu einem Bestehenden hat, wird mit einer neuen Version versehen und ist prinzipiell parallel lauffähig. Beim Start einer neuen Instanz wird immer die aktuellste Version eines Prozesses gestartet. Die verschiedenen Versionen können über die Cockpit Oberfläche eingesehen werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Fehlerbehandlung}} \newline  Eine fehlerhafte Instanz wird in der Cockpit Oberfläche als solche markiert. Dabei wird die Stelle, an der der Fehler im Prozessmodell aufgetreten ist, markiert und die zugehörige Fehlermeldung angezeigt. Wird die Fehlermeldung eines aufgerufenen Drittsystems nicht abgefangen, wird die Fehlernachricht bzw. der Stacktrace dessen angezeigt. In der Implementierung berücksichtigte Fehlerquellen können mittels Incidents und entsprechenden Incident Handlern behandelt werden. Dazu muss jedoch relativ viel Implementierungsaufwand betrieben werden, weshalb in der Bewertung ein Punkt abgezogen wird. \smallskip
+ & \centering\arraybackslash \textcircled{+}  \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Steuerung und Überwachung}
+\label{camundaSteuerung}
+Die Camunda BPM Platform bietet an der Oberfläche nur eine eingeschränkte Funktionalität dessen, was aufgrund der zugrunde liegenden Service APIs möglich wäre. Es existiert innerhalb der Cockpit Oberfläche nur eine minimalistische, eher als Beispiel anzusehende, vorgefertigte Möglichkeit zur grafischen Aufbereitung des aktuellen Zustands aller deployten Prozesse und Instanzen. Aufgrund der vorhandenen, mit gutem Umfang ausgestatteten Services, kann insgesamt eine gute Bewertung erteilt werden.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{camundaÜberwachung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Camunda Steuerung und Überwachung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{4} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Steuerung und Überwachung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{4} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Übersicht über alle laufenden Prozessinstanzen}} \newline  Über die Cockpit Oberfläche können alle deployten Prozesse, deren aktiven sowie fehlerbehafteten Instanzen eingesehen werden (siehe Abb. \ref{fig:camunda_cockpit}). Für jede Instanz können Prozessversion und die Werte der Prozessvariablen eingesehen werden. Die Werte der Prozessvariablen können manuell bearbeitet werden. Es fehlt jedoch eine Option zum Terminieren einer Instanz. Daher wird ein Punkt in der Bewertung abgezogen. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline 
+ b \label{camundaErfassungKennzahlen}
+ & \textit{\textbf{Unterstützung für Kennzahlenerfassung}} \newline Die Process Engine bietet über verschiedene Services alle notwendigen Kennzahlen und Meta-Daten auf Prozess-, Instanz- und Aufgabenebene. Dazu gehören auch die Daten der Benutzerverwaltung. Diese werden mithilfe der \ac{CDI}-Implementierung zugreifbar. Damit kann die Maximalbewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c \label{camundaAufbereitungKennzahlen}
+ & \textit{\textbf{Aufbereitung von Kennzahlen in verschiedenen Detaillierungsgraden}} \newline  Mit der Camunda BPM Platform werden keine Komponenten zur Visualisierung von Kennzahlen mitgeliefert. Camunda bietet ein Beispiel zur Implementierung einer proprietären Javascript Bibliothek eines Drittanbieters dafür, wodurch zumindest die Möglichkeiten der dahinter liegenden APIs deutlich gemacht werden.
+ Mittels der Process Diagram API lassen sich Prozessdiagramme auf Basis von PNG Bildern visualisieren und u.a. der aktuelle Stand sowie weitere Kennzahlen darstellen (siehe Abb. \ref{fig:camunda_bpmn_api}). Zur Darstellung wird eine Implementierung von \ac{JSF} benötigt. Daher kann in der Bewertung auf die schlechteste Einstufung verzichtet werden. \smallskip
+ & \centering\arraybackslash \textcircled{-} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Analyse}
+
+ Ähnlich der in \ref{camundaSteuerung} bewerteten Kategorie Steuerung und Überwachung, bietet die Camunda BPM Platform sehr gut implementierte Funktionalitäten auf der Serviceebene, zeigt jedoch einen gravierenden Mangel durch die fehlenden visuellen Aufbereitungsmöglichkeiten für die Daten. Dazu kommen die unzureichenden Funktionalitäten zur Simulation, die einen hohen Entwicklungsaufwand mit sich bringen. 
+ Daher kann in der Kategorie Analyse nur eine durchschnittliche Bewertung vergeben werden.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{camundaAnalyse}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Camunda Analyse } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{5} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Analyse -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{5} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a
+ & \textit{\textbf{Unterstützung zur Erfassung historisierter Messdaten}} \newline Unter den in \ref{camundaErfassungKennzahlen} genannten Services der Process Engine wird auch der History-Service angeboten. Über diesen kann auf alle Daten abgeschlossener Instanzen zugegriffen werden. Dabei werden, je nach Audit-Konifguration,  Prozess-, Aktivitäts- und Aufgabeninstanzen, Prozessvariablen bis hin zu Änderungen der Werte der Eingabeformen gespeichert. Damit werden alle Anforderungen für eine Höchstbewertung erfüllt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung zur visuellen Aufbereitung historischer Messdaten}} \newline  Wie in Punkt \ref{camundaAufbereitungKennzahlen} bereits beschrieben, liefert Camunda selbst keine Implementierung zur visuellen Aufbereitung von Kennzahlen. Da diese Funktionalität als Gesamtes fehlt, muss hier auf die schlechteste Bewertungsmöglichkeit zurück gegriffen werden. \smallskip
+ & \centering\arraybackslash \textcircled{-} \textcircled{-} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Möglichkeiten zur Prozesssimulation}} \newline  Mit camunda-bpm-testing wird ein Test-Framework angeboten, mit welchem flüssig lesbare Tests entwickelt werden können. Zusätzlich wird das Simulieren von Service-Aufrufen ermöglicht. Zur Prozesssimulation und Performancemessung stehen jedoch keine vorgefertigten Komponenten zur Verfügung. Diese müssen individuell entwickelt werden, was zu einem erhöhten Entwicklungsaufwand führt. Damit wird eine durchschnittliche Bewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Allgemeine Software Anforderungen}
+
+Aufgrund der Open Source Verfügbarkeit kann die Camunda BPM Platform im Punkt Kosten natürlich überzeugen. Weitere Stärken sind mit Java als technologische Basis die hohe Verbreitung und Ausgereiftheit sowie die guten Skalierungsmöglichkeiten der Process Engine. Die Dokumentation hingegen fällt im besten Fall dürftig aus. Viele Details lassen sich nur aus Codebeispielen entnehmen. Insgesamt kann die Camunda BPM Platform in dieser Kategorie überzeugen und rechtfertigt eine gute Bewertung.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{camundaSoftware}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Camunda Software Anforderungen } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{6} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Software Anforderungen -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{6} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Technologie}} \newline Die Camunda BPM Platform setzt komplett auf Java. Für die Anzeige der Prozessmodelle in der Weboberfläche wird eine Javascript Bibliothek genutzt. Durch die hohe Verbreitung von Java und den zahlreich existierenden Frameworks stehen viele Möglichkeiten der Erweiterung zur Verfügung. Die von Camunda bereit gestellten Beispiele bieten dabei eine kleine Übersicht, wie sich die BPM Platform unter anderem in die Java EE Platform integrieren lässt.  \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Dokumentation}} \newline Camunda bietet auf ihrer Homepage einen User Guide, welcher die möglichen Einsatzformen der Camunda BPM Plattform beschreibt. 
+ Daneben gibt es eine umfassende Javadoc Bibliothek. Für Einsteiger wird ein Grundlagen-Tutorial angeboten. Die gesamte Dokumentation beleuchtet dabei jedoch die meisten Funktionalitäten nur oberflächlich. Viele Möglichkeiten werden nur in den Beispielprojekten benutzt und sind nicht weiter dokumentiert. \smallskip
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Kosten}} \newline Da die Camunda BPM Platform als Open Source Lösung unter der Apache 2.0 Lizenz zur Verfügung gestellt wird, entstehen keine direkten Kosten für die Anschaffung oder laufende Lizenzkosten. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ d 
+ & \textit{\textbf{Herstellerabhängigkeit}} \newline Technisch ist die Herstellerabhängigkeit bei Camunda aufgrund der Open Source Lizenz und dem durchgehenden Einsatz von Java sehr gering. Camunda kann zahlreiche Referenzkunden ausweisen, zu welchen auch namhafte, zumindest in Deutschland bekannte Größen aus dem eCommerce bzw. der Versicherungsbranche gehören. Daher besteht auch von Marktseite ein ausreichendes Interesse am Fortbestand der Camunda BPM Platform. Allerdings hat Camunda mit ihrem überraschenden Fork von Activiti im Frühjahr 2013 für Aufsehen gesorgt, nachdem Camunda fox gerade einmal seit 2,5 Jahren verfügbar war.
+  \smallskip
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+ e 
+ & \textit{\textbf{Administrationsmöglichkeiten}} \newline Da die Camunda BPM Platform in Verbindung mit verschiedenen Applikationsservern und Datenbanken eingesetzt werden kann, variieren auch die Administrationsmöglichkeiten. Generell sind diese stark auf XML Konfigurationen beschränkt. Die Administrationsoberfläche der Camunda BPM Platform selbst beschränkt sich auf die Benutzerverwaltung. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ f 
+ & \textit{\textbf{Skalierung}} \newline Die Process Engine kann in verschiedenen Szenarien eingesetzt werden. Sie kann direkt in eine Applikation integriert werden, auf dem selben Applikationsserver (Container-Managed) ausgeführt werden, via Rest auf einem Remote Server angesprochen werden oder mit einer gemeinsamen Datenbasis im Clustering Model mit mehreren anderen Process Engines betrieben werden. Damit sind viele verschiedene Einsatzszenarien, von sehr kleinen, bis hin zu großen Clustern, möglich  \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Zusammenfassung der Camunda Evaluationsergebnisse}
+
+Die Camunda BPM Platform kann in einigen Bereichen durchaus überzeugen. Vor allem in der Kategorie Modellierung zeigt sie ihre Stärken. Durch die Verwendung von nativem \ac{BPMN} 2.0 XML als Dateibasis zur Prozessmodellierung, ist ein Austausch mit anderen Modellierungswerkzeugen sehr einfach zu bewerkstelligen. Zur Steuerung und Überwachung sowie zur Analyse der Prozessperformance sind auf Serviceebene alle Funktionalitäten vorhanden. Diese können entweder direkt im Code mittels \ac{CDI} genutzt werden, oder via einer Rest Schnittstelle abgerufen werden.
+
+\noindent Mängel hingegen zeigt Camunda bei der grafischen Aufbereitung von Kennzahlen. Die mitgelieferten Oberflächen bieten nur eine minimal notwendige Basis zur Steuerung und Überwachung der Prozesse. Für die Performance Analyse fehlt eine visuelle Darstellung gar komplett. Ebenso ist die, zumindest in der Dokumentation, fehlende Implementierung für individuelle Kennzahlen ein Schwäche von Camunda.
+
+\noindent Aufgrund fehlender Möglichkeiten zur visuellen Aufbereitung von Daten, keinen vordefinierten Schnittstellenkomponenten und unzureichenden Simulationsmöglichkeiten, bedarf der Einsatz der Camunda BPM Platform einem hohen Grad an Eigenentwicklung. Da Camunda konsequent auf Java baut, sind dabei jedoch nahezu unendlich viele Möglichkeiten zur individuellen Implementierung der benötigten Funktionalitäten denkbar.
+
+\smallskip\noindent Insgesamt kann dank der sehr guten Funktionalitäten auf Serviceebene gerade noch eine gute Bewertung erteilt werden.  
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{camundaZusammenfassung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Camunda Zusammenfassung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{Nr} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Zusammenfassung -- Fortsetzung} \\ \hline
+\rowcolor{black!10}
+\normalsize\textbf{Nr} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 1 
+ & Modellierung
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 2 
+ & Implementierung
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+ 3 
+ & Prozessausführung
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ 4 
+ & Steuerung und Überwachung
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ 5 
+ & Analyse
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+ 6 
+ & Allgemeine Software Anforderungen
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hhline{===}
+\multicolumn{2}{|r|}{\textbf{Gesamtbewertung:}} & \centering\arraybackslash \textbf{\textcircled{+}} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize

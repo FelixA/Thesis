@@ -1,0 +1,359 @@
+\newpage
+\section{Evaluation Oracle BPM Suite}
+\label{evaluationOracle}
+Die Evaluation bezieht sich auf die Oracle BPM Suite in der Version 11.1.1.7.0 bestehend aus Oracle XE 11g, Oracle WebLogic Server mit Coherence Package, Repository Creation Utility, JDeveloper, SOA Extensions for JDeveloper, BPM Extensions for JDeveloper sowie der SOA Suite 11g.
+
+%---------------------------------------------------------------------------------------------------
+
+
+%
+%\subparagraph*{Testen und Simulieren}
+%Sowohl von der Web-Oberfläche des Process Composers als auch im BPM Studio können Prozessmodelle mittels einer Simulation auf Performance hin getestet werden. Hierbei können im Process Composer jedoch nur Testdaten eingesetzt werden.
+%
+%%---------------------------------------------------------------------------------------------------
+
+\subsection{Modellierung}
+
+Oracle bietet mit der Aufteilung der Modellierungswerkzeuge in Business Process Composer in einer Weboberfläche und BPM Studio in die Entwicklungsumgebung integriert einen sehr interessanten Ansatz. Dabei kann z.B. ein rein fachliches Prozessmodell von einer Fachabteilung via Weboberfläche erstellt werden und anschließend von der IT-Abteilung zur Implementierung in die Entwicklungsumgebung importiert werden. Dazu wird nahezu der gesamte \ac{BPMN} 2.0 Standard unterstützt. 
+
+Der gute Eindruck wird jedoch stark getrübt von der fehlenden Möglichkeit zum Austausch von \ac{BPMN} 2.0 Prozessmodellen mit Modellierungswerkzeugen anderer Anbieter.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{oracleModellierung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Oracle Modellierung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Modellierung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Unterstützung des BPMN 2.0 Standards}} \newline Oracle bietet mit dem BPM Studio ein in den JDeveloper integriertes Modellierungswerkzeug. Dieses deckt den \ac{BPMN} 2.0 Standard nicht komplett ab, beinhaltet jedoch alle wesentlichen Elemente. So fehlen unter Anderem die Kompensations- und Eskalationsereignisse. Über den Standard hinaus gibt es zusätzliche interaktive Aktivitäten sowie vorkonfigurierte Nachrichtenaktivitäten. Die fehlenden Elemente führen zum Abzug eines Punktes in der Bewertung. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Benutzbarkeit des Modellierungswerkzeugs}} \newline Oracle stellt grundsätzlich zwei verschiedene Modellierungswerkzeuge zur Verfügung, welche beide eine Syntaxkontrolle mit Warnhinweisen bieten. Zum einen den über eine Weboberfläche implementierten Business Process Composer (siehe Abb. \ref{fig:oracle_composer}). Dieser verfügt über eine eingeschränkte Palette an \ac{BPMN} Elementen, nur wenigen Möglichkeiten zur Implementierung technischer Aspekte und ist generell designzentrisch ausgerichtet. Auf der anderen Seite wird mit der BPM Suite ein entwicklerzentrisches, in die Entwicklungsumgebung JDeveloper integriertes Modellierungswerkzeug geboten, welches darauf ausgelegt ist, auch die technischen Implementierungen der Prozessmodelle vorzunehmen (siehe Abb. \ref{fig:oracle_composer}). Die Prozessmodelle beider Modellierungswerkzeuge können mittels des Service Repositories gegenseitig ausgetauscht werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Unterstützung von Unterprozessen und Prozessaufrufen}} \newline Aufruf-Aktivitäten für andere Prozesse sind ebenso implementiert wie Unterprozesse und Ereignisunterprozesse. Damit werden alle Möglichkeiten des \ac{BPMN} 2.0 Standards umgesetzt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ d 
+ & \textit{\textbf{Unterstützung des Imports und Exports von \ac{BPMN} Prozessmodellen}} \newline Die Prozessmodelle werden zwar als \ac{XML}-Dateien mit der \ac{BPMN}-Endung abgelegt, jedoch hält Oracle sich dabei nicht an den \ac{XML} Standard der \ac{BPMN} 2.0. Daher lassen sich \ac{BPMN}-Dateien anderer Modellierungswerkzeuge weder importieren noch sinnvoll exportieren. \smallskip
+ & \centering\arraybackslash \textcircled{-} \textcircled{-} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Implementierung}
+
+Oracle bietet vor allem für seine eigenen Systeme eine hervorragende Integration. Aber auch für viele weit verbreitete Schnittstellen stehen vordefinierte Komponenten bereit. Einfache Prozesse können sogar komplett von der Weboberfläche des Business Process Composers modelliert, mit Benutzeroberflächen versehen und getestet zu werden. \newpage Komplexe Implementierungen hingegen müssen innerhalb des BPM Studios vorgenommen werden. Ein weiterer Punkt der für die Oracle BPM Suite spricht, ist das vollständig mit der SOA Suite integrierte \ac{BRMS}.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{oracleImplementierung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Oracle Implementierung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{2} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Implementierung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{2} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Möglichkeiten der Wiederverwendung von Funktionalitäten und Teilprozessen}} \newline  Sämtliche Geschäftsobjekte, Services, Regeln, Fehler und Benutzeraufgaben, welche über den Business Catalog angelegt werden, können über andere Projekte hinweg importiert und wiederverwendet werden. Ebenso lassen sich zusätzliche \ac{BPMN} Elemente als Templates anlegen.
+ Zudem können komplette BPM Projekte als Template Typ angelegt werden, wodurch diese auch im Business Process Composer zur Verfügung stehen und als Basis für einen neuen Prozess dienen können. Reine Prozesstemplates zur Integration in andere Prozesse sind jedoch nicht möglich, was zum Abzug eines Punktes in der Bewertung führt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung zur Erstellung von Benutzeroberflächen}} \newline  Benutzeroberflächen können aufgrund des Daten -Inputs bzw. -Outputs der Benutzeraktivität generiert werden. Diese können anschließend manuell angepasst werden. Zur Vereinfachung existieren verschiedene Implementierungen für Benutzeraktivitäten, welche bereits über einen definierten Output verfügen. Oracle erlaubt auch das Erstellen von Benutzeroberflächen via Drag\&Drop von der Weboberfläche des Business Process Composers. Dazu stehen verschiedene gebräuchliche Oberflächenkomponenten zur Verfügung. Damit kann die Maximalbewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Unterstützung zur Erstellung von Serviceaktivitäten}} \newline  Es werden zahlreiche vordefinierte Schnittstellenkomponenten angeboten. Diese sind stark auf den Oracle Stack zugeschnitten. Dazu gehören z.B. ein Adapter für Oracle BAM Systeme oder eine Komponente für Oracle Advanced Queues. Daneben gibt es verschiedene Adapter für weit verbreitete Schnittstellen wie (\ac{SOAP}-) Webservices, FTP und HTTP-Bindings und File Adapter zum Lesen bzw. Schreiben von Dateien. Zusätzlich kann natives Java EE in Form von \ac{EJB}s integriert werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ d 
+ & \textit{\textbf{Unterstützung von Business Rules}} \newline  Oracle bietet eine vollständig implementierte Version des Oracle Business Rules \ac{BRMS} in seiner SOA Suite. Angefangen bei einfachen Wenn-Dann-Beziehungen bis hin zu komplexen Entscheidungstabellen können dabei alle relevanten \ac{BR}s abgebildet werden. Die in Prozessen implementierten \ac{BR}s lassen sich über die Weboberfläche des Business Process Composer bearbeiten, wodurch z.B. Fachabteilungen, entsprechende Berechtigungen vorausgesetzt, \ac{BR}s bearbeiten können, ohne dass dazu die IT involviert werden muss. Damit werden sämtliche Anforderungen erfüllt und es kann die Höchstbewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ e 
+ & \textit{\textbf{Unterstützung eines Rechtemanagements}} \newline  Oracle nutzt die Benutzerverwaltung des zugrunde liegenden WebLogic Applikationsservers. Dieser unterstützt \ac{LDAP} und kann somit problemlos mit einem Drittsystem synchronisiert werden. Zur Rechteverwaltung innerhalb eines Prozesses nutzt Oracle Organisationsmodelle und Rollen. Die Organisationsmodelle entsprechen dabei den importierten Benutzerkonten des WebLogic Servers, welchen die prozessspezifischen Rollen zugeordnet werden. Ferner bietet Oracle die direkte Berücksichtigung der Kalender der Benutzerkonten inkl. eingetragenem Urlaub. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ f \label{oracleMeassurePoint}
+ & \textit{\textbf{Möglichkeit zur Definition von Kennzahlen}} \newline  Um individuelle Kennzahlen in einen Prozess zu integrieren, werden spezielle Measurement Artefakte an dessen Sequenzfluss angehängt. Damit können singuläre Messpunkte oder Intervalle mit Start und Ende erfasst werden. Es werden zeitbasierte Werte, Zähler für z.B. spezielle Ereignisse, Wahr-Falsch-Aussagen und weitere unterstützt. Dies rechtfertigt die Maximalbewertung. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Prozessausführung}
+
+Der Benutzer hat zu jeder Zeit einen guten Überblick über die ihm zugeteilten Aufgaben. Durch die Möglichkeit zur Erstellung individueller Dashboards wird dafür gesorgt, dass der Benutzer selbst entscheiden kann, welche Informationen eingeblendet werden sollen. Prozesse können in mehreren Versionen parallel ausgeführt werden. Fehler können dank wiederverwendbaren Fehlerobjekten gezielt und standardisiert behandelt werden.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{oracleAusführung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Oracle Prozessausführung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{3} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Prozessausführung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{3} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Information des Anwenders}} \newline Jeder Benutzer hat einen individualisierbaren Workspace, über welchen er seine Aufgaben einsehen kann und mit zusätzlichen Dashboards anpassen kann. Es lassen sich darüber neue Prozessinstanzen starten, Aufgaben übernehmen, abbrechen, delegieren, eskalieren und einen Schritt im Prozess zurück setzen. Dazu werden unter Umständen erweiterte Benutzerrechte benötigt. Weiter können Workload und Performance für Prozesse bzw. Teilnehmer eingesehen werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung verschiedener Prozessversionen}} \newline  Prozesse können parallel in mehreren Versionen ausgeführt werden. Vom Benutzer gestartet werden kann dabei jedoch immer nur die Aktuellste. Der Entwickler hat während des Deployments die Wahl, die bisherige Version zu überschreiben, was zur Terminierung aller Instanzen führt, oder eine neue Versionsnummer zu vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Fehlerbehandlung}} \newline Für im Prozessmodell bereits berücksichtigte Fehler werden spezielle Fehlerobjekte verwendet. Diese können genutzt werden, um im Fehlerfall gezielt auf verschiedene Fehlerarten reagieren zu können. Zudem können diese in anderen Prozessprojekten wiederverwendet werden. Technische Fehler werden in nutzergerechter Präsentation, mit dem Stacktrace in einblendbaren Details, an der Oberfläche angezeigt.  \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Steuerung und Überwachung}
+
+Mit dem mächtigen Business Activity Monitoring (BAM) bietet Oracle eine hochindividualisierbare Lösung zur Aufbereitung von Kennzahlen. Die zugrunde liegende Datenbasis ist von Haus aus bereits mit den wichtigsten Kennzahlen ausgestattet und lässt sich problemlos um individuell Benötigte erweitern. 
+Vor Allem aufgrund der ausgezeichneten Möglichkeit zur visuellen Aufbereitung von Echtzeitdaten wird die Höchstbewertung vergeben.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\newpage
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{oracleÜberwachung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Oracle Steuerung und Überwachung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{4} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Steuerung und Überwachung -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{4} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Übersicht über alle laufenden Prozessinstanzen}} \newline  Über die Oberfläche des Business Process Workspaces können alle aktuellen Instanzen inkl. ihrem Status und ihrem bisherigen Ablauf eingesehen werden. Eine Instanz kann zu einer bestimmten Aktivität zurückgesetzt oder beendet werden und die Werte ihrer Prozessvariablen können bearbeitet werden. Entsprechende Benutzerrechte vorausgesetzt, können Kalender inkl. Feiertage bearbeitet werden, Organisationseinheiten verwaltet sowie Genehmigungsgruppen und Konfigurationen für einzelne Aufgaben bearbeitet werden. Damit kann die Maximalbewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b \label{oracleKennzahlen}
+ & \textit{\textbf{Unterstützung für Kennzahlenerfassung}} \newline Zur Laufzeit kann auf die (Meta-)Daten der Instanz, deren einzelnen Aktivitäten sowie der Systemdaten zugegriffen werden. Dazu gehören auch die Organisationseinheiten und die Kalenderverwaltung. Aufgrund der Erfüllung aller Anforderungen wird die höchstmögliche Bewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c \label{oracleAufbereitung}
+ & \textit{\textbf{Aufbereitung von Kennzahlen in verschiedenen Detaillierungsgraden}} \newline  Oracle bietet mit dem Business Activity Monitoring (BAM) eine sehr umfangreiche Möglichkeit zur Überwachung aller Prozesse. Damit können individuelle Dashboards mit Echtzeitdaten erstellt werden. Dazu steht eine sehr umfangreiche Palette an Visualisierungselementen zur Verfügung. Insgesamt ist dadurch die Maximalbewertung mehr als gerechtfertigt. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Analyse}
+
+Die Oracle BPM Suite bietet mit den in \ref{oracleAufbereitung} beschriebenen Visualisierungsmöglichkeiten eine ausgezeichnete Basis zur Analyse. Aufgrund der Durchführungsmöglichkeit einer Analyse sowohl vom Business Process Composer als auch aus dem BPM Studio, legt Oracle auch hier großen Wert auf eine möglichst nutzergerechte Darstellung der Ergebnisse. Da keine nennenswerten Schwächen vorhanden sind, wird die maximal mögliche Bewertung vergeben.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{oracleAnalyse}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Oracle Analyse } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{5} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Analyse -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{1} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a
+ & \textit{\textbf{Unterstützung zur Erfassung historisierter Messdaten}} \newline Automatisch erfasst werden zeitbasierte Kennzahlen wie Prozessdurchlaufzeit und Wartezeiten von Aktivitäten sowie Bearbeiter bzw. Bearbeitergruppe der jeweiligen Aufgabe. Individuell definierte Kennzahlen (siehe \ref{oracleKennzahlen}) werden ebenso erfasst. Diese stehen für Berichte und Dashboards zur Verfügung. Zusätzlich können sie von anderen Prozessen genutzt werden. Dies entspricht allen Anforderungen, womit die Höchstbewertung vergeben wird. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Unterstützung zur visuellen Aufbereitung historischer Messdaten}} \newline Die selben visuellen Aufbereitungsmöglichkeiten, die zur Darstellung von Laufzeitdaten genutzt werden können (siehe \ref{oracleAufbereitung}), stehen auch zu Analysezwecken zur Verfügung. Dabei können Daten für die Visualisierung über Prozesse hinweg kumuliert werden. Mittels des ebenfalls in \ref{oracleAufbereitung} genannten BAM können dazu sehr umfangreiche, bei Bedarf auch sehr komplexe, Dashboards erstellt werden (siehe Abb. \ref{fig:oracle_bam}). Damit kann die Maximalbewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Möglichkeiten zur Prozesssimulation}} \newline  Prozesssimulationen können sowohl innerhalb des Process Composers als auch mithilfe der BPM Suite durchgeführt werden. Dazu werden geschätzte Kosten und Durchführungszeiten der einzelnen Aktivitäten sowie Prozessinstanz-Aufkommen und Personalbesetzung als Parameter benötigt. Das Resultat einer Simulation zeigt die Gesamtprozessperformance und mögliche Engpässe. Die Ergebnisse können dabei grafisch dargestellt werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Allgemeine Software Anforderungen}
+
+Oracle setzt durchgehend auf Java und bietet eine sehr gute Integration für Java Code. Die Dokumentation ist umfassend, jedoch umständlich in der Navigation. Teilweise problematisch ist die tiefe Integration in den Oracle Stack. Kunden, welche in ihrer Systemlandschaft weniger auf Oracle setzten, erhalten mit dem \ac{BPMS} sehr viel Funktionalität, die ungenutzt bleibt. Die Kosten entsprechen dem marktüblichen Niveau. Insgesamt genügt dies für eine gute Bewertung.
+
+\bigskip\leftskip=0,5cm\textit{Bewertung der Kategorie gesamt:} \hspace{5mm} \textcircled{+}
+\leftskip=0cm
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{oracleSoftware}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Oracle Software Anforderungen } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{6} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Software Anforderungen -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{6} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ a 
+ & \textit{\textbf{Technologie}} \newline Die Oracle BPM Suite basiert grundlegend auf Java mit \ac{ADF} Faces Oberflächen. Die mitgelieferte Oracle SOA Suite präferiert dabei klar \ac{SOAP}-Webservices. Java kann direkt aus EJBs heraus integriert werden. Zu den eigenen Produkten von Oracle sind durchweg vordefinierte Schnittstellenkomponenten vorhanden, was eine Einbindung deren erheblich beschleunigt. Aufgrund der weitläufigen Verbreitung und der, auch in der Open Source Gemeinschaft, hohen Beliebtheit, kann Java als sehr zukunftssicher angesehen werden. Da Java selbst von Oracle unter Oracle entwickelt wird, ist auch ausreichendes Interesse am Fortbestand der Technologie vorhanden. Daher wird die Höchstbewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline 
+ b 
+ & \textit{\textbf{Dokumentation}} \newline  Die von Oracle bereitgestellte Dokumenation ist sehr umfangreich, jedoch auch unübersichtlich in der Präsentation. Es wird für alle grundlegenden Möglichkeiten eine Schritt-für-Schritt Anleitung angeboten. Zum Einstieg steht ein einfaches Tutorial zur Verfügung, welches alle notwendigen Schritte zum Erstellen eines Prozesses mit Benutzeraktivitäten, zugehörigen generierten Oberflächen, einer \ac{BR} sowie dem Deployment beinhaltet. Aufgrund der unübersichtlichen Navigation innerhalb der Dokumentation wird in der Bewertung ein Punkt abgezogen. \smallskip
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ c 
+ & \textit{\textbf{Kosten}} \newline Nach Forrester liegen alleine die durchschnittlichen Lizenzkosten für die Anschaffung eines proprietären \ac{BPMS} für zwischen 250.000\$ und 300.000\$. Zusätzlich fallen Kosten für Schulungen und die notwendige Infrastruktur an. vgl.\cite[4]{Forresterresearchinc.2013} Damit wird die Zielgruppe möglicher Kunden auf große Unternehmen eingeschränkt. Daher wird eine eher schlechte Bewertung vergeben. \smallskip
+ & \centering\arraybackslash \textcircled{-} \tabularnewline
+\hline
+ d 
+ & \textit{\textbf{Herstellerabhängigkeit}} \newline  Aufgrund der Integration mit der Oracle Fusion Middleware inkl. SOA Umgebung wird im Falle einer Anschaffung nicht nur über ein \ac{BPMS} entschieden, sondern über einen deutlich umfangreicheren Softwarestack. Sollten in einem Unternehmen bereits weitere Oracle Systeme im Einsatz sein, so bietet sich die BPM Suite aufgrund der Integration mit diesen an. Andernfalls wird damit eine sehr langfristige strategische Entscheidung getroffen. Allgemein ist Oracle ein renommierter Softwarehersteller der zahlreiche Referenzkunden ausweisen kann. Darüber hinaus wurde Oracle sowohl bei Gartner und Forrester in deren Marktstudien aufgenommen. \cite{Gartner.2012}\cite{Forresterresearchinc.2013} \smallskip
+ & \centering\arraybackslash \textcircled{} \tabularnewline
+\hline
+ e 
+ & \textit{\textbf{Administrationsmöglichkeiten}} \newline  Die Administration ist aufgeteilt in die Weboberfläche der Fusion Middleware Control und die Administration Console des zugrunde liegenden WebLogic Applikationsservers. Es lassen sich damit sämtliche notwendigen Einstellungen mithilfe einer grafischen Oberfläche konfigurieren. Damit werden alle Anforderungen erfüllt und es kann die Maximalbewertung vergeben werden. \smallskip
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ f 
+ & \textit{\textbf{Skalierung}} \newline  Eine Skalierung wird über Clustering des WebSphere Applikationsservers und dessen Datenquellen sowie dem Einsatz eines LoadBalancers erreicht. Generell kann auch eine Skalierung zu einem gewissen Grad über den Einsatz entsprechender Hardware erreicht werden. Aufgrund der großen Abhängigkeiten zu weiteren Oracle Produkten inkl. einer kompletten Middleware ist die BPM Suite deutlich auf größere Unternehmen mit einer aufwendigen Systemlandschaft zugeschnitten. Daher ist eine Skalierung nach unten seitens Oracle nicht relevant.
+  \smallskip
+ & \centering\arraybackslash \textcircled{+}  \tabularnewline
+\hline
+\end{longtabu}
+\normalsize
+
+%Quelle Clustering:
+%[http://www.oracle.com/technetwork/middleware/bpm/learnmore/bpm11gperftuning-1912340.pdf]
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Zusammenfassung der Oracle Evaluationsergebnisse}
+
+Oracle setzt vor allem auf eine Integration der BPM Suite in seinen eigenen Softwarestack. Das kann bereits an den umfangreichen Abhängigkeiten mit der Oracle Fusion Middleware usw. zur Installation gesehen werden. Zusätzlich steht eine Reihe von vordefinierten Schnittstellenkomponenten speziell für Produkte aus dem eigenen Programm bereit.
+Aber auch weit verbreitete Standardschnittstellen kommen dabei nicht zu kurz. Daher wird die Software von Drittanbietern nicht vernachlässigt.
+Überzeugen kann Oracle vor allem durch die gute Unterstützung beim Business/IT-Alignment. Zur Modellierung und Simulation stehen zwei auf die jeweiligen Nutzer zugeschnittene, inkl. Synchronisationsmöglichkeit, Umgebungen bereit. Auffallend ist die gute Kalenderimplementierung mit der Möglichkeit, Feiertage und Urlaub der Benutzer einzupflegen, und diese Information in Prozessen direkt berücksichtigen zu können. Weiterer Punkt, der für Oracle spricht, ist die vollständige Implementierung eines \ac{BRMS}.
+Ebenso überzeugen die durch den Nutzer individuell gestaltbaren Dashboards mit umfassenden Möglichkeiten zur Visualisierung der für ihn notwendigen Information. Zusätzlich bietet Oracle mit dem BAM (siehe \ref{oracleAnalyse}) sehr mächtige Funktionalitäten zur visuellen Darstellung verschiedenster Kennzahlen.
+
+\newpage Die größte Schwäche hingegen ist die fehlende Funktionalität zum Import und Export von \ac{BPMN} 2.0 XML-Dateien. Die starke Integration in den Oracle Stack ist für Kunden, die bereits über diese Produkte verfügen, ein klarer Pluspunkt. Alle Anderen hingegen erhalten über das \ac{BPMS} hinaus viel Funktionalität, welche unter Umständen nicht benötigt wird.
+
+\smallskip\noindent Gesamt erhält damit die Oracle BPM Suite eine sehr gute Bewertung.
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{oracleZusammenfassung}
+\begin{longtabu}{@{\extracolsep{\fill}}|p{0.5cm}|X|p{2cm}|}
+\caption{ Oracle Zusammenfassung } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{Nr} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endfirsthead
+\caption*{Zusammenfassung -- Fortsetzung} \\ \hline
+\rowcolor{black!10}
+\normalsize\textbf{Nr} & \normalsize\textbf{Beschreibung} & \normalsize\textbf{Bewertung} \\
+\endhead
+\multicolumn{3}{|c|}{\textit{Fortsetzung auf der
+nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ 1 
+ & Modellierung
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hline
+ 2 
+ & Implementierung
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 3 
+ & Prozessausführung
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 4 
+ & Steuerung und Überwachung
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 5 
+ & Analyse
+ & \centering\arraybackslash \textcircled{+} \textcircled{+} \tabularnewline
+\hline
+ 6 
+ & Allgemeine Software Anforderungen
+ & \centering\arraybackslash \textcircled{+} \tabularnewline
+\hhline{===}
+\multicolumn{2}{|r|}{\textbf{Gesamtbewertung:}} & \centering\arraybackslash \textbf{\textcircled{+} \textcircled{+}} \tabularnewline
+\hline
+\end{longtabu}
+\normalsize

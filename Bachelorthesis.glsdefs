@@ -1,0 +1,180 @@
+\ifglsentryexists{computer}{}%
+{%
+\gls@defglossaryentry{computer}%
+{%
+name={computersdadwda},%
+sort={computersdadwda},%
+type={main},%
+first={computersdadwda},%
+firstplural={computersdadwdas},%
+text={computersdadwda},%
+plural={computersdadwdas},%
+description={is a programmable machine that receives input, stores and manipulates data, and provides output in a useful format},%
+descriptionplural={is a programmable machine that receives input, stores and manipulates data, and provides output in a useful format},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Sidechain}{}%
+{%
+\gls@defglossaryentry{Sidechain}%
+{%
+name={Sidechain},%
+sort={Sidechain},%
+type={main},%
+first={Sidechain},%
+firstplural={Sidechains},%
+text={Sidechain},%
+plural={Sidechains},%
+description={Eine alternative Blockchain, welche entweder direkt oder über einen festen Umrechnungskurs an die Währung bitcoin gekoppelt ist. Wird auch als Altchain bezeichnet},%
+descriptionplural={Eine alternative Blockchain, welche entweder direkt oder über einen festen Umrechnungskurs an die Währung bitcoin gekoppelt ist. Wird auch als Altchain bezeichnet},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bitcoin}{}%
+{%
+\gls@defglossaryentry{bitcoin}%
+{%
+name={bitcoin},%
+sort={bitcoin},%
+type={main},%
+first={bitcoin},%
+firstplural={bitcoins},%
+text={bitcoin},%
+plural={bitcoins},%
+description={Die zu der Bitcoin-Blockchain zugehörige Crypto-Währung},%
+descriptionplural={Die zu der Bitcoin-Blockchain zugehörige Crypto-Währung},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Bitcoin}{}%
+{%
+\gls@defglossaryentry{Bitcoin}%
+{%
+name={Bitcoin},%
+sort={Bitcoin},%
+type={main},%
+first={Bitcoin},%
+firstplural={Bitcoins},%
+text={Bitcoin},%
+plural={Bitcoins},%
+description={Überbegriff für die Technologie sowie das Netzwerk, die hinter der Crypto-Währung bitcoin steht},%
+descriptionplural={Überbegriff für die Technologie sowie das Netzwerk, die hinter der Crypto-Währung bitcoin steht},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Altcoin}{}%
+{%
+\gls@defglossaryentry{Altcoin}%
+{%
+name={Altcoin},%
+sort={Altcoin},%
+type={main},%
+first={Altcoin},%
+firstplural={Altcoins},%
+text={Altcoin},%
+plural={Altcoins},%
+description={Eine alternative Crypto-Währung zu bitcoin},%
+descriptionplural={Eine alternative Crypto-Währung zu bitcoin},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Blockchain}{}%
+{%
+\gls@defglossaryentry{Blockchain}%
+{%
+name={Blockchain},%
+sort={Blockchain},%
+type={main},%
+first={Blockchain},%
+firstplural={Blockchains},%
+text={Blockchain},%
+plural={Blockchains},%
+description={Das technologische Grundkonzept von Cryptowährungen, das auf dem Prinzip basiert, alle Transaktionen miteinander zu verketten},%
+descriptionplural={Das technologische Grundkonzept von Cryptowährungen, das auf dem Prinzip basiert, alle Transaktionen miteinander zu verketten},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

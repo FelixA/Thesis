@@ -1,0 +1,12 @@
+%---------------------------------------------------------------------------------------------------
+% Erstellt eine Widmung
+% Anwendung: \dedication{Wem ist das Schriftstück gewidmet}
+%---------------------------------------------------------------------------------------------------
+\newcommand{\createDedication}[1]{
+	\newpage
+	\thispagestyle{empty}
+	\begin{tabular}{lp{60mm}}
+		\hspace*{100mm} & \itshape\rmfamily#1 \\
+	\end{tabular}
+	\vfill
+}

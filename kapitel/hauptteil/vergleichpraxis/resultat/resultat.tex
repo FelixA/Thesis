@@ -1,0 +1,380 @@
+\newpage
+\section{Evaluierungsergebnisse im Vergleich}
+\label{ergebnisKapitel}
+In den folgenden sechs Abschnitten werden die Einzelergebnisse (siehe Punkt \ref{durchführungEvaluation}) der evaluierten \ac{BPMS} gegenüber gestellt. Dabei wird jede Kategorie einzeln betrachtet(für eine Übersicht siehe Tabelle \ref{vergleichKategorien}). Die genauen Definitionen der Evaluierungskriterien zu den jeweiligen Kategorien sind in \ref{definitionKriterien} zu finden. In der Gegenüberstellung wird das System von Camunda von beiden Proprietären abgegrenzt. Dies dient der späteren (siehe \ref{ergebnisAlternative}) Beantwortung der Frage, ob ein Open Source System eine valide Alternative darstellen kann.
+
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{vergleichKategorien}
+\begin{longtabu}{@{\extracolsep{\fill}}|[1pt]  m{60mm} | X | X | X |[1pt]}
+\caption{ Ergebnisse Kategorien } \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{Kategorie} & \centering\normalsize\textbf{Camunda} & \centering\normalsize\textbf{IBM} & \centering\normalsize\textbf{Oracle} \\ 
+\endfirsthead
+\caption*{Ergebnisse Kategorien -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{} & \centering\normalsize\textbf{Camunda} & \centering\normalsize\textbf{IBM} & \centering\normalsize\textbf{Oracle} \\ 
+\endhead
+\multicolumn{4}{|[1pt] c |[1pt]}{\textit{Fortsetzung auf der nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline  
+ \textit{Modellierung}
+  & \centering\arraybackslash \textcircled{+} \textcircled{+}
+  & \centering\arraybackslash \textcircled{+}  
+  & \centering\arraybackslash \textcircled{+} 					\tabularnewline				      							
+\hline
+ \textit{Implementierung}
+  & \centering\arraybackslash \textcircled{} 
+  & \centering\arraybackslash \textcircled{+} \textcircled{+} 
+  & \centering\arraybackslash \textcircled{+}  \textcircled{+}	\tabularnewline				      							
+\hline
+ \textit{Prozessausführung}
+  & \centering\arraybackslash \textcircled{+} 
+  & \centering\arraybackslash \textcircled{+} \textcircled{+}
+  & \centering\arraybackslash \textcircled{+} \textcircled{+} 	\tabularnewline				      							
+\hline
+ \textit{Steuerung und Überwachung}
+  & \centering\arraybackslash \textcircled{+} 
+  & \centering\arraybackslash \textcircled{+} \textcircled{+}
+  & \centering\arraybackslash \textcircled{+} \textcircled{+} 	\tabularnewline				      							
+\hline
+ \textit{Analyse}
+  & \centering\arraybackslash \textcircled{} 
+  & \centering\arraybackslash \textcircled{+} \textcircled{+}
+  & \centering\arraybackslash \textcircled{+} \textcircled{+}	\tabularnewline				      							
+\hline
+ \textit{Allgemeine Software Anforderungen}
+  & \centering\arraybackslash \textcircled{+} 
+  & \centering\arraybackslash \textcircled{+}  
+  & \centering\arraybackslash \textcircled{+} 					\tabularnewline				      							
+\hhline{====}
+ \raggedleft\textit{\textbf{Gesamtbewertung}}
+  & \centering\arraybackslash \textcircled{+} 
+  & \centering\arraybackslash \textcircled{+} \textcircled{+} 
+  & \centering\arraybackslash \textcircled{+} \textcircled{+}	\tabularnewline				      							
+\hline
+\end{longtabu}
+\normalsize
+
+
+%Bei der Gegenüberstellung werden nur die jeweils heraus ragenden Stärken bzw. Schwächen des jeweiligen \ac{BPMS} dar gelegt.
+
+\medskip\noindent Im weiteren Verlauf wird zur besseren Lesbarkeit auf die Bezeichnung der Produkte des jeweiligen Hersteller verzichtet. Entsprechend steht der Name des Herstellers stellvertretend dafür.
+
+\subsection{Vergleich Modellierung}
+Camunda bietet eine nahezu vollständige Abdeckung des \ac{BPMN} 2.0 Standards. Zudem ist es gegenüber IBM und Oracle sowohl in der Lage \ac{BPMN} 2.0 Prozessmodelle zu importieren wie auch zu exportieren. IBM unterliegt hierbei aufgrund der unvollständigen Exportfunktion. Oracle hingegen kann weder eine funktionsfähige Implementierung einer Import- noch einer Exportmöglichkeit vorweisen, da die Dateibasis der Prozessmodelle nicht dem \ac{BPMN} 2.0 Standard entspricht. Überzeugen kann Oracle dagegen mit der zielgruppengerechten Aufteilung der Modellierungsumgebung. Die Weboberfläche für Business Analysten bzw. Fachanwender auf der einen Seite und die in die Entwicklungsumgebung integrierte Version für Entwickler auf der Anderen, sowie einer Synchronisation in beide Richtungen, dient einem besseren Business/IT-Alignment. IBM bietet den Vorteil einer sehr guten und einheitlichen Benutzbarkeit. Der Eindruck wird jedoch durch die eingeschränkte \ac{BPMN} Palette getrübt.
+
+\smallskip\noindent Insgesamt kann sich Camunda gegen die beiden proprietären Produkte von IBM und Oracle durchsetzen. Es bietet eine bessere Abdeckung des \ac{BPMN} 2.0 Standards, die gleichen Fähigkeiten bei Unterprozessen sowie als Alleinstellungsmerkmal die einzige im Vergleich vollständig funktionsfähige Import- und Exportunterstützung für \ac{BPMN} Prozessmodelle. Der einzige Kritikpunkt ist die sehr entwicklerzentrisch ausgelegte Modellierungsumgebung. Dies kann unter Umständen ein Hindernis im Business/IT-Alignment darstellen.
+
+
+%\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+%\setlength\LTleft{0pt}            % default: \parindent
+%\setlength\LTright{0pt}           % default: \fill
+%\label{ergebnisseModellierung}
+%\begin{longtabu}{@{\extracolsep{\fill}}p{18mm}|[1pt]X|X|X|[1pt]}
+%\caption{ Ergebnisse Modellierung } \\\cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Modellierung} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textbf{\textcolor{white}{Camunda}} & \centering\textbf{\textcolor{white}{IBM}} & \centering\textbf{\textcolor{white}{Oracle}} \\
+%\endfirsthead
+%\caption*{Ergebnisse Modellierung -- Fortsetzung} \\ \cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Modellierung} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textcolor{white}{Camunda} & \centering\textcolor{white}{IBM} & \centering\textcolor{white}{Oracle} \\
+%\endhead
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{\textit{Fortsetzung auf der nächsten Seite}} \\ \cline{2-4}
+%\endfoot
+%\endlastfoot
+%\hhline{-===}
+% \textit{Stärken}	& \raggedright Import-/Export-Funktion\medskip 	& \raggedright Benutzbarkeit			& \raggedright Business/IT-Alignment\smallskip				\tabularnewline
+% 					& \raggedright \ac{BPMN} 2.0 Abdeckung				& 										&												\tabularnewline
+%\hline 
+% \textit{Schwächen}	& \raggedright starker Entwicklerfokus				& \raggedright fehlender Export			& \raggedright fehlender Import/Export			\tabularnewline
+%\hhline{====}
+% \textit{\textbf{Bewertung}}
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+}
+%  & \centering\arraybackslash \textcircled{+}  
+%  & \centering\arraybackslash \textcircled{+} 				 	\tabularnewline 
+%\cline{2-4}
+%\end{longtabu}
+%\normalsize
+
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Vergleich Implementierung}
+Sowohl IBM als auch Oracle bieten dank ihrer zahlreichen vordefinierter Schnittstellenkomponenten eine hervorragende Basis zur Integration von Backendsystemen. Oracle kann hier zusätzlich sehr viele Integrationskomponenten zu Produkten aus seinem eigenen Softwarestack vorweisen. Bei der Erstellung bzw. Generierung von Oberflächen für Benutzeraktivitäten können wiederum beide überzeugen. Oracle bringt den Vorteil einer kompletten \ac{BRMS} Integration mit sich. Hier kann IBM mit nur einer einfachen Implementierung für Wenn-Dann-Beziehungen bzw. Entscheidungstabellen nicht mithalten. Dafür zeigt IBM mit einer Vielzahl von standardmäßig implementierten Kennzahlen und dem komfortablen Hinzufügen zusätzlicher Kennzahlen seine Stärke.
+
+\smallskip\noindent Camunda muss bei fast allen Kriterien auf Frameworks aus der Java-Welt verweisen. Der Vorteil ist dabei einerseits, dass unter Umständen vorhandenes Know-how im Java Bereich angewendet werden kann. Andererseits müssen sämtliche Funktionalitäten abseits der Process Engine selbst implementiert und/oder integriert werden. Dazu müssen evtl. noch zukünftige Kompatibilitätsprobleme bei Versionsänderungen kommen. Die größte Schwäche ist allerdings, dass die Dokumentation mit Stand 21.12.2013 keinerlei Hinweise zur Definition von Kennzahlen enthält. Es kann zwar mittels mitgeführter Prozessvariablen, welche automatisch vom History Service überwacht werden, eine Alternative geschaffen werden. Jedoch sollte ein \ac{BPMS} eine solche Kernfunktionalität explizit bieten.
+
+
+%\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+%\setlength\LTleft{0pt}            % default: \parindent
+%\setlength\LTright{0pt}           % default: \fill
+%\label{ergebnisseImplementierung}
+%\begin{longtabu}{@{\extracolsep{\fill}}p{18mm}|[1pt]X|X|X|[1pt]}
+%\caption{ Ergebnisse Implementierung } \\\cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Implementierung} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textbf{\textcolor{white}{Camunda}} & \centering\textbf{\textcolor{white}{IBM}} & \centering\textbf{\textcolor{white}{Oracle}} \\
+%\endfirsthead
+%\caption*{Ergebnisse Implementierung -- Fortsetzung} \\ \cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Implementierung} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textcolor{white}{Camunda} & \centering\textcolor{white}{IBM} & \centering\textcolor{white}{Oracle} \\
+%\endhead
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{\textit{Fortsetzung auf der nächsten Seite}} \\ \cline{2-4}
+%\endfoot
+%\endlastfoot
+%\hhline{-===}
+% \textit{Stärken}	& \raggedright Java Integration								& \raggedright Integrationsschnittstellen			& \raggedright Integration Oracle Stack			\tabularnewline\cline{2-4}
+% 					& 															& \raggedright Kennzahlen-Implementierung\smallskip	& \raggedright Integriertes \ac{BRMS}			\tabularnewline
+%\hline 
+% \textit{Schwächen}	& \raggedright fehlende individuelle Kennzahlen\smallskip	& \raggedright simple Business Rule Implementierung	& 									\tabularnewline
+%\hhline{====}
+% \textit{\textbf{Bewertung}}
+%  & \centering\arraybackslash \textcircled{} 
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+} 
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+}	\tabularnewline 
+%\cline{2-4}
+%\end{longtabu}
+%\normalsize
+
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Vergleich Prozessausführung}
+Alle drei evaluierten \ac{BPMS} sind in der Lage, mehrere Versionen desselben Prozesses parallel auszuführen, um möglichst schnell auf veränderte Rahmenbedingungen reagieren zu können. IBM und Oracle bieten den Benutzern umfangreiche Weboberflächen mit allen Notwendigen Informationen zur Bearbeitung ihrer Aufgaben. Oracle geht dabei noch einen Schritt weiter und bietet die Möglichkeit, neben der persönlichen Tasklist individuelle Dashboards zu erstellen, um den benutzerspezifischen Anforderungen möglichst gerecht zu werden. Die Möglichkeiten zur Fehlerbehandlung sind ebenso bei allen drei \ac{BPMS} vollständig gegeben. 
+
+\smallskip\noindent Die Tasklist von Camunda bietet ebenfalls alle notwendigen Informationen, lässt sich jedoch nur mit relativ hohem Entwicklungsaufwand erweitern. Zusätzlich ist bei einer zielgerichteten Fehlerbehandlung ein ungleich höherer Entwicklungsaufwand notwendig. Die trotz alledem gute Bewertung kommt durch die mangelfreie Implementierung der Prozessversionierung sowie der funktionsmäßig vollständig vorhandenen Fehlerbehandlung zustande. 
+
+
+%\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+%\setlength\LTleft{0pt}            % default: \parindent
+%\setlength\LTright{0pt}           % default: \fill
+%\label{ergebnisseAusführung}
+%\begin{longtabu}{@{\extracolsep{\fill}}p{18mm}|[1pt]X|X|X|[1pt]}
+%\caption{ Ergebnisse Implementierung } \\\cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Prozessausführung} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textbf{\textcolor{white}{Camunda}} & \centering\textbf{\textcolor{white}{IBM}} & \centering\textbf{\textcolor{white}{Oracle}} \\
+%\endfirsthead
+%\caption*{Ergebnisse Prozessausführung -- Fortsetzung} \\ \cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Prozessausführung} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textcolor{white}{Camunda} & \centering\textcolor{white}{IBM} & \centering\textcolor{white}{Oracle} \\
+%\endhead
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{\textit{Fortsetzung auf der nächsten Seite}} \\ \cline{2-4}
+%\endfoot
+%\endlastfoot
+%\hhline{-===}
+% \textit{Stärken}	& 		& 		& \raggedright Individualisierbare Dashboards\smallskip	\tabularnewline\cline{2-4}
+%\hline 
+% \textit{Schwächen}	& 		& 		& 												\tabularnewline
+%\hhline{====}
+% \textit{\textbf{Bewertung}}
+%  & \centering\arraybackslash \textcircled{+} 
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+} 
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+}	\tabularnewline 
+%\cline{2-4}
+%\end{longtabu}
+%\normalsize
+
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Vergleich Steuerung und Überwachung}
+\label{vergleichSteuerung}
+Die beide proprietären Produkte von IBM und Oracle können hier beide durch umfassende Möglichkeiten zur Visualisierung von Kennzahlen überzeugen. Vor allem Oracle bietet dabei mit dem BAM eine sehr mächtige Lösung dafür. Bei beiden werden standardmäßig umfangreiche Kennzahlen und Metadaten erfasst. Zur Überwachung und Steuerung stehen ebenfalls bei beiden Systemen reichhaltige Oberflächen zur Verfügung, welche eine sehr gute Übersicht über alle aktuellen Instanzen und deren Status liefern. 
+
+\smallskip\noindent Camunda hingegen kann nur bei der Kennzahlenerfassung auf Serviceebene mithalten. Zur visuellen Aufbereitung dieser bietet Camunda selbst keine Implementierung. Einzige Ausnahme ist die Darstellung eines Prozesses als \ac{BPMN}-Diagramm. Die Oberflächen für Tasklist und zur Steuerung und Überwachung sind mit einem Mindestmaß an Information ausgestattet.
+
+
+%\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+%\setlength\LTleft{0pt}            % default: \parindent
+%\setlength\LTright{0pt}           % default: \fill
+%\label{ergebnisseÜberwachung}
+%\begin{longtabu}{@{\extracolsep{\fill}}p{18mm}|[1pt]X|X|X|[1pt]}
+%\caption{ Ergebnisse Steuerung und Überwachung } \\\cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Steuerung und Überwachung} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textbf{\textcolor{white}{Camunda}} & \centering\textbf{\textcolor{white}{IBM}} & \centering\textbf{\textcolor{white}{Oracle}} \\
+%\endfirsthead
+%\caption*{Ergebnisse Steuerung und Überwachung -- Fortsetzung} \\ \cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Steuerung und Überwachung} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textcolor{white}{Camunda} & \centering\textcolor{white}{IBM} & \centering\textcolor{white}{Oracle} \\
+%\endhead
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{\textit{Fortsetzung auf der nächsten Seite}} \\ \cline{2-4}
+%\endfoot
+%\endlastfoot
+%\hhline{-===}
+% \textit{Stärken}	& 											& 				& \raggedright Visuelle Aufbereitung \smallskip	\tabularnewline\cline{2-4}
+%\hline 
+% \textit{Schwächen}	& \raggedright fehlende visuelle Aufbereitung\smallskip	& 				& 												\tabularnewline
+%\hhline{====}
+% \textit{\textbf{Bewertung}}
+%  & \centering\arraybackslash \textcircled{+} 
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+} 
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+}	\tabularnewline 
+%\cline{2-4}
+%\end{longtabu}
+%\normalsize
+
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Vergleich Analyse}
+Wie bereits in \ref{vergleichSteuerung} genannt, bieten sowohl Oracle als auch IBM sehr umfangreiche Visualisierungsmöglichkeiten. Die notwendigen Daten zur Analyse der Prozessperformance werden ebenfalls von beiden bereit gestellt. Auch unterstützen beide die Simulation von Prozessen. Dabei bietet IBM die Möglichkeit, als Datenbasis die historischen Daten laufender Prozesse zu verwenden. Oracle kann dagegen mit der Möglichkeit zur Simulation aus beiden in \ref{oracleModellierung} genannten Modellierungswerkzeugen überzeugen.  
+
+\smallskip\noindent Camunda kann in der Kategorie nur auf Serviceebene überzeugen. Es werden alle zur Laufzeit anfallenden Daten gesammelt, wobei das Detaillevel in mehreren Stufen eingestellt werden kann. Jedoch sprechen weder die fehlenden visuellen Aufbereitungsmöglichkeiten noch die unvollständige Möglichkeit zur Simulation für Camunda. In beiden Fällen müssen die notwendigen Funktionalitäten selbst entwickelt werden.
+
+%\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+%\setlength\LTleft{0pt}            % default: \parindent
+%\setlength\LTright{0pt}           % default: \fill
+%\label{ergebnisseAnalyse}
+%\begin{longtabu}{@{\extracolsep{\fill}}p{18mm}|[1pt]X|X|X|[1pt]}
+%\caption{ Ergebnisse Analyse } \\\cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Analyse} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textbf{\textcolor{white}{Camunda}} & \centering\textbf{\textcolor{white}{IBM}} & \centering\textbf{\textcolor{white}{Oracle}} \\
+%\endfirsthead
+%\caption*{Ergebnisse Analyse -- Fortsetzung} \\ \cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Analyse} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textcolor{white}{Camunda} & \centering\textcolor{white}{IBM} & \centering\textcolor{white}{Oracle} \\
+%\endhead
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{\textit{Fortsetzung auf der nächsten Seite}} \\ \cline{2-4}
+%\endfoot
+%\endlastfoot
+%\hhline{-===}
+% \textit{Stärken}	& \raggedright											& \raggedright				& \raggedright Visuelle Aufbereitung von Kennzahlen\smallskip	\tabularnewline\cline{2-4}
+%\hline 
+% \textit{Schwächen}	& \raggedright hoher Entwicklungsaufwand für Simulation\smallskip	& \raggedright				& \raggedright												\tabularnewline
+%\hhline{====}
+% \textit{\textbf{Bewertung}}
+%  & \centering\arraybackslash \textcircled{} 
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+} 
+%  & \centering\arraybackslash \textcircled{+} \textcircled{+}	\tabularnewline 
+%\cline{2-4}
+%\end{longtabu}
+%\normalsize
+
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+
+\subsection{Vergleich Allgemeine Software Anforderungen}
+Gemein ist allen drei evaluierten \ac{BPMS} die grundlegende Implementierung in Java und der damit einhergehenden Möglichkeit zur direkten Einbindung von Java Code. Sowohl IBM als auch Oracle bieten langjährige Markterfahrung und erstklassige Referenzkunden. Zusätzlich wurden beide in zahlreichen Marktstudien mit großer Reichweite bereits mehrfach genannt. Nachteilig ist dagegen wiederum bei beiden Systemen die Abhängigkeit von den tangierenden Produkten des jeweiligen Herstellers. Insbesondere Oracle hat viele Abhängigkeiten zu seinem eigenen Software Stack. 
+Ebenso gemein ist allen drei die unzureichende oder zumindest sehr unübersichtliche Dokumentation. IBM hat hier den Vorteil, auf das Buch von Neil Kolban verweisen zu können, welches sehr viele Wissenswerte Details enthält. Bei den Einführungskosten liegen sowohl IBM als auch Oracle im marktüblichen Bereich, bei den Kosten für Wartung \& Support jedoch liegt IBM 25\% über dem Durchschnitt.
+
+\smallskip\noindent Camunda hat bei den direkten Kosten ganz klar seinen größten Vorteil. Allerdings muss dabei berücksichtigt werden, dass aufgrund der fehlenden Funktionalitäten mit einem höheren Entwicklungsaufwand gerechnet werden muss. Bei der Skalierung kann mit Camunda der Vorteil genutzt werden, dass es auch nach unten skalierbar ist. Es kann auch in kleinsten Umgebungen eingesetzt werden. Unter Umständen lassen sich auch Transfereffekte nutzen, wenn die Camunda Process Engine innerhalb einer prozessgesteuerten Anwendung eingesetzt wird. 
+
+%\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+%\setlength\LTleft{0pt}            % default: \parindent
+%\setlength\LTright{0pt}           % default: \fill
+%\label{ergebnisseSoftware}
+%\begin{longtabu}{@{\extracolsep{\fill}}p{18mm}|[1pt]X|X|X|[1pt]}
+%\caption{ Ergebnisse Allgemeine Software Anforderungen } \\\cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Allgemeine Software Anforderungen} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textbf{\textcolor{white}{Camunda}} & \centering\textbf{\textcolor{white}{IBM}} & \centering\textbf{\textcolor{white}{Oracle}} \\
+%\endfirsthead
+%\caption*{Ergebnisse Allgemeine Software Anforderungen -- Fortsetzung} \\ \cline{2-4}
+%\rowcolor{black!10}
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{Allgemeine Software Anforderungen} \tabularnewline \cline{2-4}
+%\rowcolor{black!40} 
+%\cellcolor{white} & \centering\textcolor{white}{Camunda} & \centering\textcolor{white}{IBM} & \centering\textcolor{white}{Oracle} \\
+%\endhead
+%\cellcolor{white} & \multicolumn{3}{c|[1pt]}{\textit{Fortsetzung auf der nächsten Seite}} \\ \cline{2-4}
+%\endfoot
+%\endlastfoot
+%\hhline{-===}
+% \textit{Stärken}	& \raggedright Anschaffungskosten					& \raggedright				& \raggedright \smallskip	\tabularnewline\cline{2-4}
+%\hline 
+% \textit{Schwächen}	& \raggedright \smallskip	& \raggedright Kosten für Wartung \& Support				& \raggedright												\tabularnewline
+%\hhline{====}
+% \textit{\textbf{Bewertung}}
+%  & \centering\arraybackslash \textcircled{+} 
+%  & \centering\arraybackslash \textcircled{+}  
+%  & \centering\arraybackslash \textcircled{+} \tabularnewline 
+%\cline{2-4}
+%\end{longtabu}
+%\normalsize
+
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\subsection{Ergebnisse Stärken \& Schwächen}
+\label{schlussbetrachtungErgebnisse}
+Die Tabelle \ref{stärkenSchwächen} fasst noch einmal die in vorangegangenen sechs Punkten heraus gearbeiteten Stärken \& Schwächen der evaluierten \ac{BPMS} zusammen. Dabei werden, wie zu Beginn des Kapitels bereits erwähnt, nur die Stärken bzw. Schwächen aufgeführt, die ein System von den anderen beiden abhebt. Die Reihenfolge ihrer Nennung gibt ihre Gewichtigkeit an. Die bloße Anzahl hat dabei keine Aussagekraft. 
+
+
+\small  % Switch from 12pt to 11pt; otherwise, table won't fit
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
+\label{stärkenSchwächen}
+\begin{longtabu}{@{\extracolsep{\fill}}|[1pt]  m{18mm} |[1pt] X | X | X |[1pt]}
+\caption{ Ergebnisse Stärken \& Schwächen } \\ \hline
+\rowcolor{black!10} 
+\cellcolor{white} & \centering\normalsize\textbf{Camunda} & \centering\normalsize\textbf{IBM} & \centering\normalsize\textbf{Oracle} \\ 
+\endfirsthead
+\caption*{Ergebnisse Stärken \& Schwächen -- Fortsetzung} \\ \hline
+\rowcolor{black!10} 
+\normalsize\textbf{} & \centering\normalsize\textbf{Camunda} & \centering\normalsize\textbf{IBM} & \centering\normalsize\textbf{Oracle} \\ 
+\endhead
+\multicolumn{4}{|[1pt] c |[1pt]}{\textit{Fortsetzung auf der nächsten Seite}} \\ \hline
+\endfoot
+\endlastfoot
+\hline
+ \multirow{4}{*}{\raggedright\textit{Stärken}} 
+ & \scriptsize\raggedright Import-/Export-Funktion        
+ & \scriptsize\raggedright Benutzbarkeit          
+ & \scriptsize\raggedright Business/IT-Alignment				\\[-0.5ex] 
+  
+ & \scriptsize\raggedright BPMN 2.0 Abdeckung   
+ & \scriptsize\raggedright Integrationsschnittstellen          
+ & \scriptsize\raggedright Integration Oracle Stack			 	\\[-0.5ex] 
+  
+ & \scriptsize\raggedright Java Integration          
+ & \scriptsize\raggedright Kennzahlen Implementierung          
+ & \scriptsize\raggedright Individualisierbare Dashboards		\\[-0.5ex]  
+ 
+ & 
+ & 
+ & \scriptsize\raggedright Integriertes BRMS					\\ 
+\hline
+  
+\multirow{3}{*}{\raggedright\textit{Schwächen}} 
+ & \scriptsize\raggedright fehlende visuelle Aufbereitung        
+ & \scriptsize\raggedright fehlender Export          
+ & \scriptsize\raggedright fehlender Import/Export				\\[-0.5ex]
+  
+ & \scriptsize\raggedright keine individuellen Kennzahlen   
+ & \scriptsize\raggedright Kosten für Wartung \& Support         
+ &  									 						\\[-0.5ex] 
+  
+ & \scriptsize\raggedright unzureichende Simulation          
+ & \scriptsize\raggedright nur simple Business Rules          
+ &  							      							\\ [-0.5ex]
+ 
+ & \scriptsize\raggedright starker Entwicklerfokus          
+ & 
+ &  							      							\\
+\hline
+\end{longtabu}
+\normalsize
+
+

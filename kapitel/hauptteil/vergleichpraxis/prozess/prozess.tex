@@ -1,0 +1,308 @@
+
+%---------------------------------------------------------------------------------------------------
+\section{Beschreibung des Evaluationsszenarios}
+\label{Evaluationsszenario}
+Der Prozess, welcher das Evaluationsszenario definiert, ist angelehnt an einen Reportingprozess einer Investmentgesellschaft. Er umfasst Benutzeraktivitäten, automatisierte Aktivitäten und Geschäftsregeln.
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Fachlicher Hintergrund}
+\label{fachProzess}
+Die \ac{EZB} bzw. die nationalen Zentralbanken veröffentlichen regelmäßig Statistiken über Investmentfonds im jeweiligen Hoheitsgebiet. Von der \ac{EZB} wurde dafür die Verordnung EZB/2007/8 über Aktiva und Passiva von Investmentfonds verabschiedet, die der EU-weiten Harmonisierung der Fondsstatistiken dient. Die nationalen Zentralbanken sind für die Umsetzung dieser Verordnung verantwortlich und können diese um eigene Richtlinien für ihr jeweiliges Hoheitsgebiet ergänzen. Daher gibt es leichte Abweichungen zwischen den Reportingrichtlinien der verschiedenen EU- Staaten.
+Zu melden sind die Aktiva und Passiva im Bestand auf der Basis des einzelnen Fonds zum Monatsende in bereinigter Form. Dabei sind sämtliche finanzielle Aktiva und Passiva für statistische Zwecke auf Bruttobasis auszuweisen. 
+
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Evaluationsprozess}
+Im folgenden werden die Schritte des Evaluationsprozesses näher beschrieben. Dabei wird vom Standardablauf des Prozesses ausgegangen. Die Möglichkeiten im Fehlerfall werden in \ref{fehlerbehandlung} beschrieben. Wird dabei vom Benutzer gesprochen, bezieht sich dies immer auf einen in \ref{fachabteilung} genannten Benutzer der Fachabteilung. Die möglichen Reportvarianten können in \ref{reporte} eingesehen werden.
+
+\begin{figure}[!h]
+	\caption{Evaluationsszenario - Gesamtprozess}
+	\centering
+		\includegraphics[width=\textwidth]{grafiken/EvaluationsSzenario_Gesamtprozess.png}
+	\label{fig:gesamtprozess}
+\end{figure}
+
+\paragraph*{Startparameter eingeben}
+Im ersten Schritt wählt der Benutzer den Monat, für welchen die Reporte erzeugt werden sollen, sowie die gewünschten Reporte selbst.
+
+\paragraph*{Monatsultimo prüfen}
+Mithilfe einer \ac{BR}-Aktivität wird zu dem vom Benutzer gewählten Monat der Monatsultimo ermittelt. Im Falle des Quartalsreports wird nicht das Monatsultimo heran gezogen, sondern entsprechend das Quartalsultimo.
+
+\paragraph*{Daten laden}
+Anhand des ermittelten Datums und den gewählten Reporten werden aus einer Datenbank, welche dem Zwecke der Fondsbuchhaltung dient, die entsprechenden Datensätze ausgelesen und in die Datenbank des in \ref{kalkulationSystem} beschriebenen Kalkulationssystem geschrieben.
+
+\paragraph*{Bilanzpositionen kalkulieren}
+Mittels eines Http-Rest-Aufrufes wird das Kalkulationssystem (für Details siehe \ref{kalkulationSystem}) angewiesen, die notwendigen Bilanzpositionen für die vom Benutzer gewählten Reporte zu berechnen.
+
+\paragraph*{Reporte erzeugen}
+Ebenso mit einem Http-Rest-Aufruf an das Reportsystem (für Details siehe \ref{reportSystem}) werden aus den errechneten Bilanzpositionen die vom Benutzer angeforderten Report erzeugt und in Form einer \ac{PDF}-Datei abgelegt.
+
+\paragraph*{Reporte kontrollieren}
+Der Benutzer hat nach erfolgter Reporterzeugung die Aufgabe, diese manuell auf inhaltliche Fehler zu prüfen.
+
+\paragraph*{Reporte freigeben}
+Konnte der Benutzer bei der Kontrolle der erzeugten Reporte keine Fehler finden, kann er diese freigeben. Andernfalls hat er die in \ref{fachFehler} beschriebenen Möglichkeiten zur Fehlerkorrektur.
+
+\paragraph*{Archivierung entscheiden}
+Sind die erzeugten Reporte vom Benutzer freigegeben, hat er die Wahl diese zu archivieren, oder im Ausnahmefall zu löschen.
+
+\paragraph*{Reporte archivieren}
+Hat der Benutzer die Archivierung der Reporte gewählt, werden diese mithilfe eines Skriptes in das Archiv verschoben. Nach Abschluss dessen wird die Prozessinstanz beendet.
+
+\paragraph*{Reporte löschen}
+Sollte der Benutzer sich im Schritt \textit{Archivierung entscheiden} für eine Löschung der Reporte entschieden haben, werden diese, ebenfalls durch die Ausführung eines Skriptes, gelöscht, was zur anschließenden Beendigung der Instanz führt.
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Akteure}
+\label{akteure}
+Am Evaluationsprozess selbst können je nach Ablauf bis zu zwei Benutzergruppen teilnehmen.
+
+\label{fachabteilung}
+\bigskip
+\noindent Im Standardablauf ist nur die Interaktion eines Benutzers aus der  \textbf{Fachabteilung}, welche sich für die Erzeugung der Reporte verantwortlich zeichnet, vorgesehen. Er interagiert mit dem \ac{BPMS} in den in \ref{fig:benutzersicht} dargestellten Benutzeraktivitäten. Im Falle eines in \ref{fachFehler} näher beschriebenen Fehlers fachlicher Natur, bleibt die Verantwortung zur Behebung dessen bei dem Benutzer der Fachabteilung selbst.
+
+\begin{figure}[!h]
+	\caption{Evaluationsszenario - Benutzersicht}
+	\centering
+		\includegraphics[width=\textwidth]{grafiken/EvaluationsSzenario_Benutzersicht.png}	
+	\label{fig:benutzersicht}
+\end{figure}
+
+\label{wartungsabteilung}
+\bigskip
+\noindent Tritt ein in \ref{techFehler} beschriebener Fehler technischer Natur auf, wird damit ein Benutzer der \textbf{Wartungsabteilung} hinzugezogen. Dieser hat die Aufgabe den Fehler zu beseitigen und dies nach Abschluss zu bestätigen. Damit endet seine Beteiligung, die Prozessinstanz wird beendet und eine neue Instanz des Evaluationsprozesses gestartet.
+
+\begin{figure}[!h]
+	\caption{Evaluationsszenario - Wartungssicht}
+	\centering
+		\includegraphics[height=4cm]{grafiken/EvaluationsSzenario_Wartungssicht.png}	
+	\label{fig:wartungssicht}
+\end{figure}
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Systeme}
+\label{systeme}
+Für die komplette Erzeugung der Reporte werden zwei verschiedene Backendsysteme benötigt.
+
+\label{kalkulationSystem}
+\bigskip
+\noindent Das \textbf{Kalkulationssystem} dient der Berechnung der für die Reporterzeugung notwendigen Bilanzpositionen. Die dafür benötigten Daten werden in einem vorausgehenden Prozessschritt bereit gestellt. Für die eigentliche Kalkulation werden drei Rest-Schnittstellen angeboten. Diese berechnen, für die in \ref{reporte} beschriebenen Reporte, die entsprechend notwendigen Bilanzpositionen.
+
+\label{reportSystem}
+\bigskip
+\noindent Zur Erzeugung der Reporte dient das \textbf{Reportsystem}. Dieses liest die berechneten Bilanzpositionen des Kalkulationssystems ein und erzeugt daraus die Report in Form einer \ac{PDF}-Datei. Dabei stehen ebenfalls drei Rest-Schnittstellen bereit, die den in \ref{reporte} beschriebenen Reporten entsprechen.
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Reportvarianten}
+\label{reporte}
+Es stehen drei Varianten von Reporten zur Verfügung. Diese Unterscheiden sich dahin gehend, dass sie jeweils den Anforderungen zweier verschiedener in \ref{fachProzess} beschriebenen nationalen Zentralbanken entsprechen. Für den Evaluationsprozess wird dies aufgrund der dafür notwendigen, hohen Komplexität allerdings nur simuliert.
+
+
+\label{inland}
+\smallskip
+\noindent Der Report \textbf{Inland} entspricht einem zum Monatsultimo fälligen Report an die inländische Zentralbank.
+
+\newpage
+\label{ausland}
+\smallskip
+\noindent Der \textbf{Ausland} Report ist ebenso zum Monatsultimo fällig. Er erfüllt die Anforderungen einer nicht näher spezifizierten ausländischen Zentralbank.
+
+
+\label{quartal}
+\smallskip
+\noindent Die ausländische Zentralbank fordert zusätzlich zum Quartalsultimo den \textbf{Quartal} Report.
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Fehlerbehandlung}
+\label{fehlerbehandlung}
+Der Prozess verfügt über Maßnahmen sowohl zur Behandlung von Fehlern technischer Natur wie auch Fachlicher. 
+
+\label{techFehler}
+\noindent\textbf{Technische Fehler} treten auf, wenn eines der unter \ref{systeme} aufgeführten Systeme nicht korrekt antwortet bzw. nicht reagiert. In diesem Fall wird ein Eskalationsendereignis ausgelöst, wodurch die Prozessinstanz beendet wird. Das Eskalationsereignis wird von der in einem Unterprozess der in \ref{wartungsabteilung} beschriebenen Wartungsabteilung abgefangen und behandelt. Hat diese ihre Wartungsarbeiten abgeschlossen, wird der Evaluationsprozess mittels Nachrichtenereignis erneut gestartet. Damit erhält der ursprüngliche Benutzer der Fachabteilung die Aufgabe zur Eingabe der Startparameter noch einmal.
+
+\label{fachFehler}
+\noindent Unter \textbf{fachlichen Fehlern} wird dabei verstanden, dass die angeforderten Reporte zwar erzeugt werden konnten, deren Inhalt jedoch nicht den fachlichen Anforderungen entspricht. Dies wird mit dem manuellen Schritt \textit{Reporte kontrollieren} und dem darauf folgenden \textit{Reporte freigeben} umgesetzt. Im Fehlerfall muss der Benutzer entscheiden, ob die Daten erneut geladen werden sollen oder der Fehler mit einer erneuten Kalkulation der Bilanzpositionen behoben werden kann. Im ersteren Fall werden zuvor die Daten des Kalkulationssystems in dem Schritt \textit{Daten löschen} zurück gesetzt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%
+%
+%
+%
+%
+%
+%
+%\subsection{Startparameter}
+%Für den Start des Prozesses müssen vom Benutzer die folgenden Parameter angegeben werden:
+%
+%\begin{description}
+%    \item[Stichtag:] Der Tag, zu dem der Kurswert der Fonds ermittelt wird.
+%        
+%    \item[Reporte:] Zur Wahl stehen die Reporte für \ac{GF}, \ac{NGF} und im Falle der Fachabteilung Ausland, ein Quartalsreport.
+%         
+%    \item[Fondsgruppen:] Alle in der Fondsbuchhaltung existierenden Fondsgruppen stehen zur Auswahl. Dabei können einzelne, mehrere oder alle Fondsgruppen ausgewählt werden.      
+%\end{description}
+%
+%\begin{tabularx}{\textwidth}{lX}
+%\textbullet \enspace ECB\_FOREIGN\_MMF & Geldmarktfonds Ausland (MMF = money market fund) \\
+%\textbullet \enspace ECB\_FOREIGN\_NMMF & Nicht-Geldmarktfonds Ausland (NMMF = Non-money market funds) \\
+%\textbullet \enspace ECB\_INLAND\_MMF & Geldmarktfonds Inland \\
+%\textbullet \enspace ECB\_INLAND\_NMMF & Nicht-Geldmarktfonds Ausland \\
+%\end{tabularx}
+%
+%%---------------------------------------------------------------------------------------------------
+%\subsection{Reportarten}
+%Die drei verfügbaren Reporte stützen sich alle auf dieselbe Datenbasis aus der Fondsbuchhaltung. Alle Reporte werden immer auf der Basis des einzelnen Fonds erstellt.
+%
+%\paragraph*{Geldmarktfonds Report}
+%Nach Springer Gabler "handelt es sich [bei Geldmarktfonds] um um Investmentfonds, die in Bankguthaben und liquide Geldmarktinstrumente investieren, wie Schuldscheindarlehen, Anleihen, festverzinsliche Wertpapiere mit kurzer Restlaufzeit u. dgl. Haupteinflussfaktor für die Rendite ist die Zinsentwicklung am Geldmarkt."
+%
+%Daher berücksichtigt der \ac{GF} Report nur die Fondsgruppen, die unter die oben genannten Kriterien fallen. Stichtag für den GF Report ist der Monatsultimo.
+%
+%\paragraph*{Nicht-Geldmarktfonds Report}
+%Der Report für die \ac{NGF}s umfasst alle Investmentfonds, mit Ausnahme der Geldmarktfonds. 
+%Nach Springer Gabler sind Investmentfonds Sondervermögen bestehend aus Wertpapieren, Geldmarktinstrumenten, Bankguthaben, Investmentanteilen und Derivaten. Investmentfonds können nach Vermögensgegenständen, nach Volumen, nach Streuung unter den Anlegern und nach der Behandlung der Erträge unterschieden werden.
+%
+%Auch der \ac{NGF} Report ist zum Monatsultimo fällig.
+%
+%\paragraph*{Quartalsreport}
+%Der Quartalsbericht ist eine statistische Zusammenfassung der Aktiva und Passiva zum Quartalsultimo.
+%Der Report ist nach folgenden Kriterien gegliedert:
+% \begin{enumerate}
+%      \item -	Land, in dem der Fonds registriert ist
+%      \item -	Währung
+%      \item -	Branche
+%      \item -	Erstlaufzeit des Fonds
+% \end{enumerate}
+%Diese müssen nach Land, in der Fonds registriert ist, nach Währung, nach Branche und nach Erstlaufzeit zusammengefasst werden.
+%
+%
+%
+%
+%%---------------------------------------------------------------------------------------------------
+%\subsection{Geschäftsregeln}
+%Während des Prozessablaufs finden drei Geschäftsregeln ihre Anwendung. Sie entscheiden über den zu wählenden Prozesspfad sowie die Validierung des Stichtags.
+%\begin{description}
+%    \item[Stichtag:] Prüft, ob der vom Benutzer eingegebene Stichtag mit der Regel übereinstimmt. 
+%   
+%    \item[Zuordnung Benutzer Inland/Ausland:] Anhand der Zuordnung der Rolle des Benutzers zu seiner Fachabteilung wird entweder der Prozesspfad Inland oder Ausland gewählt.    
+%   
+%    \item[Stichtag Quartalsreport:] Prüft, falls der Benutzer zur Fachabteilung Ausland gehört und den Quartalsreport angefordert hat, ob der eingegebene Stichtag regelkonform ist.     
+%\end{description}
+%
+%%---------------------------------------------------------------------------------------------------
+%\subsection{Standardablauf}
+%Grundsätzlich umfasst der Prozess die Reporterstellung für INLAND oder AUSLAND. INLAND bzw. AUSLAND stehen dabei für zwei nationale Zentralbanken, an welche die Investmentgesellschaft berichten muss. Der Prozess durchläuft dabei im Standardfall immer die folgenden Schritte:
+%\begin{description}
+%    \item[Startparameter festlegen:] Die Startparameter werden vom Benutzer eingegeben.
+%   
+%    \item[Daten laden:] Die Daten werden aus der Fondsbuchhaltung geladen. Dabei wird anhand der Fachabteilung des prozessstartenden Benutzers entweder der Prozesspfad INLAND oder AUSLAND ausgewählt. Berücksichtigt werden die Wertpapiere, Anteilsscheine und Konten der Fonds, die im jeweiligen Hoheitsgebiet registriert sind.    
+%   
+%    \item[Bilanzpositionen kalkulieren:] Entsprechend des gewählten Prozesspfades werden auf Basis der geladenen Daten die für die Reporterstellung notwendigen Bilanzpositionen berechnet.
+%    
+%    \item[Reporte erstellen:] Gemäß der vom Benutzer gewählten Startparameter werden die benötigten Reporte erstellt und zur Freigabe bereitgestellt.
+%    
+%    \item[Reporte kontrollieren und freigeben:] Die erstellten Reporte müssen vom Benutzer auf fachliche Korrektheit geprüft werden und abschließend freigegeben werde.
+%    
+%    \item[Reporte archivieren:] Nach erfolgter Freigabe werden die Reporte im Archivverzeichnis abgelegt.
+%\end{description}
+%
+%\paragraph*{Prozesspfad Inland}
+%Anhand der Vorschriften der Zentralbank „Inland“ werden alle Fonds berücksichtigt, welche in ihrem Hoheitsgebiet registriert sind. Weiter werden die Bilanzpositionen entsprechend dieser berechnet. Die Zentralbank „Inland“ schreibt dabei eine Trennung in \ac{GF} Bericht und \ac{NGF} Bericht vor.
+%
+%\paragraph*{Prozesspfad Ausland}
+%Mit den im Hoheitsgebiet der Zentralbank „Ausland“ registrierten Fonds wird ebenso anhand deren Vorschriften verfahren, was das Laden der Daten, das Berechnen der Bilanzpositionen sowie der Trennung in \ac{GF} Bericht und \ac{NGF} Bericht angeht. Zusätzlich verlangt die Zentralbank „Ausland“ zu einem Stichtag nach einem Quartalsbericht, für den zusätzliche Vorschriften gelten.
+%
+%%---------------------------------------------------------------------------------------------------
+%\subsection{Prozessbeteiligte}
+%Die Prozessbeteiligten werden im Folgenden in Akteure und Systeme unterteilt. Akteure sind dabei Personen in Form von Mitarbeitern der verschiedenen Fachabteilungen, welche sich im Prozess für die Benutzer-Tasks verantwortlich zeigen. Die Systeme hingegen werden vom \ac{BPMS} in Service-Tasks aufgerufen, um Teilschritte des Prozesses auszuführen.
+%
+%\paragraph*{Akteure}
+%Im Standarddurchlauf des Prozesses ist der Benutzer einer Fachabteilung der einzige Akteur. Im Fehlerfall wird die Prozessinstanz an die Wartungsabteilung eskaliert, so dass diese aktiv werden muss. 
+%
+%\subparagraph*{Benutzer der Fachabteilung}
+%Für den Benutzer hat der Prozess zur Report-Erstellung vier Schritte. Der Prozess wird durch ihn manuell mit den benötigten Parametern gestartet. Die erzeugten Reporte werden nach Fertigstellung automatisch als Aufgabe in die Inbox des Benutzers gelegt. Dieser muss die Reporte dann auf fachliche Korrektheit prüfen und anschließend freigeben. 
+%Sollte der Benutzer die Reporte für nicht Ordnungsgemäß befinden, kann er deren Berechnung wiederholen oder den gesamten Prozess neu starten. 
+%Nach erfolgter Freigabe der Reporte werden diese im Standardfall archiviert. Der Benutzer hat jedoch die Möglichkeit, diese alternativ zu löschen.
+%
+%\subparagraph*{Wartungsabteilung}
+%Im Standardpfad des Prozesses ist eine Beteiligung der Wartungsabteilung nicht vorgesehen. Kommt es jedoch zu einem Fehler bei der Beziehung der Daten, der Berechnung der Bilanzpositionen oder der Erstellung der Reporte, so wird die Prozessinstanz an die Wartungsabteilung eskaliert. Diese zeichnet sich dann dafür verantwortlich, den Fehler zu finden und zu beheben. Abschließend startet sie die Prozessinstanz mit den gleichen Parametern neu.
+%
+%\paragraph*{Systeme}
+%Da nicht auf die reale Testumgebung der Investmentgesellschaft zugegriffen werden kann, müssen die am Prozess beteiligten Systeme durch Eigenentwicklungen simuliert werden. Dabei wird darauf geachtet, unnötige Komplexität zu vermeiden.
+%Technisch verwenden alle drei Systeme dieselbe Datenbank, um unnötige Implementierungsaufwand für die Simulationsumgebung zu vermeiden. Die Systeme zur Kalkulation und Erstellung der Reporte werden auf demselben Container ausgeführt, jedoch über verschiedene Rest-Schnittstellen aufgerufen.
+%
+%\subparagraph*{System der Fondsbuchhaltung}
+%\begin{setlength}{\leftmargini}{0pt} 
+%\begin{description}
+%    \item[Fachliche Beschreibung:] Die Fondsbuchhaltung verwaltet die operativen Daten, welche für die Reporterstellung benötigt werden. Dazu gehören die \ac{WP}e, \ac{ANTS}e und Konten.
+%   
+%    \item[Technische Beschreibung:] Das System der Fondsbuchhaltung wird abgebildet durch eine MySQL Datenbank. Das Datenschema wird dabei an das real im Einsatz befindliche angelehnt.    
+%\end{description}
+%\end{setlength}
+%Die folgenden Tabellen stehen für die Fondsbuchhaltung:
+%\smallskip
+%
+%\begin{tabularx}{\textwidth}{lX}
+%\textbullet \enspace SRC\_SECURITIES & Wertpapiere \\
+%\textbullet \enspace SRC\_SHARES & Anteilsscheine \\
+%\textbullet \enspace SRC\_ACCOUNTS & Konten \\
+%\end{tabularx}
+%\medskip
+%
+%\noindent Mit dem Prozessschritt „Daten laden“ werden die Datensätze aus den SRC\_* Tabellen in die ECB\_* Tabellen via eines SQL-Scripts eingefügt. Dafür stehen folgende Tabellen zur Verfügung:
+%\smallskip
+%
+%\begin{tabularx}{\textwidth}{lX}
+%\textbullet \enspace ECB\_SECURITIES & Wertpapiere \\
+%\textbullet \enspace ECB\_SHARES & Anteilsscheine \\
+%\textbullet \enspace ECB\_ACCOUNTS & Konten \\
+%\end{tabularx}
+%
+%%---------------------------------------------------------------------------------------------------
+%\subparagraph*{System zur Kalkulation der Bilanzpositionen}
+%
+%\begin{setlength}{\leftmargini}{0pt} 
+%\begin{description}
+%    \item[Fachliche Beschreibung:] Das Kalkulationssystem berechnet die notwendigen Bilanzpositionen für die Reporte auf Basis der einzelnen Fonds. 
+%   
+%    \item[Technische Beschreibung:] Datengrundlage zur Berechnung sind die aus Fondsbuchhaltung ausgelesenen Datensätze in den ECB\_* Tabellen. Die Berechnung der benötigten Bilanzpositionen wird über eine Rest-Schnittstelle angestoßen. Das Kalkulationssystem wird durch einen JBoss Applikationsserver (Port 9090 um Probleme mit BPMS zu vermeiden) mit RESTeasy Servlet und einem Service-Layer für die eigentliche Berechnung dargestellt. Die Ergebnisse werden in die Tabellen zur Report Erzeugung gespeichert.
+%\end{description}
+%\end{setlength}
+%Folgende Tabellen werden bedient:
+%\smallskip
+%
+%\begin{tabularx}{\textwidth}{lX}
+%\textbullet \enspace ECB\_FOREIGN\_MMF & Geldmarktfonds Ausland (MMF = money market fund) \\
+%\textbullet \enspace ECB\_FOREIGN\_NMMF & Nicht-Geldmarktfonds Ausland (NMMF = Non-money market funds) \\
+%\textbullet \enspace ECB\_INLAND\_MMF & Geldmarktfonds Inland \\
+%\textbullet \enspace ECB\_INLAND\_NMMF & Nicht-Geldmarktfonds Ausland \\
+%\end{tabularx}
+%
+%
+%%---------------------------------------------------------------------------------------------------
+%\subparagraph*{System zur Erstellung der Reporte}
+%\begin{setlength}{\leftmargini}{0pt} 
+%\begin{description}
+%    \item[Fachliche Beschreibung:] Das Reportsystem erstellt die eigentlichen Reporte, wobei zwischen Geldmarktfonds, Nicht-Geldmarktfonds und Quartalsbericht unterschieden wird. 
+%   
+%    \item[Technische Beschreibung:] Die Erstellung der Reporte wird über dasselbe System wie die Berechnung der Bilanzpositionen abgewickelt, wozu eine weitere Rest-Schnittstelle dient. Dabei stehen zwei getrennte Schnittstellen für den \ac{GF} bzw. den \ac{NGF} Report zur Verfügung. Über eine weitere Schnittstelle können die Quartalsberichte erstellt werden. Die Reporte werden in PDF Form in ein Zielverzeichnis abgelegt, das \ac{BPMS} erhält einen positiven Response. Als Datenbasis dienen die bei der vorhergehenden Berechnung gefüllten Tabellen.
+%\end{description}
+%\end{setlength}
+%
+%%---------------------------------------------------------------------------------------------------
+%\subsection{Fehlerbehandlung}
+%Der Prozess hat sowohl eine fachliche wie eine technische Stufe zur Fehlerbehandlung. Die Prüfung auf fachliche Korrektheit der angeforderten Reporte obliegt dem Benutzer. Ist die Fehlerquelle technischer Natur, wird die Prozessinstanz an die Wartungsabteilung eskaliert.
+%Bei der Freigabe der Reporte hat der Benutzer die Verantwortung, im Falle fachlich inkorrekter Reporte, entweder die Berechnung der Bilanzpositionen erneut durchzuführen oder die Prozessinstanz noch einmal mit denselben Parametern mit dem Laden der Daten  zu beginnen. In beiden Fällen werden zuerst die berechneten Daten sowie die erstellten Reports gelöscht.
+%Bei technischen Fehlern während des Ladens der Daten, der Berechnung der Bilanzpositionen oder dem Erstellen der Reporte, wird die Prozessinstanz eskaliert und die Wartungsabteilung informiert. Die Wartungsabteilung ist dann dafür verantwortlich, die Störung zu beheben, und die Prozessinstanz anschließend mit denselben Parametern neu zu starten. Der Benutzer erfährt von der Behebung des Fehlers dadurch, dass in seiner Inbox das Arbeitselement zur Kontrolle und Freigabe der angeforderten Reporte eingeht.

@@ -1,0 +1,198 @@
+%---------------------------------------------------------------------------------------------------
+% Einstellungen
+% (gelten nur in Zusammenarbeit mit pdflatex)
+%---------------------------------------------------------------------------------------------------
+\documentclass[
+  pagesize,	                                           % flexible Auswahl des Papierformats
+  BCOR12mm,      	                                     % Bindungskorrektur
+  DIV12,																						% Konstruktion des Satzspiegels, abhängig von der verwendeten Zeichengröße zu wählen; gute Lesbarkeit, wenn eine Zeile etwa 66-72 Zeichen 
+  headsepline,                                         % Strich unter der Kopfzeile
+  12pt,                                                % 12pt Schriftgröße
+	liststotoc,																					 % Tabellen- und Abbildungsverzeichnis im 																																 			 % Inhaltsverzeichnis
+	idxtotoc,																						 % Index im Inhaltsverzeichnis	
+  bibtotoc,                                            % Literaturverzeichnis im Inhaltsverzeichnis  
+  twoside,
+	openright,% openany openright                        % Neue Kapitel beginnen auf nächster leeren rechten Seite
+	notitlepage,%titlepage, notitlepage		 								 % selects if there should be a separate title page
+]{scrbook}%scrreprt}                                            % KOMA-Scriptklasse Report
+
+% DIN A4
+\KOMAoptions{paper=a4}
+
+% true= zweiseitiger Druck
+% false= einseitiger Druck
+\KOMAoptions{twoside=true}
+
+% 12pt Schriftgröße
+%\KOMAoptions{fontsize=12pt}
+
+% Europäischer Satz: Abstand zwischen Absätzen
+%\KOMAoptions{parskip=half}
+
+% Spezielle Formatierung, die erlaubt, dass die Zusammenfassung vor dem Inhaltsverzeichnis steht
+%\KOMAoptions{abstract=true}
+
+% false= Es handelt sich um die endgültige Version
+% true= Es handelt sich um eine Vorabversion	
+\KOMAoptions{draft=false}
+
+%---------------------------------------------------------------------------------------------------
+\usepackage{todonotes}
+\usepackage[english,ngerman]{babel}                    % deutsche Trennmuster
+\usepackage[TS1,T1]{fontenc}                               % EC-Schriften, Trennstellen nach Umlauten
+\usepackage[utf8]{inputenc}                          % direkte Umlauteingabe (ä statt "a)
+                                                       % latin1/latin9 für unixoide Systeme
+                                                       % (latin1 ist auch unter Win verwendbar)
+                                                       % ansinew für Windows
+                                                       % applemac Macs
+                                                       % cp850 OS/2
+%TODO: Serifenschrift als default Schrift setzen
+\usepackage{times}              											 % Schriften Paket
+\usepackage[official]{eurosym} 
+\usepackage{mathptmx}
+\usepackage{array,ragged2e} 													 % Wichtig für Abstandsformatierung
+\usepackage{color}
+\usepackage{float}
+\usepackage{harveyballs}
+\usepackage[xindy,toc]{glossaries}
+\usepackage{natbib}
+\usepackage[citeonce*]{footbib}
+\usepackage{url}
+\renewcommand{\harvardurl}[1]{\textbf{URL:} \url{#1}}
+%\usepackage{bigfoot}
+\makeglossaries
+%---------------------------------------------------------------------------------------------------
+%\usepackage{cmbright}                                  % serifenlose Schrift als Standard
+                                                       % + alle für TeX benötigten mathematischen
+                                                       %   Schriften einschließlich der AMS-Symbole
+%\usepackage[scaled=.90]{helvet}                        % skalierte Helvetica als \sfdefault
+%\renewcommand{\familydefault}{\rmfamily}								% als Standardschrift setzen
+
+%\usepackage{courier}                                   % Courier als \ttdefault
+%\renewcommand{\familydefault}{\ttdefault}
+
+%---------------------------------------------------------------------------------------------------
+\usepackage[automark]{scrpage2}                        % Anpassung der Kopf- und Fußzeilen
+\usepackage{xspace}                                    % Korrekter Leerraum nach Befehlsdefinitionen
+%\usepackage[onehalfspacing]{setspace}
+%\usepackage{setspace}																	 % Dieses Package brauchen wir für den 				
+																											 % anderthalbzeiligen Abstand.
+%\onehalfspacing															% \singlespacing \doublespacing
+%\setlength{\headheight}{1.1\baselineskip}		
+
+%\usepackage[numbers]{natbib}                                    % Neuimplementierung des \cite-Kommandos
+%\usepackage[square]{natbib}
+%\usepackage[square]{natbib}                                  % Neuimplementierung des \cite-Kommandos
+%\usepackage[]{natbib}
+%\usepackage{biblatex}
+%\usepackage{bibgerm}       											       % Deutsche Bezeichnungen
+%\usepackage{cite}
+%  \renewcommand{\citeleft}{(}	%runde Klammer links
+%  \renewcommand{\citeright}{)}	%runde Klammer rechts
+
+\usepackage[absolute]{textpos}                         % placing boxes at absolute positions
+\usepackage[final]{pdfpages}                           % include pages of external PDF documents
+\usepackage{listings}
+\usepackage{paralist}                                  % Spaltenbreite bis zur Seitenbreite dehnen
+\usepackage{makeidx}																	 % Paket zur Erstellung eines Stichwortverzeichnisses
+\makeindex	
+\usepackage[autostyle]{csquotes} 	
+																				 % Automatische Erstellung des Stichwortverzeichnis
+\usepackage[intoc,
+						german,
+						prefix]{nomencl}
+
+%---------------------------------------------------------------------------------------------------
+% Tabelle
+%---------------------------------------------------------------------------------------------------
+\usepackage{tabularx}                          %Tabellenspalten zusammenlegen
+\usepackage{multirow}                          %Tabellezeilen zusammenlegen
+\usepackage{booktabs}                                   %schöne Tabellen
+\usepackage{longtable}                        %mehrseitige Tabellen
+\usepackage{rotating}                           %vertikale Tabellenspaltenausrichtung
+\usepackage{array}   
+\usepackage{colortbl} % Paket für die Farbe 
+\usepackage{xcolor} % Paket für farbige Texte
+\usepackage[justification=centering,font=small,labelfont=bf,format=plain,up,textfont=it,up]{caption}
+\usepackage{bigstrut}
+\usepackage{subcaption}
+\usepackage{lipsum}
+\usepackage{tabu}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{hhline}
+\usepackage{ragged2e}
+\usepackage{setspace} %zeilenabstand in Tabelle
+\definecolor{Gray}{gray}{0.9}
+\definecolor{White}{rgb}{1.0,1.0,1.0}
+\newcolumntype{P}[1]{>{RaggedRight\arraybackslash}p{#1}}
+
+%---------------------------------------------------------------------------------------------------
+% Abkürzungen
+%---------------------------------------------------------------------------------------------------
+\usepackage[
+printonlyused                           %nur benutzte im Verzeichnis anzeigen
+]{acronym}                                           %Paket für Abkürzungen, withpage Option für Seitennummer
+%---------------------------------------------------------------------------------------------------
+
+
+
+
+
+%---------------------------------------------------------------------------------------------------
+% Neue Befehle
+%---------------------------------------------------------------------------------------------------
+\input{einstellungen/neuebefehle.sty}
+
+%---------------------------------------------------------------------------------------------------
+\usepackage{graphicx}                                 % Zur Einbindung von PDF-Bildern
+%\usepackage {picins}
+\usepackage[colorlinks,															 % Einstellen und Laden des Hyperref-Pakets
+	pdftex,
+	bookmarks,
+	bookmarksopen	=false,
+	bookmarksnumbered,
+	citecolor		= black, %green, %black,
+	linkcolor		= black, %red, %black,
+	urlcolor		= black, %blue, %black,
+	filecolor		= black,
+	linktocpage,
+  	pdfstartview	= Fit,                                  % startet mit Ganzseitenanzeige    
+	pdfsubject		= {},
+	pdftitle		= {Masterthesis},
+	pdfauthor		= {Felix Albert}]{hyperref}
+\pdfcompresslevel	= 9
+ 
+%---------------------------------------------------------------------------------------------------
+% Inhaltsverzeichnis und Abschnittnummerierung
+%---------------------------------------------------------------------------------------------------
+\setcounter{secnumdepth}{4}   % Bis Ebene 3 erlaubt. (Ebene 4 in Ausnahmefällen).
+\setcounter{tocdepth}{4}
+
+
+%---------------------------------------------------------------------------------------------------
+% Kopf- und Fußzeilen
+%---------------------------------------------------------------------------------------------------
+\pagestyle{scrheadings}
+\chapterHeaderWithoutNumbers
+
+%---------------------------------------------------------------------------------------------------
+% Trennung
+%---------------------------------------------------------------------------------------------------
+\input{einstellungen/trennungen.sty}
+
+%---------------------------------------------------------------------------------------------------
+% Anpassung der Parameter, die TeX bei der Berechnung der Zeilenumbrüche verwendet:
+%---------------------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+
+
+%\tolerance 1414
+%\hbadness 1414
+%\emergencystretch 1.5em
+%\hfuzz 0.3pt
+%\widowpenalty=10000
+%\vfuzz \hfuzz
+%\raggedbottom
+\input{einstellungen/tex_parameter.tex}

@@ -1,0 +1,267 @@
+%---------------------------------------------------------------------------------------------------
+% Neue Befehle
+%---------------------------------------------------------------------------------------------------
+
+\newcommand{\myCr}{\linebreak}
+\newcommand{\abstandBeispiel}{\textheigth}
+\newcommand{\myName}{Ingo Foth}
+\newcommand{\myTitel}{Komplexe Entscheidungsfindung innerhalb eines Workflows durch Integration eines Regelwerks am Beispiel eines Anwendungsfalls aus dem IT-Management Bereich}
+\newcommand{\myLocation}{Stuttgart}
+\newcommand{\myHochschulename}{Hochschule Karlsruhe Technik und Wirtschaft}
+\newcommand{\myFakultaetname}{Fakultät Informatik und Wirtschaftsinformatik}
+\newcommand{\myStudiengang}{Fachgebiet Wirtschaftsinformatik}
+
+
+% Neue Befehle um Headerdarstellung zu verändern
+%---------------------------------------------------------------------------------------------------
+\newcommand{\chapterHeaderWithNumbers}{
+	\clearscrheadings
+	\clearscrplain
+	\clearscrheadfoot
+	% laesst Seitenzahl oben rechts auch bei Chapter erscheinen
+	\ihead[\pagemark]{\pagemark}
+	\ohead{\headmark}
+}
+
+\newcommand{\chapterHeaderWithoutNumbers}{
+	\clearscrheadings
+	\clearscrplain
+	\clearscrheadfoot
+	% verhindert eine Seitenzahl oben rechts bei Chapter
+	\ihead{\headmark}
+	\ohead{\pagemark}
+}
+
+%---------------------------------------------------------------------------------------------------
+%% The \cite command functions as follows:
+%%   \cite{key}                ==>>  Jones u. a. (1990)
+%%   \cite[chap. 2]{key}       ==>>  (Jones u. a. 1990, chap. 2)
+%%   \cite[e.g.][]{key}        ==>>  (e.g. Jones u. a. 1990)
+%%   \cite[e.g.][p. 32]{key}   ==>>  (e.g. Jones u. a. p. 32)
+%%   \citep{key}               ==>>  (Jones u. a. 1990)
+%%   \citep*{key}              ==>>  (Jones, Baker und Smith 1990)
+%%   \citet{key}               ==>>  Jones u. a. (1990)
+%%   \citet*{key}              ==>>  Jones, Baker und Smith (1990)
+%%   \citeauthor{key}          ==>>  Jones u. a.
+%%   \citeauthor*{key}         ==>>  Jones, Baker und Smith
+%%   \citeyear{key}            ==>>  1990
+%---------------------------------------------------------------------------------------------------
+% Befehl zum Erstellen und Hervorheben eines Zitats
+% Parameter:
+% 1. Zitat
+% 2. Author
+% 3. Quelle
+%---------------------------------------------------------------------------------------------------
+\newcommand{\myCitation}[3]{
+	%\begin{flushright}
+	\begin{center}
+	\begin{minipage}{.9\linewidth}
+	\footnotesize\rmfamily\itshape
+		\footnotesize\rmfamily\itshape#1
+		\vspace{.005cm}
+		\begin{flushright}
+		#2
+		\end{flushright}
+		\vspace{.1cm} 
+		#3
+	\end{minipage}
+	\end{center}
+	%\end{flushright}
+	\nobreakspace
+}
+
+%---------------------------------------------------------------------------------------------------
+% Der folgende Befehle wurden aus der Vorlage von Michael Knop übernommen
+%--------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+% Ident
+%---------------------------------------------------------------------------------------------------
+\newcommand{\ident}[1]{                             % ein Parameter
+	\small\ttfamily#1\sffamily\normalsize
+}
+
+%---------------------------------------------------------------------------------------------------
+% Umbenennen des Symbolverzeichnisses
+%---------------------------------------------------------------------------------------------------
+\renewcommand{\nomname}{Glossar}				% Das Symbolverzeichnis heisst nun "Glossar"
+\renewcommand{\nomlabel}[1]{						% Die zu erklärenden Begriffe sind nun fett hervorgehoben
+	\hfil \textbf{#1} \hfil
+}
+
+%---------------------------------------------------------------------------------------------------
+% Ein paar ganz nützliche Befehle von Lars Mählmann
+%---------------------------------------------------------------------------------------------------
+%für Kommentare 
+\newcommand{\colb}{\color{green}}
+\newcommand{\colbl}{\color{black}}
+
+%---------------------------------------------------------------------------------------------------
+% Fügt ein Wort dem Index zu
+%---------------------------------------------------------------------------------------------------
+\newcommand{\toIndex}[1]{#1\index{#1}}
+
+%---------------------------------------------------------------------------------------------------
+% Befehle zum Erstellen des Index
+% \addIndexEntry{Eintrag in den Index}
+% \addSubIndexEntry{Eintrag in den Index}{Eintrag des übergeordneten Eintrags}
+%---------------------------------------------------------------------------------------------------
+\newcommand{\addIndexEntry}[1]{#1\index{#1}}
+\newcommand{\addSubIndexEntry}[2]{#1\index{#2!#1}}
+
+%---------------------------------------------------------------------------------------------------
+% Erstellung von Deckblatt (Seite 1) und Titelblatt (Seite 2)
+%---------------------------------------------------------------------------------------------------
+\newcommand{\createCoverAndTitlePage}[8]{
+	\createCover{#1}{#2}{#3}
+	\createTitlePage{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}
+}
+
+%---------------------------------------------------------------------------------------------------
+% Erstellung von Deckblatt (Seite 1) 
+% Anwendung:
+% \createCover{Art der Arbeit}{Autor}{Titel}
+%---------------------------------------------------------------------------------------------------
+\newcommand{\createCover}[3]{
+	\thispagestyle{empty}
+	\begin{titlepage}
+
+	\setlength{\TPHorizModule}{1mm}
+	\setlength{\TPVertModule}{1mm}
+	\textblockorigin{0mm}{0mm} % start everything near the top-left corner
+
+	% Art der Arbeit
+	\begin{textblock}{111}(83,115)
+		\begin{minipage}[c][1,78cm][c]{11,09cm}		
+  		\fontsize{22pt}{20pt}
+  		\selectfont
+  		\begin{center}
+  		#1arbeit
+  		\end{center}
+		\end{minipage}
+	\end{textblock}
+
+	% Name & Titel
+	\begin{textblock}{111}(83,131)
+		\begin{minipage}[c][4,81cm][t]{11,09cm}	
+		\linespread{1.2}	
+    \fontsize{16pt}{14pt}    
+    \selectfont
+    \begin{center}
+    #2 \\ \medskip
+    #3
+    \end{center}
+    \end{minipage}
+	\end{textblock}
+	% Infos zur Arbeit und zum Fachbereich
+	\begin{textblock}{186}(22,264)
+  	\begin{minipage}[t][5,72cm][l]{17,57cm}
+    	\fontsize{12pt}{12pt}
+    	\selectfont
+			{\em \myFakultaetname}
+  	\end{minipage}
+	\end{textblock}
+	\newpage
+	\end{titlepage}
+%---------------------------------------------------------------------------------------------------
+% Wichtig! Entsprechendes Auskommentieren!
+%---------------------------------------------------------------------------------------------------
+  %\includepdf{pdf/titel}           				% zum Ausdruck auf blanko Papier
+  %\includepdf{pdf/titel_leer}           	% zum Ausdruck auf die Pappe
+  
+  % TODO Deckblatt einscannen und in elektrische Abgabe integrieren
+  \includepdf{pdf/titel_hska}							% evtl. zur elektron. Abgabe als pdf
+}
+
+%---------------------------------------------------------------------------------------------------
+% Erstellung von Titelblatt (Seite 2) 
+% Anwendung:
+% \createTitlePage{Art der Arbeit}{Author}{Titel}{Studiengang}{Erstprüfer}{Zweitprüfer}
+%---------------------------------------------------------------------------------------------------
+\newcommand{\createTitlePage}[7]{
+	\thispagestyle{empty}
+
+	\setlength{\TPHorizModule}{1mm}
+	\setlength{\TPVertModule}{\TPHorizModule}
+	\textblockorigin{0mm}{0mm} % start everything near the top-left corner
+
+	% Name & Titel
+	\begin{textblock}{130}(40,63)
+		\begin{minipage}[c][5,9cm][t]{13cm}
+			\begin{center}
+			\linespread{1.2}
+			\fontsize{18pt}{18pt}
+  		\selectfont
+  		#2 \\ \medskip
+  		\fontsize{16pt}{16pt}
+  		#3
+  		\end{center}
+		\end{minipage}  	
+	\end{textblock}
+
+	% Infos zur Arbeit und zum Fachbereich
+	\begin{textblock}{126}(32,214)
+  	\begin{minipage}[t][5,72cm][l]{12,57cm}
+    	\fontsize{12pt}{12pt}
+    	\selectfont
+    	#1arbeit eingereicht im Rahmen der #1prüfung\\
+    	im #4\\
+			%am Department Wirtschaftsinformatik\\
+			der \myFakultaetname \\
+			der \myHochschulename \\
+			\\\
+			\\\
+			Betreuender Prüfer : #5\\
+			Zweitgutachter : #6\\
+			\\\
+			Abgegeben am \today
+  	\end{minipage}
+	\end{textblock}
+	\	% WICHTIG! Damit wird nach dem Titelblatt eine neue Seite angefangen! Sonst werden Titelblatt &
+  	% Danksagung auf eine Seite gedruckt!
+}
+
+%---------------------------------------------------------------------------------------------------
+% Versicherung über Selbstständigkeit einbinden
+%---------------------------------------------------------------------------------------------------
+%\input{einstellungen/asurency}
+
+%---------------------------------------------------------------------------------------------------
+% Dient zum Eintragen folgender Dinge in die Zusammenfassung (Abstract):
+%	- Thema
+% - Stichworte
+% - Kurzfassung
+% Benutzung wie folgt:
+% \abstractentry{Titel}{Text}
+%---------------------------------------------------------------------------------------------------
+\newcommand{\abstractentry}[2]{
+	\textbf{\large#1}\\ 
+	\newline
+	\nobreakspace 
+	\begin{tabular}{lp{142mm}}
+		\hspace*{5mm} & #2 \\
+	\end{tabular}
+	\vfill
+}
+
+%---------------------------------------------------------------------------------------------------
+% Einbinden von Definition
+% Anwendung: \definition{Die Definition}
+%---------------------------------------------------------------------------------------------------
+\input{einstellungen/definition}
+
+%---------------------------------------------------------------------------------------------------
+% Einbinden von Widmung
+% Anwendung: \dedication{Wem ist das Schriftstück gewidmet}
+%---------------------------------------------------------------------------------------------------
+\input{einstellungen/dedication}
+
+%---------------------------------------------------------------------------------------------------
+% Häufig verwendete Namen mit Literaturverweis und Indexeintrag einbinden
+%--------------------------------------------------------------------------------------------------
+\input{einstellungen/haeufigverwendeteNamen_Literatur}
+
+
+%---------------------------------------------------------------------------------------------------
+% Kürzel einbinden
+%---------------------------------------------------------------------------------------------------
+\input{einstellungen/kuerzel}
